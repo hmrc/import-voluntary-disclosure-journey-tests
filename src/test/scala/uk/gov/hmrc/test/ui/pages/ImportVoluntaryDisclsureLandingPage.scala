@@ -16,8 +16,9 @@
 
 package uk.gov.hmrc.test.ui.pages
 
-import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-trait BasePage extends Matchers {
-  val url: String
+object ImportVoluntaryDisclsureLandingPage extends BasePage {
+  val url: String = TestConfiguration.url("import-voluntary-disclosure")
+
 }

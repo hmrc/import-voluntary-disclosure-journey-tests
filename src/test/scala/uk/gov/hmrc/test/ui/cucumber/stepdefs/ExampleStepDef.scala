@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 HM Revenue & Customs
+ * Copyright 2020 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,27 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.{ExamplePage, PayOnlinePage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclsureLandingPage}
 
 class ExampleStepDef extends BaseStepDef {
 
-  Given("""^a user logs in to access payments page$""") { () =>
-    driver.navigate().to(ExamplePage.url)
+  Given("""^a user logs in to access the import voluntary disclosure service""") { () =>
+    driver.navigate().to(AuthLoginStubPage.url)
 
     driver.findElement(By.name("redirectionUrl")).clear()
-    driver.findElement(By.name("redirectionUrl")).sendKeys(PayOnlinePage.url)
+    driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclsureLandingPage.url)
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
-
-    eventually {
-      driver.getTitle should be(PayOnlinePage.title)
-    }
   }
 
   Given("""^a user navigates to payments page$""") { () =>
-    driver.navigate().to(PayOnlinePage.url)
+    driver.navigate().to(ImportVoluntaryDisclsureLandingPage.url)
   }
 
   When("""^the user chooses to pay VAT tax$""") { () =>
@@ -41,10 +38,9 @@ class ExampleStepDef extends BaseStepDef {
     driver.findElement(By.id("next")).click()
   }
 
-  Then("""^payment details page is displayed$""") { () =>
-    eventually {
-      driver.getTitle should be("Choose a way to pay - Pay your VAT - GOV.UK")
-    }
+  Then("""^the user should be on the '(.*)' page$""") { (page: String) =>
+    val actualPage: String = driver.findElement(By.tagName("h1")).getText
+    assertResult(page)(actualPage)
   }
 
 }

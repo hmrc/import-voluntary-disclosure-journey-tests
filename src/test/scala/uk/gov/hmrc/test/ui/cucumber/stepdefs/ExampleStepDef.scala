@@ -17,12 +17,12 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.{ExamplePage, ImportVoluntaryDisclsureLandingPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclsureLandingPage}
 
 class ExampleStepDef extends BaseStepDef {
 
   Given("""^a user logs in to access the import voluntary disclosure service""") { () =>
-    driver.navigate().to(ExamplePage.url)
+    driver.navigate().to(AuthLoginStubPage.url)
 
     driver.findElement(By.name("redirectionUrl")).clear()
     driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclsureLandingPage.url)

@@ -47,5 +47,4 @@ class IVDStepDef extends ShutdownStepDef {
       case _ => fail(s"$button is not a valid button")
     }
   }
-
 }

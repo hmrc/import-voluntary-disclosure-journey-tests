@@ -19,23 +19,14 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclsureLandingPage}
 
-class ExampleStepDef extends BaseStepDef {
+class IVDStepDef extends BaseStepDef {
 
-  Given("""^a user logs in to access the import voluntary disclosure service""") { () =>
+  Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
     driver.navigate().to(AuthLoginStubPage.url)
 
     driver.findElement(By.name("redirectionUrl")).clear()
     driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclsureLandingPage.url)
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
-  }
-
-  Given("""^a user navigates to payments page$""") { () =>
-    driver.navigate().to(ImportVoluntaryDisclsureLandingPage.url)
-  }
-
-  When("""^the user chooses to pay VAT tax$""") { () =>
-    driver.findElement(By.id("vat")).click()
-    driver.findElement(By.id("next")).click()
   }
 
   Then("""^the user should be on the '(.*)' page$""") { (page: String) =>

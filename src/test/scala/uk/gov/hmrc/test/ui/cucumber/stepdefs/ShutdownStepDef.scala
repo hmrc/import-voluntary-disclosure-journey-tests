@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 HM Revenue & Customs
+ * Copyright 2021 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,13 +20,15 @@ import org.scalatest.matchers.should.Matchers
 import org.scalatest.concurrent.Eventually
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
 import io.cucumber.scala.{EN, ScalaDsl}
+import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.webdriver.SingletonDriver
 
 import scala.util.Try
 
-trait BaseStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers {
+trait ShutdownStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with BasePage {
 
   sys.addShutdownHook {
     Try(SingletonDriver.closeInstance)
   }
+
 }

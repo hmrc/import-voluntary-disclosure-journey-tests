@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 HM Revenue & Customs
+ * Copyright 2021 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,8 +16,21 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import org.openqa.selenium.{By, WebElement}
 import org.scalatest.matchers.should.Matchers
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
 
-trait BasePage extends Matchers {
-  val url: String
+trait BasePage extends Matchers with BrowserDriver {
+
+  // ID Wrappers
+  def findById(id: String) = findBy(By.id(id))
+  def clickById(id: String) = findById(id).click()
+
+  // Find By Syntax Sugar
+  def findBy(by: By) = driver.findElement(by)
+  def findElementsBy(by: By) = driver.findElements(by)
+  def findElementById(id: String): WebElement = driver.findElement(By.id(id))
+  def findElementByName(name: String): WebElement = driver.findElement(By.name(name))
+
+
 }

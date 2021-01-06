@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 HM Revenue & Customs
+ * Copyright 2021 HM Revenue & Customs
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,6 +16,36 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import org.openqa.selenium.By
+import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclsureLandingPage}
 
-class IVDStepDef extends BaseStepDef {
+class IVDStepDef extends ShutdownStepDef {
+
+  Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
+    driver.navigate().to(AuthLoginStubPage.url)
+    driver.findElement(By.name("redirectionUrl")).clear()
+    driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclsureLandingPage.url)
+    driver.findElement(By.cssSelector("Input[value='Submit']")).click()
+  }
+
+  Then("""^the user should be on the '(.*)' page$""") { (page: String) =>
+    val actualPage: String = driver.findElement(By.tagName("h1")).getText
+    assertResult(page)(actualPage)
+  }
+
+  And("""^the user selects the (.*) radio button$""") { button: String =>
+    button match {
+      case "Importer" => clickById("value")
+      case "Representative" => clickById("value-2")
+      case _ => fail(s"$button is not a valid Selection")
+    }
+  }
+
+  And("""^clicks the (.*) button$""") { button: String =>
+    button match {
+      case "Save and continue" | "Continue" | "Confirm" | "Accept and continue" => findBy(By.className("govuk-button")).click()
+      case _ => fail(s"$button is not a valid button")
+    }
+  }
+
 }

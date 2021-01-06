@@ -9,6 +9,3 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user selects the Importer radio button
     And clicks the Continue button
     Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
-
-
-

@@ -14,16 +14,21 @@
  * limitations under the License.
  */
 
-package uk.gov.hmrc.test.ui.driver
+package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
-import com.typesafe.scalalogging.LazyLogging
-import org.openqa.selenium.WebDriver
+import org.scalatest.matchers.should.Matchers
+import org.scalatest.concurrent.Eventually
+import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import io.cucumber.scala.{EN, ScalaDsl}
+import uk.gov.hmrc.test.ui.pages.BasePage
 import uk.gov.hmrc.webdriver.SingletonDriver
 
-trait BrowserDriver extends LazyLogging {
-  logger.info(
-    s"Instantiating Browser: ${sys.props.getOrElse("browser", "'browser' System property not set. This is required")}"
-  )
+import scala.util.Try
 
-  implicit lazy val driver: WebDriver = SingletonDriver.getInstance()
+trait ShutdownStepDef extends ScalaDsl with EN with BrowserDriver with Eventually with Matchers with BasePage {
+
+  sys.addShutdownHook {
+    Try(SingletonDriver.closeInstance)
+  }
+
 }

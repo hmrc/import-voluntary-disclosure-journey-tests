@@ -35,10 +35,22 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^the user selects the (.*) radio button$""") { button: String =>
     button match {
-      case "Importer" => clickById("value")
+      case "Importer" | "One Entry" => clickById("value")
       case "Representative" => clickById("value-2")
-      case _ => fail(s"$button is not a valid Selection")
+      case _ => fail(s"$button is not a valid radio button")
     }
+  }
+
+  And("""^the user enters a (.*) into the (.*) input field$""") { (value: String, field: String) =>
+    field match {
+      case "EPU number" => findById("epu").sendKeys(value)
+      case "Entry number" => findById("entryNumber").sendKeys(value)
+      case "Entry date day" => findById("entryDate.day").sendKeys(value)
+      case "Entry date month" => findById("entryDate.month").sendKeys(value)
+      case "Entry date year" => findById("entryDate.year").sendKeys(value)
+      case _ => fail(s"$field is not a valid input field")
+    }
+
   }
 
   And("""^clicks the (.*) button$""") { button: String =>

@@ -12,10 +12,10 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user selects the One Entry radio button
     When clicks the Continue button
     Then the user should be on the 'Entry details' page
-    And the user enters a EPU number into the 123 input field
-    And the user enters a Entry number into the 123456Q input field
-    And the user enters a Entry date day into the 01 input field
-    And the user enters a Entry date month into the 01 input field
-    And the user enters a Entry date year into the 2021 input field
+    And the user enters 123 into the EPU number input field
+    And the user enters 123456Q into the Entry number input field
+    And the user enters 01 into the Entry date day input field
+    And the user enters 01 into the Entry date month input field
+    And the user enters 2021 into the Entry date year input field
     When clicks the Continue button
     Then the user should be on the 'Entry details' page

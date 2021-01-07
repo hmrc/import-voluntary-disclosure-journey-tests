@@ -41,7 +41,7 @@ class IVDStepDef extends ShutdownStepDef {
     }
   }
 
-  And("""^the user enters a (.*) into the (.*) input field$""") { (value: String, field: String) =>
+  And("""^the user enters (.*) into the (.*) input field$""") { (value: String, field: String) =>
     field match {
       case "EPU number" => findById("epu").sendKeys(value)
       case "Entry number" => findById("entryNumber").sendKeys(value)

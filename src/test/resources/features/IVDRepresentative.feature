@@ -12,11 +12,11 @@ Feature: Representative submitting an Import Voluntary Disclosure on behalf of a
     And the user selects the One Entry radio button
     When clicks the Continue button
     Then the user should be on the 'Entry details' page
-    And the user enters a EPU number into the 123 input field
-    And the user enters a Entry number into the 123456Q input field
-    And the user enters a Entry date day into the 31 input field
-    And the user enters a Entry date month into the 12 input field
-    And the user enters a Entry date year into the 2020 input field
+    And the user enters 123 into the EPU number input field
+    And the user enters 123456Q into the Entry number input field
+    And the user enters 31 into the Entry date day input field
+    And the user enters 12 into the Entry date month input field
+    And the user enters 2020 into the Entry date year input field
     When clicks the Continue button
     Then the user should be on the 'Entry details' page
 

@@ -35,7 +35,7 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^the user selects the (.*) radio button$""") { button: String =>
     button match {
-      case "Importer" => clickById("value")
+      case "Importer" | "Yes" => clickById("value")
       case "Representative" => clickById("value-2")
       case _ => fail(s"$button is not a valid Selection")
     }

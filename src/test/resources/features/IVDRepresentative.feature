@@ -18,5 +18,7 @@ Feature: Representative submitting an Import Voluntary Disclosure on behalf of a
     And the user enters 12 into the Entry date month input field
     And the user enters 2020 into the Entry date year input field
     When clicks the Continue button
-    Then the user should be on the 'Entry details' page
-
+    Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
+    And the user selects the Yes radio button
+    And clicks the Continue button
+    Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page

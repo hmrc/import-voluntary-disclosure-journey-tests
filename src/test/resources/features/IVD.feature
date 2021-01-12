@@ -19,3 +19,5 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters 2021 into the Entry date year input field
     When clicks the Continue button
     Then the user should be on the 'Entry details' page
+    When clicks the Continue button
+    Then the user should be on the 'Supporting documentation' page

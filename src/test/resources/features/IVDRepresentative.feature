@@ -21,4 +21,9 @@ Feature: Representative submitting an Import Voluntary Disclosure on behalf of a
     Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
     And the user selects the Yes radio button
     And clicks the Continue button
-    Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
+    Then the user should be on the 'What have you underpaid?' page
+    And they select the Customs Duty checkbox
+    And they select the Import VAT checkbox
+    And they select the Excise Duty checkbox
+    When clicks the Continue button
+    Then the user should be on the 'What have you underpaid?' page

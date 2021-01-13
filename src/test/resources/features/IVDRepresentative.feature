@@ -24,6 +24,13 @@ Feature: Representative submitting an Import Voluntary Disclosure on behalf of a
     Then the user should be on the 'What have you underpaid?' page
     And they select the Customs Duty checkbox
     And they select the Import VAT checkbox
-    And they select the Excise Duty checkbox
     When clicks the Continue button
-    Then the user should be on the 'What have you underpaid?' page
+    Then the user should be on the 'Customs Duty underpayment details' page
+    And the user enters 200 into the Original amount input field
+    And the user enters 350 into the Amended amount input field
+    When clicks the Continue button
+    Then the user should be on the 'Import VAT underpayment details' page
+    And the user enters 440 into the Original amount input field
+    And the user enters 520 into the Amended amount input field
+    When clicks the Continue button
+    Then the user should be on the 'Import VAT underpayment details' page

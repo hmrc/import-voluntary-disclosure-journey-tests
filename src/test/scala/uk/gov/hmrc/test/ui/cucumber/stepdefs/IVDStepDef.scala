@@ -48,8 +48,8 @@ class IVDStepDef extends ShutdownStepDef {
       case "Entry date day" => findById("entryDate.day").sendKeys(value)
       case "Entry date month" => findById("entryDate.month").sendKeys(value)
       case "Entry date year" => findById("entryDate.year").sendKeys(value)
-      case "Original amount" => findById("originalAmount").sendKeys(value) //ID can be subject to change (depending on code)
-      case "Amended amount" => findById("amendedAmount").sendKeys(value) //ID can be subject to change (depending on code)
+      case "Original amount" => findById("original").sendKeys(value)
+      case "Amended amount" => findById("amended").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 
@@ -64,9 +64,9 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^they select the (.*) checkbox$""") { checkbox: String=>
     checkbox match{
-      case ("Customs Duty") => clickById("waste")
-      case ("Import VAT") => clickById("waste-2")
-      case ("Excise Duty") => clickById("waste-3")
+      case ("Customs Duty") => clickById("value")
+      case ("Import VAT") => clickById("value-2")
+      case ("Excise Duty") => clickById("value-3")
       case _ => fail(s"$checkbox was not found")
     }
   }

@@ -18,6 +18,11 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters 01 into the Entry date month input field
     And the user enters 2021 into the Entry date year input field
     When clicks the Continue button
-    Then the user should be on the 'Entry details' page
+    Then the user should be on the 'What have you underpaid?' page
+    And they select the Customs Duty checkbox
+    And they select the Import VAT checkbox
+    And they select the Excise Duty checkbox
+    When clicks the Continue button
+    Then the user should be on the 'What have you underpaid?' page
     When clicks the Continue button
     Then the user should be on the 'Supporting documentation' page

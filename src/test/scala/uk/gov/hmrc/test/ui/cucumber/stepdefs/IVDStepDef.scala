@@ -62,9 +62,9 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^they select the (.*) checkbox$""") { checkbox: String=>
     checkbox match{
-      case ("Customs Duty") => clickById("waste")
-      case ("Import VAT") => clickById("waste-2")
-      case ("Excise Duty") => clickById("waste-3")
+      case ("Customs Duty") => clickById("value")
+      case ("Import VAT") => clickById("value-2")
+      case ("Excise Duty") => clickById("value-3")
       case _ => fail(s"$checkbox was not found")
     }
   }

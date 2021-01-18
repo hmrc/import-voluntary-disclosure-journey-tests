@@ -32,4 +32,3 @@
       And the user enters 520 into the Amended amount input field
       When clicks the Continue button
       Then the user should be on the 'Import VAT underpayment details' page
-

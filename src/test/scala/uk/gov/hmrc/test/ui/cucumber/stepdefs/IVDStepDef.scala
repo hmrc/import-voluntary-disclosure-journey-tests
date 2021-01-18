@@ -48,6 +48,8 @@ class IVDStepDef extends ShutdownStepDef {
       case "Entry date day" => findById("entryDate.day").sendKeys(value)
       case "Entry date month" => findById("entryDate.month").sendKeys(value)
       case "Entry date year" => findById("entryDate.year").sendKeys(value)
+      case "Original amount" => findById("original").sendKeys(value)
+      case "Amended amount" => findById("amended").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 

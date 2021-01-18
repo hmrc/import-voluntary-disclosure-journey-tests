@@ -31,4 +31,3 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters 425 into the Amended amount input field
     When clicks the Continue button
     Then the user should be on the 'Excise Duty underpayment details' page
-

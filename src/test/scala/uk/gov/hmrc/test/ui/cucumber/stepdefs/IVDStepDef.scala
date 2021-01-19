@@ -48,8 +48,12 @@ class IVDStepDef extends ShutdownStepDef {
       case "Entry date day" => findById("entryDate.day").sendKeys(value)
       case "Entry date month" => findById("entryDate.month").sendKeys(value)
       case "Entry date year" => findById("entryDate.year").sendKeys(value)
-      case "Original amount" => findById("original").sendKeys(value)
-      case "Amended amount" => findById("amended").sendKeys(value)
+      case "Original amount" =>
+        findById("original").clear()
+        findById("original").sendKeys(value)
+      case "Amended amount" =>
+        findById("amended").clear()
+        findById("amended").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 
@@ -73,7 +77,7 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^the user clicks the (.*) (.*) link for (.*) on the Underpayment amount summary page$""") { (linkPos: String, link: String, field: String) =>
     link match {
-      case "Change" =>
+      case "change" =>
         linkPos match {
           case "1st" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
           case "2nd" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
@@ -122,4 +126,7 @@ class IVDStepDef extends ShutdownStepDef {
     findById("back-link").click()
   }
 
+  And("""^the user clicks browser back""") {
+    driver.navigate().back()
+  }
 }

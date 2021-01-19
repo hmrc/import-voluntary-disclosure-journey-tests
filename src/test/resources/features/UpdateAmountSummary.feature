@@ -71,11 +71,11 @@
       And the Excise duty due to HMRC amount is £150.00 on the Underpayment amount summary page
       When the user clicks the 2nd change link for Import VAT on the Underpayment amount summary page
       Then the user should be on the 'Import VAT underpayment details' page
-      When the user clicks the back link
+      When the user clicks browser back
       Then the user should be on the 'Underpayment amount summary' page
       When the user clicks the 3rd change link for Excise Duty on the Underpayment amount summary page
       Then the user should be on the 'Excise Duty underpayment details' page
-      When the user clicks the back link
+      When the user clicks browser back
       Then the user should be on the 'Underpayment amount summary' page
       When clicks the Continue button
       Then the user should be on the 'Underpayment amount summary' page

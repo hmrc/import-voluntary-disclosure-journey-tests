@@ -36,4 +36,5 @@
       And the user enters 390 into the Original amount input field
       And the user enters 425 into the Amended amount input field
       When clicks the Continue button
-      Then the user should be on the 'Excise Duty underpayment details' page
+      Then the user should be on the 'Underpayment amount summary' page
+      When clicks the Continue button

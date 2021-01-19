@@ -48,8 +48,12 @@ class IVDStepDef extends ShutdownStepDef {
       case "Entry date day" => findById("entryDate.day").sendKeys(value)
       case "Entry date month" => findById("entryDate.month").sendKeys(value)
       case "Entry date year" => findById("entryDate.year").sendKeys(value)
-      case "Original amount" => findById("original").sendKeys(value)
-      case "Amended amount" => findById("amended").sendKeys(value)
+      case "Original amount" =>
+        findById("original").clear()
+        findById("original").sendKeys(value)
+      case "Amended amount" =>
+        findById("amended").clear()
+        findById("amended").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 
@@ -67,8 +71,62 @@ class IVDStepDef extends ShutdownStepDef {
       case ("Customs Duty") => clickById("value")
       case ("Import VAT") => clickById("value-2")
       case ("Excise Duty") => clickById("value-3")
-      case _ => fail(s"$checkbox was not found")
+      case _ => fail(s"$checkbox is not a valid checkbox")
     }
   }
 
+  And("""^the user clicks the (.*) (.*) link for (.*) on the Underpayment amount summary page$""") { (linkPos: String, link: String, field: String) =>
+    link match {
+      case "change" =>
+        linkPos match {
+          case "1st" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
+          case "2nd" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
+          case "3rd" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
+          case _ => fail(s"$link is not a valid link")
+        }
+      case _ => fail(s"$link is not a valid link")
+    }
+  }
+
+  And("""^the (.*) is (.*) on the Underpayment amount summary page$""") { (field: String, expectedAmount: String) =>
+    field match {
+      case "Customs duty original amount" =>
+        val actualAmount: String = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__value.govuk-\\!-padding-bottom-0")).getText
+        assertResult(expectedAmount)(actualAmount)
+      case "Customs duty amended amount" =>
+        val actualAmount: String = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div:nth-child(2) > dd")).getText
+        assertResult(expectedAmount)(actualAmount)
+      case "Customs duty due to HMRC amount" =>
+        val actualAmount: String = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div:nth-child(3) > dd")).getText
+        assertResult(expectedAmount)(actualAmount)
+      case "Import VAT original amount" =>
+        val actualAmount: String = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__value.govuk-\\!-padding-bottom-0")).getText
+        assertResult(expectedAmount)(actualAmount)
+      case "Import VAT amended amount" =>
+        val actualAmount: String = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(2) > dd")).getText
+        assertResult(expectedAmount)(actualAmount)
+      case "Import VAT due to HMRC amount" =>
+        val actualAmount: String = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(3) > dd")).getText
+        assertResult(expectedAmount)(actualAmount)
+      case "Excise duty original amount" =>
+        val actualAmount: String = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__value.govuk-\\!-padding-bottom-0")).getText
+        assertResult(expectedAmount)(actualAmount)
+      case "Excise duty amended amount" =>
+        val actualAmount: String = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div:nth-child(2) > dd")).getText
+        assertResult(expectedAmount)(actualAmount)
+      case "Excise duty due to HMRC amount" =>
+        val actualAmount: String = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div:nth-child(3) > dd")).getText
+        assertResult(expectedAmount)(actualAmount)
+
+      case _ => fail(s"$field is not a valid field")
+    }
+  }
+
+  And("""^the user clicks the back link$""") {
+    findById("back-link").click()
+  }
+
+  And("""^the user clicks browser back""") {
+    driver.navigate().back()
+  }
 }

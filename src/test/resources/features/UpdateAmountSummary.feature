@@ -19,6 +19,9 @@
       Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
       And the user selects the Yes radio button
       And clicks the Continue button
+      Then the user should be on the 'Has the customs procedure code changed?' page
+      And the user selects the No radio button
+      When clicks the Continue button
       Then the user should be on the 'What have you underpaid?' page
       And they select the Customs Duty checkbox
       And they select the Import VAT checkbox

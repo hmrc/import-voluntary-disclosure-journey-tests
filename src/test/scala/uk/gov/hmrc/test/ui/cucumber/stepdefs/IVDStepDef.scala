@@ -37,6 +37,7 @@ class IVDStepDef extends ShutdownStepDef {
     button match {
       case "Importer" | "One Entry" | "Yes" => clickById("value")
       case "Representative" => clickById("value-2")
+      case "No" => clickById("value-no")
       case _ => fail(s"$button is not a valid radio button")
     }
   }

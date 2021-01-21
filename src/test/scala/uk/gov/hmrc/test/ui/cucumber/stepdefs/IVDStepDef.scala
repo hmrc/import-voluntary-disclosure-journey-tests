@@ -28,13 +28,6 @@ class IVDStepDef extends ShutdownStepDef {
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
   }
 
-  And("""^a user navigates to the (.*) page$""") { (page: String) =>
-    page match {
-      case "Deferment" => driver.navigate().to(ImportVoluntaryDisclosureLandingPage.url + "/disclosure/paying-by-deferment")
-      case _ => fail(s"$page is not a valid page")
-    }
-  }
-
   Then("""^the user should be on the '(.*)' page$""") { (page: String) =>
     val actualPage: String = driver.findElement(By.tagName("h1")).getText
     assertResult(page)(actualPage)

@@ -46,4 +46,7 @@ Feature: Representative submitting an Import Voluntary Disclosure on behalf of a
     When clicks the Continue button
     Then the user should be on the 'Underpayment amount summary' page
     When clicks the Continue button
-    Then the user should be on the 'Underpayment amount summary' page
+    Then the user should be on the 'Are you paying by deferment?' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Are you paying by deferment?' page

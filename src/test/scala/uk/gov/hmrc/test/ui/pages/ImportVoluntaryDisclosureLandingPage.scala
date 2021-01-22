@@ -18,7 +18,7 @@ package uk.gov.hmrc.test.ui.pages
 
 import uk.gov.hmrc.test.ui.conf.TestConfiguration
 
-object ImportVoluntaryDisclsureLandingPage extends BasePage {
+object ImportVoluntaryDisclosureLandingPage extends BasePage {
   val url: String = TestConfiguration.url("import-voluntary-disclosure")
 
 }

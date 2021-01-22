@@ -38,4 +38,7 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     When clicks the Continue button
     Then the user should be on the 'Underpayment amount summary' page
     When clicks the Continue button
-    Then the user should be on the 'Underpayment amount summary' page
+    Then the user should be on the 'Are you paying by deferment?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Are you paying by deferment?' page

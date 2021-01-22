@@ -17,14 +17,14 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclsureLandingPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
 
 class IVDStepDef extends ShutdownStepDef {
 
   Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
     driver.navigate().to(AuthLoginStubPage.url)
     driver.findElement(By.name("redirectionUrl")).clear()
-    driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclsureLandingPage.url)
+    driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclosureLandingPage.url)
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
   }
 

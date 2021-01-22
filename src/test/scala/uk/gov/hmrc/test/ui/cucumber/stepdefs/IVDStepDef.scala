@@ -57,6 +57,9 @@ class IVDStepDef extends ShutdownStepDef {
         findById("amended").sendKeys(value)
       case "Customs procedure code" =>
         findById("cpc").sendKeys(value)
+      case "Name" => findById("fullName").sendKeys(value)
+      case "Email address" => findById("email").sendKeys(value)
+      case "UK telephone number" => findById("phoneNumber").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 

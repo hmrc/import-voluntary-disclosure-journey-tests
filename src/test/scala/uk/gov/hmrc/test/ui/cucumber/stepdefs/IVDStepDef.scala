@@ -80,6 +80,10 @@ class IVDStepDef extends ShutdownStepDef {
     }
   }
 
+  And("""^wait for (.*) seconds$""") { wait: Int =>
+    Thread.sleep(wait * 1000)
+  }
+
   And("""^they select the (.*) checkbox$""") { checkbox: String=>
     checkbox match{
       case ("Customs Duty") => clickById("value")

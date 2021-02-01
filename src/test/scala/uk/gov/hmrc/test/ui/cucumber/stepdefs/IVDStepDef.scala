@@ -33,6 +33,13 @@ class IVDStepDef extends ShutdownStepDef {
     assertResult(page)(actualPage)
   }
 
+  Then("""^the user navigates the '(.*)' page$""") { (page: String) =>
+    page match {
+      case "supporting-documentation" => driver.navigate().to(ImportVoluntaryDisclosureLandingPage.url + "/disclosure/supporting-documentation-format")
+      case _ => fail(s"$page is not a directly navigable page")
+    }
+  }
+
   And("""^the user selects the (.*) radio button$""") { button: String =>
     button match {
       case "Importer" | "One Entry" | "Yes" => clickById("value")
@@ -60,6 +67,7 @@ class IVDStepDef extends ShutdownStepDef {
       case "Name" => findById("fullName").sendKeys(value)
       case "Email address" => findById("email").sendKeys(value)
       case "UK telephone number" => findById("phoneNumber").sendKeys(value)
+      case "Upload document" => findById("file").sendKeys(sys.env("PWD") + value)
       case _ => fail(s"$field is not a valid input field")
     }
 

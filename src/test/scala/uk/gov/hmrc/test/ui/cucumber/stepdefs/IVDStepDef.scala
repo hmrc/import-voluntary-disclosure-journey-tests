@@ -40,6 +40,12 @@ class IVDStepDef extends ShutdownStepDef {
     }
   }
 
+  And("""^there should be '(.*)' files on the page$""") { (number: String) =>
+    val actualNumber =  driver.findElement(By.tagName("h1")).getText
+      .split("\\D+").filter(_.nonEmpty).headOption.getOrElse("no digits found")
+    assertResult(number)(actualNumber)
+  }
+
   And("""^the user selects the (.*) radio button$""") { button: String =>
     button match {
       case "Importer" | "One Entry" | "Yes" => clickById("value")
@@ -142,6 +148,10 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^the user clicks the back link$""") {
     findById("back-link").click()
+  }
+
+  And("""^the user clicks the Remove link$""") {
+    findBy(By.className("govuk-link")).click()
   }
 
   And("""^the user clicks browser back""") {

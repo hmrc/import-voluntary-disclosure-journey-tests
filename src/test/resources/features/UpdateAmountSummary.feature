@@ -89,6 +89,9 @@
       And the user enters email@email.com into the Email address input field
       And the user enters 0123456789 into the UK telephone number input field
       When clicks the Continue button
+      Then the user should be on the 'Is this your correct address?' page
+      And the user selects the Yes radio button
+      When clicks the Continue button
       Then the user should be on the 'Are you paying by deferment?' page
       And the user selects the Yes radio button
       When clicks the Continue button

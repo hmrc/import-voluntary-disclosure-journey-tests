@@ -11,6 +11,6 @@
     Scenario: The user continues to Upload a file
       And clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
-      And the user enters /data/TestDocument.pdf into the Upload document input field
+      And the user enters /src/test/resources/data/TestDocument.pdf into the Upload document input field
       And clicks the Continue button
       Then the user should be on the 'You have uploaded 1 file' page

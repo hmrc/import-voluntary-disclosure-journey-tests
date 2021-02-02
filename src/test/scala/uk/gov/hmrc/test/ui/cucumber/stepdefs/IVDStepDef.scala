@@ -46,6 +46,11 @@ class IVDStepDef extends ShutdownStepDef {
     assertResult("Callback")(input.getAttribute("value"))
   }
 
+  Then("""^the page should contain content""") { () =>
+    val input = driver.findElement(By.tagName("html"))
+    assertResult("Callback")(input.getText)
+  }
+
   And("""^the user should be either waiting for file upload or completed upload$""") { () =>
 
     def sleep(millis: Int = 1000) = Thread.sleep(millis)

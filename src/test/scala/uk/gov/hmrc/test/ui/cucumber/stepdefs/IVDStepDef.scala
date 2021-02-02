@@ -19,6 +19,7 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
 
+
 class IVDStepDef extends ShutdownStepDef {
 
   Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
@@ -38,6 +39,11 @@ class IVDStepDef extends ShutdownStepDef {
       case "supporting-documentation" => driver.navigate().to(ImportVoluntaryDisclosureLandingPage.url + "/disclosure/supporting-documentation-format")
       case _ => fail(s"$page is not a directly navigable page")
     }
+  }
+
+  Then("""^the page should contain (.*) input$""") { name: String =>
+    val input = driver.findElement(By.name(name))
+    assertResult("Callback")(input.getAttribute("value"))
   }
 
   And("""^the user selects the (.*) radio button$""") { button: String =>

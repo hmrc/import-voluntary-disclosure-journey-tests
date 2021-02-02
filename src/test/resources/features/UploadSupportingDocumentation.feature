@@ -11,7 +11,8 @@
     Scenario: The user continues to Upload a file
       And clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
+      Then the page should contain x-amz-meta-callback-url input
       And the user enters /src/test/resources/data/TestDocument.pdf into the Upload document input field
       And clicks the Continue button
-      And wait for 100 seconds
+      And wait for 10 seconds
       Then the user should be on the 'You have uploaded 1 file' page

@@ -81,6 +81,7 @@ class IVDStepDef extends ShutdownStepDef {
       case "Importer" | "One Entry" | "Yes" => clickById("value")
       case "Representative" => clickById("value-2")
       case "No" => clickById("value-no")
+      case "2 Other Place" => clickById("addressId")
       case _ => fail(s"$button is not a valid radio button")
     }
   }
@@ -103,6 +104,11 @@ class IVDStepDef extends ShutdownStepDef {
       case "Name" => findById("fullName").sendKeys(value)
       case "Email address" => findById("email").sendKeys(value)
       case "UK telephone number" => findById("phoneNumber").sendKeys(value)
+      case "UK postcode" | "UK postcode (optional)" => findById("postcode").sendKeys(value)
+      case "Property name or number" => findById("filter").sendKeys(value)
+      case "Address line 1" => findById("line1").sendKeys(value)
+      case "Address line 2 (optional)" => findById("line2").sendKeys(value)
+      case "Town/city" => findById("town").sendKeys(value)
       case "Upload document" => {
         val path = Paths.get("").toAbsolutePath
         findById("file").sendKeys(path + value)
@@ -114,8 +120,15 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^clicks the (.*) button$""") { button: String =>
     button match {
-      case "Save and continue" | "Continue" | "Confirm" | "Accept and continue" => findBy(By.className("govuk-button")).click()
+      case "Save and continue" | "Continue" | "Confirm" | "Accept and continue" | "Find Address" | "Confirm address" => findBy(By.className("govuk-button")).click()
       case _ => fail(s"$button is not a valid button")
+    }
+  }
+
+  And("""^clicks the (.*) hyperlink""") { button: String =>
+    button match {
+      case "Enter the address manually" => findById("manualAddress").click()
+      case _ => fail(s"$button is not a valid hyperlink")
     }
   }
 

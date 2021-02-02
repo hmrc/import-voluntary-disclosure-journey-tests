@@ -16,6 +16,8 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import java.nio.file.Paths
+
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
 
@@ -46,9 +48,8 @@ class IVDStepDef extends ShutdownStepDef {
     assertResult("Callback")(input.getAttribute("value"))
   }
 
-  Then("""^the page should contain content""") { () =>
-    val input = driver.findElement(By.tagName("html"))
-    assertResult("Callback")(input.getText)
+  Then("""^the page should be printed$""") { () =>
+    println(driver.getPageSource)
   }
 
   And("""^the user should be either waiting for file upload or completed upload$""") { () =>
@@ -107,7 +108,10 @@ class IVDStepDef extends ShutdownStepDef {
       case "Name" => findById("fullName").sendKeys(value)
       case "Email address" => findById("email").sendKeys(value)
       case "UK telephone number" => findById("phoneNumber").sendKeys(value)
-      case "Upload document" => findById("file").sendKeys(sys.env("PWD") + value)
+      case "Upload document" => {
+        val path = Paths.get("").toAbsolutePath
+        findById("file").sendKeys(path + value)
+      }
       case _ => fail(s"$field is not a valid input field")
     }
 

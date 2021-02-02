@@ -15,5 +15,6 @@
 #      Then the page should contain success_action_redirect input
       And the user enters /src/test/resources/data/TestDocument.pdf into the Upload document input field
       And clicks the Continue button
-      And wait for 300 seconds
+      And wait for 1 seconds
+      And the user should be either waiting for file upload or completed upload
       Then the user should be on the 'You have uploaded 1 file' page

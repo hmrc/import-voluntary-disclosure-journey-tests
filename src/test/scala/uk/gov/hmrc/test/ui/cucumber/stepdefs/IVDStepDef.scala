@@ -43,11 +43,6 @@ class IVDStepDef extends ShutdownStepDef {
     }
   }
 
-  Then("""^the page should contain (.*) input$""") { name: String =>
-    val input = driver.findElement(By.name(name))
-    assertResult("Callback")(input.getAttribute("value"))
-  }
-
   Then("""^the page should be printed$""") { () =>
     println(driver.getPageSource)
   }

@@ -16,6 +16,7 @@
       And the user enters /src/test/resources/data/TestDocument.pdf into the Upload document input field
       And clicks the Continue button
       And wait for 1 seconds
+      And the page should be printed
 #      And the page should contain content
-      And the user should be either waiting for file upload or completed upload
+#      And the user should be either waiting for file upload or completed upload
       Then the user should be on the 'You have uploaded 1 file' page

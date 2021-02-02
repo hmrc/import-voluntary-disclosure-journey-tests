@@ -16,8 +16,11 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import java.nio.file.Paths
+
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
+
 
 class IVDStepDef extends ShutdownStepDef {
 
@@ -41,9 +44,47 @@ class IVDStepDef extends ShutdownStepDef {
   }
 
   And("""^there should be '(.*)' files on the page$""") { (number: String) =>
-    val actualNumber =  driver.findElement(By.tagName("h1")).getText
+    val actualNumber = driver.findElement(By.tagName("h1")).getText
       .split("\\D+").filter(_.nonEmpty).headOption.getOrElse("no digits found")
     assertResult(number)(actualNumber)
+  }
+
+  Then("""^the page should contain (.*) input$""") { name: String =>
+    val input = driver.findElement(By.name(name))
+    assertResult("Callback")(input.getAttribute("value"))
+  }
+
+  Then("""^the page should be printed$""") { () =>
+    println(driver.getPageSource)
+  }
+
+  And("""^the user should be either waiting for file upload or completed upload$""") { () =>
+
+    def sleep(millis: Int = 1000) = Thread.sleep(millis)
+
+    def comparisonCheck(count: Int): Boolean = {
+      val actualPage = driver.findElement(By.cssSelector("h1")).getText
+      if (actualPage != "You have uploaded 1 file" && count < 60) {
+        sleep(1500)
+        if (findBy(By.className("govuk-button")).isDisplayed) {
+          findBy(By.className("govuk-button")).click()
+          comparisonCheck(count + 1)
+        } else {
+          val actualPage = driver.findElement(By.cssSelector("h1")).getText
+          println(actualPage)
+          driver.navigate().to("http://localhost:7950/disclose-import-taxes-underpayment/disclosure/upload-file/polling")
+          comparisonCheck(count + 1)
+        }
+      } else {
+        if (actualPage == "You have uploaded 1 file") true
+        else {
+          fail("Failed to redirect to the 'The file has been uploaded successfully' page")
+        }
+      }
+    }
+
+    assert(comparisonCheck(0))
+
   }
 
   And("""^the user selects the (.*) radio button$""") { button: String =>
@@ -73,7 +114,10 @@ class IVDStepDef extends ShutdownStepDef {
       case "Name" => findById("fullName").sendKeys(value)
       case "Email address" => findById("email").sendKeys(value)
       case "UK telephone number" => findById("phoneNumber").sendKeys(value)
-      case "Upload document" => findById("file").sendKeys(sys.env("PWD") + value)
+      case "Upload document" => {
+        val path = Paths.get("").toAbsolutePath
+        findById("file").sendKeys(path + value)
+      }
       case _ => fail(s"$field is not a valid input field")
     }
 

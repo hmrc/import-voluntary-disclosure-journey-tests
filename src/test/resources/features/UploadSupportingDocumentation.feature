@@ -11,9 +11,13 @@
     Scenario: The user continues to Upload a file
       And clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
+#      Then the page should contain x-amz-meta-callback-url input
+#      Then the page should contain success_action_redirect input
       And the user enters /src/test/resources/data/TestDocument.pdf into the Upload document input field
       And clicks the Continue button
       And wait for 3 seconds
+#      And the page should contain content
+      And the user should be either waiting for file upload or completed upload
       Then the user should be on the 'You have uploaded 1 file' page
       And there should be '1' files on the page
 

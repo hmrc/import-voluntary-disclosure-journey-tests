@@ -18,10 +18,9 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import java.nio.file.Paths
 
-import org.apache.http.client.methods.HttpPost
-import org.apache.http.impl.client.HttpClientBuilder
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
+import uk.gov.hmrc.test.ui.utils.UpscanJson
 
 
 class IVDStepDef extends ShutdownStepDef {
@@ -64,9 +63,8 @@ class IVDStepDef extends ShutdownStepDef {
   }
 
   And("""^I call the upscan callback handler""") { () =>
-    val post = new HttpPost(callbackUrl)
-
-    driver.navigate().to(redirectUrl)
+    val resp = requestPOST(callbackUrl, UpscanJson.upscanSuccessCallback(refKey), Map("Content-Type" -> "application/json"))
+    println(resp.status, resp.statusText)
   }
 
   And("""^the user should be either waiting for file upload or completed upload$""") { () =>

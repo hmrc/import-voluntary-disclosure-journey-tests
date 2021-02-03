@@ -16,9 +16,17 @@
 
 package uk.gov.hmrc.test.ui.pages
 
+import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
 import org.openqa.selenium.{By, WebElement}
 import org.scalatest.matchers.should.Matchers
+import play.api.libs.json.{JsValue, Json}
+import play.api.libs.ws.ahc.StandaloneAhcWSClient
+import play.api.libs.ws.DefaultBodyWritables._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+
+import scala.concurrent.duration._
+import scala.concurrent.Await
 
 trait BasePage extends Matchers with BrowserDriver {
 
@@ -32,5 +40,23 @@ trait BasePage extends Matchers with BrowserDriver {
   def findElementById(id: String): WebElement = driver.findElement(By.id(id))
   def findElementByName(name: String): WebElement = driver.findElement(By.name(name))
 
+  def asyncClient: StandaloneAhcWSClient = {
+    implicit val system: ActorSystem = ActorSystem()
+    implicit val materializer: ActorMaterializer = ActorMaterializer()
+    StandaloneAhcWSClient()
+  }
+
+  def requestPOST(url: String,
+                  body: String,
+                  headers: Map[String, String]
+                 ) = {
+
+    val client = asyncClient.url(url)
+
+    Await.result(client
+      .addHttpHeaders(headers.toList: _*)
+      .withRequestTimeout(60 seconds)
+      .post(body), 60 seconds)
+  }
 
 }

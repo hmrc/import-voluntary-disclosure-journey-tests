@@ -18,11 +18,17 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import java.nio.file.Paths
 
+import org.apache.http.client.methods.HttpPost
+import org.apache.http.impl.client.HttpClientBuilder
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
 
 
 class IVDStepDef extends ShutdownStepDef {
+
+  var callbackUrl: String = ""
+  var redirectUrl: String = ""
+  var refKey: String = ""
 
   Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
     driver.navigate().to(AuthLoginStubPage.url)
@@ -45,6 +51,22 @@ class IVDStepDef extends ShutdownStepDef {
 
   Then("""^the page should be printed$""") { () =>
     println(driver.getPageSource)
+  }
+
+  And("""^I get the data from the page$""") { () =>
+    callbackUrl = driver.findElement(By.name("x-amz-meta-callback-url")).getAttribute("value")
+    redirectUrl = driver.findElement(By.name("success_action_redirect")).getAttribute("value")
+    refKey = driver.findElement(By.name("key")).getAttribute("value")
+  }
+
+  And("""^I call the success redirect""") { () =>
+    driver.navigate().to(redirectUrl)
+  }
+
+  And("""^I call the upscan callback handler""") { () =>
+    val post = new HttpPost(callbackUrl)
+
+    driver.navigate().to(redirectUrl)
   }
 
   And("""^the user should be either waiting for file upload or completed upload$""") { () =>

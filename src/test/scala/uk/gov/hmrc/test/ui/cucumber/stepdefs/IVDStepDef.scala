@@ -36,6 +36,11 @@ class IVDStepDef extends ShutdownStepDef {
     assertResult(page)(actualPage)
   }
 
+  Then("""^the page should contain (.*) input$""") { name: String =>
+    val input = driver.findElement(By.name(name))
+    assertResult("Callback")(input.getAttribute("value"))
+  }
+
   And("""^the user selects the (.*) radio button$""") { button: String =>
     button match {
       case "Importer" | "One Entry" | "Yes" => clickById("value")
@@ -137,6 +142,10 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^the user clicks the back link$""") {
     findById("back-link").click()
+  }
+
+  And("""^the user clicks the Remove link$""") {
+    findBy(By.className("govuk-link")).click()
   }
 
   And("""^the user clicks browser back""") {

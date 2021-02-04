@@ -20,14 +20,9 @@ import java.nio.file.Paths
 
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
-import uk.gov.hmrc.test.ui.utils.UpscanJson
 
 
 class IVDStepDef extends ShutdownStepDef {
-
-  var callbackUrl: String = ""
-  var redirectUrl: String = ""
-  var refKey: String = ""
 
   Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
     driver.navigate().to(AuthLoginStubPage.url)
@@ -39,61 +34,6 @@ class IVDStepDef extends ShutdownStepDef {
   Then("""^the user should be on the '(.*)' page$""") { (page: String) =>
     val actualPage: String = driver.findElement(By.tagName("h1")).getText
     assertResult(page)(actualPage)
-  }
-
-  Then("""^the user navigates the '(.*)' page$""") { (page: String) =>
-    page match {
-      case "supporting-documentation" => driver.navigate().to(ImportVoluntaryDisclosureLandingPage.url + "/disclosure/supporting-documentation-format")
-      case _ => fail(s"$page is not a directly navigable page")
-    }
-  }
-
-  Then("""^the page should be printed$""") { () =>
-    println(driver.getPageSource)
-  }
-
-  And("""^I get the data from the page$""") { () =>
-    callbackUrl = driver.findElement(By.name("x-amz-meta-callback-url")).getAttribute("value")
-    redirectUrl = driver.findElement(By.name("success_action_redirect")).getAttribute("value")
-    refKey = driver.findElement(By.name("key")).getAttribute("value")
-  }
-
-  And("""^I call the success redirect""") { () =>
-    driver.navigate().to(redirectUrl)
-  }
-
-  And("""^I call the upscan callback handler""") { () =>
-    val resp = requestPOST(callbackUrl, UpscanJson.upscanSuccessCallback(refKey), Map("Content-Type" -> "application/json"))
-    println(resp.status, resp.statusText)
-  }
-
-  And("""^the user should be either waiting for file upload or completed upload$""") { () =>
-
-    def sleep(millis: Int = 1000) = Thread.sleep(millis)
-
-    def comparisonCheck(count: Int): Boolean = {
-      val actualPage = driver.findElement(By.cssSelector("h1")).getText
-      if (actualPage != "You have uploaded 1 file" && count < 60) {
-        sleep(1500)
-        if (findBy(By.className("govuk-button")).isDisplayed) {
-          findBy(By.className("govuk-button")).click()
-          comparisonCheck(count + 1)
-        } else {
-          val actualPage = driver.findElement(By.cssSelector("h1")).getText
-          println(actualPage)
-          driver.navigate().to("http://localhost:7950/disclose-import-taxes-underpayment/disclosure/upload-file/polling")
-          comparisonCheck(count + 1)
-        }
-      } else {
-        if (actualPage == "You have uploaded 1 file") true
-        else {
-          fail("Failed to redirect to the 'The file has been uploaded successfully' page")
-        }
-      }
-    }
-
-    assert(comparisonCheck(0))
-
   }
 
   And("""^the user selects the (.*) radio button$""") { button: String =>
@@ -134,13 +74,9 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^clicks the (.*) button$""") { button: String =>
     button match {
-      case "Save and continue" | "Continue" | "Confirm" | "Accept and continue" => findBy(By.className("govuk-button")).click()
+      case "Save and continue" | "Continue" | "Confirm" | "Accept and continue" | "Refresh" => findBy(By.className("govuk-button")).click()
       case _ => fail(s"$button is not a valid button")
     }
-  }
-
-  And("""^wait for (.*) seconds$""") { wait: Int =>
-    Thread.sleep(wait * 1000)
   }
 
   And("""^they select the (.*) checkbox$""") { checkbox: String=>

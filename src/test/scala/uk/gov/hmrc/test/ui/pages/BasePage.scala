@@ -20,10 +20,10 @@ import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
 import org.openqa.selenium.{By, WebElement}
 import org.scalatest.matchers.should.Matchers
-import play.api.libs.json.{JsValue, Json}
 import play.api.libs.ws.ahc.StandaloneAhcWSClient
 import play.api.libs.ws.DefaultBodyWritables._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
+import scala.concurrent.ExecutionContext.Implicits.global
 
 import scala.concurrent.duration._
 import scala.concurrent.Await
@@ -49,14 +49,15 @@ trait BasePage extends Matchers with BrowserDriver {
   def requestPOST(url: String,
                   body: String,
                   headers: Map[String, String]
-                 ) = {
+                 ): Int = {
 
     val client = asyncClient.url(url)
 
     Await.result(client
       .addHttpHeaders(headers.toList: _*)
       .withRequestTimeout(60 seconds)
-      .post(body), 60 seconds)
+      .post(body)
+      .map(_.status), 60 seconds)
   }
 
 }

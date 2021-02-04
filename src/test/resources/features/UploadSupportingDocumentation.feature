@@ -1,4 +1,4 @@
-@upload-supporting-documentation
+@all @upload-supporting-documentation
   Feature: Testing the upload of a file
 
     Scenario: A logged in representative is able to navigate to the supporting documentation page
@@ -11,9 +11,11 @@
     Scenario: The user continues to Upload a file
       And clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
-      And the user enters /src/test/resources/data/TestDocument.pdf into the Upload document input field
-      And clicks the Continue button
-      And wait for 1 seconds
-#      And the page should be printed
+      And I get the data from the page
+      And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+      And I call the success redirect
+      Then the user should be on the 'Upload progress' page
+      And I call the upscan callback handler and get response 204
+      And clicks the Refresh button
       And the user should be either waiting for file upload or completed upload
       Then the user should be on the 'You have uploaded 1 file' page

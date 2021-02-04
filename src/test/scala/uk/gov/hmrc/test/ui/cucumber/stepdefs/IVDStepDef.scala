@@ -36,19 +36,9 @@ class IVDStepDef extends ShutdownStepDef {
     assertResult(page)(actualPage)
   }
 
-  And("""^there should be '(.*)' files on the page$""") { (number: String) =>
-    val actualNumber = driver.findElement(By.tagName("h1")).getText
-      .split("\\D+").filter(_.nonEmpty).headOption.getOrElse("no digits found")
-    assertResult(number)(actualNumber)
-  }
-
   Then("""^the page should contain (.*) input$""") { name: String =>
     val input = driver.findElement(By.name(name))
     assertResult("Callback")(input.getAttribute("value"))
-  }
-
-  Then("""^the page should be printed$""") { () =>
-    println(driver.getPageSource)
   }
 
   And("""^the user selects the (.*) radio button$""") { button: String =>

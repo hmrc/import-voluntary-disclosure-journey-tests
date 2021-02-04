@@ -85,4 +85,10 @@ class UpscanStepDef extends ShutdownStepDef {
     findById("file").sendKeys(path + value)
   }
 
+  And("""^there should be '(.*)' files on the page$""") { (number: String) =>
+    val actualNumber = driver.findElement(By.tagName("h1")).getText
+      .split("\\D+").filter(_.nonEmpty).headOption.getOrElse("no digits found")
+    assertResult(number)(actualNumber)
+  }
+
 }

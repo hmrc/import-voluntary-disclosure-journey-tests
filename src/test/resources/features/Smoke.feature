@@ -2,6 +2,7 @@
   Feature: Smoke tests for Import Voluntary Disclosure
 
     Scenario: A user successfully submits their voluntary disclosure
+      Given a user logs in to access the Import Voluntary Disclosure Service
       Then the user should be on the 'Are you the importer or their representative?' page
       And the user selects the Representative radio button
       And clicks the Continue button

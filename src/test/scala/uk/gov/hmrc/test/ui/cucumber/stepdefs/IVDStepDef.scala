@@ -36,13 +36,6 @@ class IVDStepDef extends ShutdownStepDef {
     assertResult(page)(actualPage)
   }
 
-  Then("""^the user navigates the '(.*)' page$""") { (page: String) =>
-    page match {
-      case "supporting-documentation" => driver.navigate().to(ImportVoluntaryDisclosureLandingPage.url + "/disclosure/supporting-documentation-format")
-      case _ => fail(s"$page is not a directly navigable page")
-    }
-  }
-
   And("""^there should be '(.*)' files on the page$""") { (number: String) =>
     val actualNumber = driver.findElement(By.tagName("h1")).getText
       .split("\\D+").filter(_.nonEmpty).headOption.getOrElse("no digits found")
@@ -56,35 +49,6 @@ class IVDStepDef extends ShutdownStepDef {
 
   Then("""^the page should be printed$""") { () =>
     println(driver.getPageSource)
-  }
-
-  And("""^the user should be either waiting for file upload or completed upload$""") { () =>
-
-    def sleep(millis: Int = 1000) = Thread.sleep(millis)
-
-    def comparisonCheck(count: Int): Boolean = {
-      val actualPage = driver.findElement(By.cssSelector("h1")).getText
-      if (actualPage != "You have uploaded 1 file" && count < 60) {
-        sleep(1500)
-        if (findBy(By.className("govuk-button")).isDisplayed) {
-          findBy(By.className("govuk-button")).click()
-          comparisonCheck(count + 1)
-        } else {
-          val actualPage = driver.findElement(By.cssSelector("h1")).getText
-          println(actualPage)
-          driver.navigate().to("http://localhost:7950/disclose-import-taxes-underpayment/disclosure/upload-file/polling")
-          comparisonCheck(count + 1)
-        }
-      } else {
-        if (actualPage == "You have uploaded 1 file") true
-        else {
-          fail("Failed to redirect to the 'The file has been uploaded successfully' page")
-        }
-      }
-    }
-
-    assert(comparisonCheck(0))
-
   }
 
   And("""^the user selects the (.*) radio button$""") { button: String =>
@@ -125,13 +89,9 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^clicks the (.*) button$""") { button: String =>
     button match {
-      case "Save and continue" | "Continue" | "Confirm" | "Accept and continue" => findBy(By.className("govuk-button")).click()
+      case "Save and continue" | "Continue" | "Confirm" | "Accept and continue" | "Refresh" => findBy(By.className("govuk-button")).click()
       case _ => fail(s"$button is not a valid button")
     }
-  }
-
-  And("""^wait for (.*) seconds$""") { wait: Int =>
-    Thread.sleep(wait * 1000)
   }
 
   And("""^they select the (.*) checkbox$""") { checkbox: String=>

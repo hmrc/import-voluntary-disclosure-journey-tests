@@ -18,7 +18,7 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters 01 into the Entry date month input field
     And the user enters 2021 into the Entry date year input field
     When clicks the Continue button
-    Then the user should be on the 'What is the amended customs procedure code?' page
+    Then the user should be on the 'What is the customs procedure code?' page
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Has the customs procedure code changed?' page

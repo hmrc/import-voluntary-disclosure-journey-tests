@@ -12,6 +12,7 @@ object Dependencies {
     "junit"                % "junit"             % "4.12"    % Test,
     "com.novocode"         % "junit-interface"   % "0.11"    % Test,
     "uk.gov.hmrc"         %% "zap-automation"    % "2.8.0"   % Test,
+    "com.typesafe.play"   %% "play-ws"           % "2.6.20"  % Test,
     "com.typesafe"         % "config"            % "1.3.2"   % Test
   )
 

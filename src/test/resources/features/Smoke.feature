@@ -2,6 +2,7 @@
   Feature: Smoke tests for Import Voluntary Disclosure
 
     Scenario: A user successfully submits their voluntary disclosure
+      Given a user logs in to access the Import Voluntary Disclosure Service
       Then the user should be on the 'Are you the importer or their representative?' page
       And the user selects the Representative radio button
       And clicks the Continue button
@@ -44,6 +45,17 @@
       When clicks the Continue button
       Then the user should be on the 'Underpayment amount summary' page
       When clicks the Continue button
+
+      Then the user should be on the 'Supporting documentation' page
+      And clicks the Continue button
+      Then the user should be on the 'Upload supporting documentation' page
+      And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+      And clicks the Continue button
+      And the user should be either waiting for file upload or completed upload
+      Then the user should be on the 'You have uploaded 1 file' page
+      And the user selects the No radio button
+      And clicks the Continue button
+
       Then the user should be on the 'What are your contact details?' page
       And the user enters First last into the Name input field
       And the user enters email@email.com into the Email address input field

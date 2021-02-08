@@ -66,21 +66,18 @@
       And the user selects the Yes radio button
       When clicks the Continue button
       Then the user should be on the 'Are you paying by deferment?' page
-      And the user selects the Yes radio button
+      And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'Check your answers before sending your disclosure' page
-      #TODO Check Disclosure Details summary
       And I check that within the Disclosure details summary that the value of Number of entries is One
       And I check that within the Disclosure details summary that the value of EPU is 123
       And I check that within the Disclosure details summary that the value of Entry number is 123456Q
       And I check that within the Disclosure details summary that the value of Entry date is 31 December 2020
-      #TODO Check Underpayment Details summary
+      And I check that within the Disclosure details summary that the value of Entry acceptance date before 1 January 2021? is Yes
       And I check that within the Underpayment details summary that the value of Customs Duty is £150
       And I check that within the Underpayment details summary that the value of Import VAT is £80
       And I check that within the Underpayment details summary that the value of Excise Duty is £35
-      #TODO Check Supporting Documents summary
       And I check that within the Supporting documents summary that the value of 1 file uploaded is TestDocument.pdf
-      #TODO Check Your Details summary
       And I check that within the Your details summary that the value of Name is First last
       And I check that within the Your details summary that the value of Email address is email@email.com
       And I check that within the Your details summary that the value of Telephone number is 0123456789
@@ -88,5 +85,4 @@
       And I check that within the Your details summary that the value of 2nd Line Address is Anyold Town
       And I check that within the Your details summary that the value of Postcode is 99JZ 1AA
       And I check that within the Your details summary that the value of Country is United Kingdom
-      #TODO Check Payment Information summary
       And I check that within the Payment information summary that the value of By deferment? is No

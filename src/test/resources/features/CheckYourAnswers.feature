@@ -74,15 +74,14 @@
       And I check that within the Disclosure details summary that the value of Entry number is 123456Q
       And I check that within the Disclosure details summary that the value of Entry date is 31 December 2020
       And I check that within the Disclosure details summary that the value of Entry acceptance date before 1 January 2021? is Yes
-      And I check that within the Underpayment details summary that the value of Customs Duty is £150
-      And I check that within the Underpayment details summary that the value of Import VAT is £80
-      And I check that within the Underpayment details summary that the value of Excise Duty is £35
+      And I check that within the Underpayment details summary that the value of Customs Duty is £150.00
+      And I check that within the Underpayment details summary that the value of Import VAT is £80.00
+      And I check that within the Underpayment details summary that the value of Excise Duty is £35.00
+      And I check that within the Amendment details summary that the value of Customs procedure code is 1234A67
+      And I check that within the Amendment details summary that the value of Customs procedure code changed? is No
       And I check that within the Supporting documents summary that the value of 1 file uploaded is TestDocument.pdf
       And I check that within the Your details summary that the value of Name is First last
       And I check that within the Your details summary that the value of Email address is email@email.com
       And I check that within the Your details summary that the value of Telephone number is 0123456789
-      And I check that within the Your details summary that the value of 1st Line Address is 99 Avenue Road
-      And I check that within the Your details summary that the value of 2nd Line Address is Anyold Town
-      And I check that within the Your details summary that the value of Postcode is 99JZ 1AA
-      And I check that within the Your details summary that the value of Country is United Kingdom
+      And I check that within the Your details summary that the Address contains 1st line: 99 Avenue Road, 2nd line: Anyold Town, postcode: 99JZ 1AA and country: United Kingdom
       And I check that within the Payment information summary that the value of By deferment? is No

@@ -1,7 +1,7 @@
-@smoke
-  Feature: Smoke tests for Import Voluntary Disclosure
+@all
+  Feature: Testing check your answers
 
-    Scenario: A user successfully submits their voluntary disclosure
+    Scenario: User navigates to check your answers
       Given a user logs in to access the Import Voluntary Disclosure Service
       Then the user should be on the 'Are you the importer or their representative?' page
       And the user selects the Representative radio button
@@ -45,12 +45,16 @@
       Then the user should be on the 'Underpayment amount summary' page
       When clicks the Continue button
       Then the user should be on the 'Supporting documentation' page
-      And clicks the Continue button
+      When clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
+      And I get the data from the page
       And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-      And clicks the Continue button
-      And the user should be either waiting for file upload or completed upload
+      And I call the success redirect
+      Then the user should be on the 'Upload progress' page
+      And I call the upscan callback handler and get response 204
+      And clicks the Refresh button
       Then the user should be on the 'You have uploaded 1 file' page
+      And there should be '1' files on the page
       And the user selects the No radio button
       And clicks the Continue button
       Then the user should be on the 'What are your contact details?' page
@@ -65,5 +69,19 @@
       And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'Check your answers before sending your disclosure' page
-      When clicks the Accept and send button
-      Then the user should be on the 'Check your answers before sending your disclosure' page
+      And I check that within the Disclosure details summary that the value of Number of entries is One
+      And I check that within the Disclosure details summary that the value of EPU is 123
+      And I check that within the Disclosure details summary that the value of Entry number is 123456Q
+      And I check that within the Disclosure details summary that the value of Entry date is 31 December 2020
+      And I check that within the Disclosure details summary that the value of Entry acceptance date before 1 January 2021? is Yes
+      And I check that within the Underpayment details summary that the value of Customs Duty is £150.00
+      And I check that within the Underpayment details summary that the value of Import VAT is £80.00
+      And I check that within the Underpayment details summary that the value of Excise Duty is £35.00
+      And I check that within the Amendment details summary that the value of Customs procedure code is 1234A67
+      And I check that within the Amendment details summary that the value of Customs procedure code changed? is No
+      And I check that within the Supporting documents summary that the value of 1 file uploaded is TestDocument.pdf
+      And I check that within the Your details summary that the value of Name is First last
+      And I check that within the Your details summary that the value of Email address is email@email.com
+      And I check that within the Your details summary that the value of Telephone number is 0123456789
+      And I check that within the Your details summary that the Address contains 1st line: 99 Avenue Road, 2nd line: Anyold Town, postcode: 99JZ 1AA and country: United Kingdom
+      And I check that within the Payment information summary that the value of By deferment? is No

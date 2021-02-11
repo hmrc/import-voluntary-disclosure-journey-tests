@@ -68,6 +68,7 @@ class IVDStepDef extends ShutdownStepDef {
       case "Name" => findById("fullName").sendKeys(value)
       case "Email address" => findById("email").sendKeys(value)
       case "UK telephone number" => findById("phoneNumber").sendKeys(value)
+      case "Box Number" => findById("value").sendKeys(value)
       case "Upload document" => {
         val path = Paths.get("").toAbsolutePath
         findById("file").sendKeys(path + value)

@@ -154,4 +154,4 @@ Feature: Check the flow of the Box amendments reasons journey
     Then the user should be on the 'What is the box number?' page
     And the user enters 68 into the Box Number input field
     When clicks the Continue button
-    Then the user should be on the 'What is the box number?' page
+    Then the user should be on the 'What is the box number?'

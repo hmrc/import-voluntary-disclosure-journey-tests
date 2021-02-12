@@ -14,4 +14,7 @@ Scenario: A logged in user is able to walk through the flow Box underpayments
   Then the user should be on the 'What is the box number?' page
   And the user enters 33 into the Box Number input field
   When clicks the Continue button
-  Then the user should be on the 'What is the box number?' page
+  Then the user should be on the 'What is the item number?' page
+  And the user enters 1 into the Item Number input field
+  When clicks the Continue button
+  Then the user should be on the 'What is the item number?' page

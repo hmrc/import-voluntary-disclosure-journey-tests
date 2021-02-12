@@ -11,4 +11,7 @@ Scenario: A logged in user is able to walk through the flow Box underpayments
   And the user navigates the 'box-guidance' page
   Then the user should be on the 'You must tell us the reason for the underpayment' page
   When clicks the Continue button
-  Then the user should be on the 'You must tell us the reason for the underpayment' page
+  Then the user should be on the 'What is the box number?' page
+  And the user enters 33 into the Box Number input field
+  When clicks the Continue button
+  Then the user should be on the 'What is the box number?' page

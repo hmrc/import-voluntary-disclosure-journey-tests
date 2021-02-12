@@ -66,4 +66,4 @@
       When clicks the Continue button
       Then the user should be on the 'Check your answers before sending your disclosure' page
       When clicks the Accept and send button
-#      Then the user should be on the 'Check your answers before sending your disclosure' page
+      Then the user should be on the 'Disclosure complete' page

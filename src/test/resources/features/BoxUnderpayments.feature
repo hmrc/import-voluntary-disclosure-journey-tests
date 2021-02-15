@@ -25,7 +25,11 @@ Feature: Check the flow of the Box amendments reasons journey
     Then the user should be on the 'What is the item number?' page
     And the user enters 1 into the Item Number input field
     When clicks the Continue button
-    Then the user should be on the 'What is the item number?' page
+    Then the user should be on the 'Box 33 commodity code amendment for item 1' page
+    And the user enters 1234567891ABCD into the Original value input field
+    And the user enters 1987654321DCBA into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Box 33 commodity code amendment for item 1' page
 
   Scenario: A logged in user is able to walk through the Box 34 item level underpayment flow
     Then the user should be on the 'What is the box number?' page

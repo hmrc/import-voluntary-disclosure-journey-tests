@@ -61,7 +61,6 @@ Feature: Check the flow of the Box amendments reasons journey
 #    When clicks the Continue button
 #    Then the user should be on the 'Box 35 gross mass amendment for item 1' page
 
-
   Scenario: A logged in user is able to walk through the Box 36 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
     And the user enters 36 into the Box Number input field

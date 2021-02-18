@@ -110,6 +110,19 @@ class IVDStepDef extends ShutdownStepDef {
     }
   }
 
+  And("""^the user clicks the (.*) (.*) link for (.*) on the Underpayment box summary page$""") { (linkPos: String, link: String, field: String) =>
+    link match {
+      case "change" =>
+        linkPos match {
+          case "1st" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a")).click()
+          case "2nd" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")).click()
+          case "3rd" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a")).click()
+          case _ => fail(s"$link is not a valid link")
+        }
+      case _ => fail(s"$link is not a valid link")
+    }
+  }
+
   And("""^the (.*) is (.*) on the Underpayment amount summary page$""") { (field: String, expectedAmount: String) =>
     field match {
       case "Customs duty original amount" =>

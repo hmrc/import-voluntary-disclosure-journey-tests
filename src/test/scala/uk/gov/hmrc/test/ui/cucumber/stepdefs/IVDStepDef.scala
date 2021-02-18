@@ -74,6 +74,8 @@ class IVDStepDef extends ShutdownStepDef {
         val path = Paths.get("").toAbsolutePath
         findById("file").sendKeys(path + value)
       }
+      case "Original value" => findById("original").sendKeys(value)
+      case "Amended value" => findById("amended").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 

@@ -22,9 +22,6 @@
       Then the user should be on the 'What is the customs procedure code?' page
       And the user enters 1234A67 into the Customs procedure code input field
       When clicks the Continue button
-      Then the user should be on the 'Has the customs procedure code changed?' page
-      And the user selects the No radio button
-      When clicks the Continue button
       Then the user should be on the 'What have you underpaid?' page
       And they select the Customs Duty checkbox
       And they select the Import VAT checkbox
@@ -78,7 +75,6 @@
       And I check that within the Underpayment details summary that the value of Import VAT is £80.00
       And I check that within the Underpayment details summary that the value of Excise Duty is £35.00
       And I check that within the Amendment details summary that the value of Customs procedure code is 1234A67
-      And I check that within the Amendment details summary that the value of Customs procedure code changed? is No
       And I check that within the Supporting documents summary that the value of 1 file uploaded is TestDocument.pdf
       And I check that within the Your details summary that the value of Name is First last
       And I check that within the Your details summary that the value of Email address is email@email.com

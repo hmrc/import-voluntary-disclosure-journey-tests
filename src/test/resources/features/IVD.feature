@@ -47,6 +47,9 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     Then the user should be on the 'You have added 1 reason for the underpayment' page
     And the user selects the Yes radio button
     When clicks the Continue button
+    Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
+    And the user selects the No radio button
+    When clicks the Continue button
     Then the user should be on the 'Supporting documentation' page
     When clicks the Continue button
     Then the user should be on the 'Upload supporting documentation' page

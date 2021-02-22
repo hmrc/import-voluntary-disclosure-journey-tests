@@ -68,4 +68,7 @@ Feature: Check the flow of the Box underpayments summary journey
     And I check that within the Underpayment box summary that the 2nd entry has a value of Box 33 and level of Item 1
     And the user selects the No radio button
     When clicks the Continue button
+    Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
+    And the user selects the No radio button
+    When clicks the Continue button
     Then the user should be on the 'Supporting documentation' page

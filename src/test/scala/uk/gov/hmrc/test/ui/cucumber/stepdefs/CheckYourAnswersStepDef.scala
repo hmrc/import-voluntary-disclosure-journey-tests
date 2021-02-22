@@ -160,4 +160,46 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }
+
+  And("""^I check that within the Underpayment box confirmation that the value of (.*) is (.*)$""") { (field: String, value: String) =>
+    field match {
+      case "Box number" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Item number" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__value")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Original value" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__value")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Amended value" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(4) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(4) > dd.govuk-summary-list__value")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case _ => fail(s"Field: $field is not valid, please investigate")
+    }
+  }
+
+  And("""^I check that within the Underpayment box summary that the (.*) entry has a value of (.*) and level of (.*)$""") { (pos: String, boxNumber: String, level: String) =>
+    pos match {
+      case "1st" =>
+        val actualBoxNumber = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText
+        val actualLevel = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value")).getText
+        assertResult(boxNumber)(actualBoxNumber)
+        assertResult(level)(actualLevel)
+      case "2ns" =>
+        val actualBoxNumber = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText
+        val actualLevel = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__value")).getText
+        assertResult(boxNumber)(actualBoxNumber)
+        assertResult(level)(actualLevel)
+      case _ => fail(s"Position: $pos is not valid, please investigate")
+    }
+  }
 }

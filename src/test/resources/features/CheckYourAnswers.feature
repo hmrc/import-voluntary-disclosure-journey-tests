@@ -89,7 +89,6 @@
       And I check that within the Underpayment details summary that the value of Customs Duty is £150.00
       And I check that within the Underpayment details summary that the value of Import VAT is £80.00
       And I check that within the Underpayment details summary that the value of Excise Duty is £35.00
-      And I check that within the Underpayment details summary that the value of Number of amendments is 1
       And I check that within the Amendment details summary that the value of Customs procedure code is 1234A67
       And I check that within the Amendment details summary that the value of Customs procedure code changed? is No
       And I check that within the Supporting documents summary that the value of 1 file uploaded is TestDocument.pdf

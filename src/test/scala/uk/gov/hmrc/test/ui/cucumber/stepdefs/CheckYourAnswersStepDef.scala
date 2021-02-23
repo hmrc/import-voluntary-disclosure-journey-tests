@@ -74,6 +74,11 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
         val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(3) > dd.govuk-summary-list__value")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
+      case "Number of amendments" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(4) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(4) > dd.govuk-summary-list__value")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }

@@ -21,9 +21,6 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     Then the user should be on the 'What is the customs procedure code?' page
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
-    Then the user should be on the 'Has the customs procedure code changed?' page
-    And the user selects the No radio button
-    When clicks the Continue button
     Then the user should be on the 'What have you underpaid?' page
     And they select the Customs Duty checkbox
     And they select the Excise Duty checkbox
@@ -75,3 +72,8 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Are you paying by deferment?' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    When clicks the Accept and send button
+    Then the user should be on the 'Disclosure complete' page

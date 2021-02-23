@@ -161,7 +161,28 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     }
   }
 
-  And("""^I check that within the Underpayment box confirmation that the value of (.*) is (.*)$""") { (field: String, value: String) =>
+  And("""^I check that within the Underpayment box summary that the Entry level value of (.*) is (.*)$""") { (field: String, value: String) =>
+    field match {
+      case "Box number" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Original value" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__value")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Amended value" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__value")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case _ => fail(s"Field: $field is not valid, please investigate")
+    }
+  }
+
+  And("""^I check that within the Underpayment box summary that the Item level value of (.*) is (.*)$""") { (field: String, value: String) =>
     field match {
       case "Box number" =>
         val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText

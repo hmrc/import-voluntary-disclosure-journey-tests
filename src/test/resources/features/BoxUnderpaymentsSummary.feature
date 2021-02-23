@@ -69,3 +69,32 @@ Feature: Check the flow of the Box underpayments summary journey
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Supporting documentation' page
+    When clicks the Continue button
+    Then the user should be on the 'Upload supporting documentation' page
+    And I get the data from the page
+    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+    And I call the success redirect
+    Then the user should be on the 'Upload progress' page
+    And I call the upscan callback handler and get response 204
+    And clicks the Refresh button
+    Then the user should be on the 'You have uploaded 1 file' page
+    And there should be '1' files on the page
+    And the user selects the No radio button
+    And clicks the Continue button
+    Then the user should be on the 'What are your contact details?' page
+    And the user enters First last into the Name input field
+    And the user enters email@email.com into the Email address input field
+    And the user enters 0123456789 into the UK telephone number input field
+    When clicks the Continue button
+    Then the user should be on the 'Is this your correct address?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Are you paying by deferment?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Are you paying by deferment?' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    When clicks the Accept and send button
+    Then the user should be on the 'Disclosure complete' page

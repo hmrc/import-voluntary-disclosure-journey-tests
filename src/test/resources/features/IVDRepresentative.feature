@@ -53,7 +53,7 @@ Feature: Representative submitting an Import Voluntary Disclosure on behalf of a
     Then the user should be on the 'Confirm the details of the reason for underpayment' page
     When clicks the Continue button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
-    And the user selects the Yes radio button
+    And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Supporting documentation' page
     When clicks the Continue button

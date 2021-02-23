@@ -68,8 +68,12 @@ class IVDStepDef extends ShutdownStepDef {
       case "Name" => findById("fullName").sendKeys(value)
       case "Email address" => findById("email").sendKeys(value)
       case "UK telephone number" => findById("phoneNumber").sendKeys(value)
-      case "Box Number" => findById("value").sendKeys(value)
-      case "Item Number" => findById("itemNumber").sendKeys(value)
+      case "Box Number" =>
+        findById("value").clear()
+        findById("value").sendKeys(value)
+      case "Item Number" =>
+        findById("itemNumber").clear()
+        findById("itemNumber").sendKeys(value)
       case "Upload document" => {
         val path = Paths.get("").toAbsolutePath
         findById("file").sendKeys(path + value)
@@ -104,6 +108,19 @@ class IVDStepDef extends ShutdownStepDef {
           case "1st" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
           case "2nd" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
           case "3rd" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
+          case _ => fail(s"$link is not a valid link")
+        }
+      case _ => fail(s"$link is not a valid link")
+    }
+  }
+
+  And("""^the user clicks the (.*) (.*) link for (.*) on the Underpayment box summary page$""") { (linkPos: String, link: String, field: String) =>
+    link match {
+      case "change" =>
+        linkPos match {
+          case "1st" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a")).click()
+          case "2nd" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")).click()
+          case "3rd" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a")).click()
           case _ => fail(s"$link is not a valid link")
         }
       case _ => fail(s"$link is not a valid link")

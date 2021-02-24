@@ -21,9 +21,6 @@ Feature: Check the flow of the Box underpayments summary journey
     Then the user should be on the 'What is the customs procedure code?' page
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
-    Then the user should be on the 'Has the customs procedure code changed?' page
-    And the user selects the No radio button
-    When clicks the Continue button
     Then the user should be on the 'What have you underpaid?' page
     And they select the Customs Duty checkbox
     And they select the Excise Duty checkbox
@@ -37,6 +34,8 @@ Feature: Check the flow of the Box underpayments summary journey
     And the user enters 425 into the Amended amount input field
     When clicks the Continue button
     Then the user should be on the 'Underpayment amount summary' page
+    When clicks the Continue button
+    Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What is the box number?' page
     And the user enters 22 into the Box Number input field
@@ -63,7 +62,7 @@ Feature: Check the flow of the Box underpayments summary journey
     When clicks the Continue button
     Then the user should be on the 'Confirm the details of the reason for underpayment' page
     When clicks the Continue button
-    Then the user should be on the 'You have added 2 reason for the underpayment' page
+    Then the user should be on the 'You have added 2 reasons for the underpayment' page
     And I check that within the Underpayment box summary that the 1st entry has a value of Box 22 and level of Entry level
     And I check that within the Underpayment box summary that the 2nd entry has a value of Box 33 and level of Item 1
     And the user selects the No radio button
@@ -71,4 +70,31 @@ Feature: Check the flow of the Box underpayments summary journey
     Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
     And the user selects the No radio button
     When clicks the Continue button
-    Then the user should be on the 'Supporting documentation' page
+    Then the user should be on the 'Upload supporting documentation' page
+    And I get the data from the page
+    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+    And I call the success redirect
+    Then the user should be on the 'Upload progress' page
+    And I call the upscan callback handler and get response 204
+    And clicks the Refresh button
+    Then the user should be on the 'You have uploaded 1 file' page
+    And there should be '1' files on the page
+    And the user selects the No radio button
+    And clicks the Continue button
+    Then the user should be on the 'What are your contact details?' page
+    And the user enters First last into the Name input field
+    And the user enters email@email.com into the Email address input field
+    And the user enters 0123456789 into the UK telephone number input field
+    When clicks the Continue button
+    Then the user should be on the 'Is this your correct address?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Are you paying by deferment?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Are you paying by deferment?' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    When clicks the Accept and send button
+    Then the user should be on the 'Disclosure complete' page

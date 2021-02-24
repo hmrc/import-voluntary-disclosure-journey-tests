@@ -41,6 +41,8 @@
       When clicks the Continue button
       Then the user should be on the 'Underpayment amount summary' page
       When clicks the Continue button
+      Then the user should be on the 'You must tell us the reason for the underpayment' page
+      When clicks the Continue button
       Then the user should be on the 'What is the box number?' page
       And the user enters 22 into the Box Number input field
       When clicks the Continue button
@@ -51,13 +53,11 @@
       Then the user should be on the 'Confirm the details of the reason for underpayment' page
       When clicks the Continue button
       Then the user should be on the 'You have added 1 reason for the underpayment' page
-      And the user selects the Yes radio button
+      And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
       And the user selects the No radio button
       When clicks the Continue button
-      Then the user should be on the 'Supporting documentation' page
-      And clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
       And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
       And clicks the Continue button

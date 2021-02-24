@@ -215,7 +215,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
         val actualLevel = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value")).getText
         assertResult(boxNumber)(actualBoxNumber)
         assertResult(level)(actualLevel)
-      case "2ns" =>
+      case "2nd" =>
         val actualBoxNumber = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText
         val actualLevel = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__value")).getText
         assertResult(boxNumber)(actualBoxNumber)

@@ -35,6 +35,8 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     When clicks the Continue button
     Then the user should be on the 'Underpayment amount summary' page
     When clicks the Continue button
+    Then the user should be on the 'You must tell us the reason for the underpayment' page
+    When clicks the Continue button
     Then the user should be on the 'What is the box number?' page
     And the user enters 22 into the Box Number input field
     When clicks the Continue button
@@ -46,8 +48,6 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     When clicks the Continue button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
     And the user selects the No radio button
-    When clicks the Continue button
-    Then the user should be on the 'Supporting documentation' page
     When clicks the Continue button
     Then the user should be on the 'Upload supporting documentation' page
     And I get the data from the page

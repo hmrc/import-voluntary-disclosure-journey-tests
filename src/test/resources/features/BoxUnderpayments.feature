@@ -268,7 +268,7 @@ Feature: Check the flow of the Box amendments reasons journey
     And I check that within the Underpayment box summary that the Entry level value of Original value is GBP250.00
     And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 63 entry level underpayment flow
     Then the user should be on the 'What is the box number?' page

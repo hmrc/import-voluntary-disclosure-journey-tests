@@ -22,9 +22,6 @@ Feature: Check the change flow of the Box amendments reasons journey
     Then the user should be on the 'What is the customs procedure code?' page
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
-    Then the user should be on the 'Has the customs procedure code changed?' page
-    And the user selects the No radio button
-    When clicks the Continue button
     Then the user should be on the 'What have you underpaid?' page
     And they select the Customs Duty checkbox
     And they select the Excise Duty checkbox
@@ -38,6 +35,8 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters 425 into the Amended amount input field
     When clicks the Continue button
     Then the user should be on the 'Underpayment amount summary' page
+    When clicks the Continue button
+    Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What is the box number?' page
     And the user enters 22 into the Box Number input field
@@ -93,8 +92,6 @@ Feature: Check the change flow of the Box amendments reasons journey
     When clicks the Continue button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
     And the user selects the No radio button
-    When clicks the Continue button
-    Then the user should be on the 'Supporting documentation' page
     When clicks the Continue button
     Then the user should be on the 'Upload supporting documentation' page
     And I get the data from the page

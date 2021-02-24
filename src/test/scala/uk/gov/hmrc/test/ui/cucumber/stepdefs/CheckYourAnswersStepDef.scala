@@ -207,4 +207,20 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }
+
+  And("""^I check that within the Underpayment box summary that the (.*) entry has a value of (.*) and level of (.*)$""") { (pos: String, boxNumber: String, level: String) =>
+    pos match {
+      case "1st" =>
+        val actualBoxNumber = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText
+        val actualLevel = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value")).getText
+        assertResult(boxNumber)(actualBoxNumber)
+        assertResult(level)(actualLevel)
+      case "2nd" =>
+        val actualBoxNumber = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText
+        val actualLevel = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__value")).getText
+        assertResult(boxNumber)(actualBoxNumber)
+        assertResult(level)(actualLevel)
+      case _ => fail(s"Position: $pos is not valid, please investigate")
+    }
+  }
 }

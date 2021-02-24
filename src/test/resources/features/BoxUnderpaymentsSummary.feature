@@ -1,9 +1,9 @@
-@all @ivd
+@all @box_underpayments_summary
 
-Feature: Check the full flow of Import Voluntary Disclosure Journey
+@ZAP
+Feature: Check the flow of the Box underpayments summary journey
 
-  @ZAP
-  Scenario: A logged in user is able to walk through the flow of IVD
+  Scenario: A logged in user is able to walk through the Box 22 entry level underpayment flow and opts to add another box
     Given a user logs in to access the Import Voluntary Disclosure Service
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Importer radio button
@@ -47,6 +47,24 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     Then the user should be on the 'Confirm the details of the reason for underpayment' page
     When clicks the Continue button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
+    And I check that within the Underpayment box summary that the 1st entry has a value of Box 22 and level of Entry level
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'What is the box number?' page
+    And the user enters 33 into the Box Number input field
+    When clicks the Continue button
+    Then the user should be on the 'What is the item number?' page
+    And the user enters 1 into the Item Number input field
+    When clicks the Continue button
+    Then the user should be on the 'Box 33 commodity code amendment for item 1' page
+    And the user enters 1234567891ABCD into the Original value input field
+    And the user enters 1987654321DCBA into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    When clicks the Continue button
+    Then the user should be on the 'You have added 2 reasons for the underpayment' page
+    And I check that within the Underpayment box summary that the 1st entry has a value of Box 22 and level of Entry level
+    And I check that within the Underpayment box summary that the 2nd entry has a value of Box 33 and level of Item 1
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Upload supporting documentation' page
@@ -66,6 +84,9 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters 0123456789 into the UK telephone number input field
     When clicks the Continue button
     Then the user should be on the 'Is this your correct address?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Are you paying by deferment?' page
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Are you paying by deferment?' page

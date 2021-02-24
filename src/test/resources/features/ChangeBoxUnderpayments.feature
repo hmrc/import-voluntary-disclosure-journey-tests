@@ -1,9 +1,10 @@
-@all @ivd
+@all @box_underpayments
 
-Feature: Check the full flow of Import Voluntary Disclosure Journey
+@ZAP
+Feature: Check the change flow of the Box amendments reasons journey
 
-  @ZAP
-  Scenario: A logged in user is able to walk through the flow of IVD
+  Scenario: A logged in user is able to walk through the Box 22 entry level underpayment flow, opt to change to box 33,
+    and then opt to change back to box 22
     Given a user logs in to access the Import Voluntary Disclosure Service
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Importer radio button
@@ -45,6 +46,49 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters GBP190.50 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    And I check that within the Underpayment box summary that the Entry level value of Box number is 22
+    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR125.00
+    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP190.50
+    When the user clicks the 1st change link for Box number on the Underpayment box summary page
+    Then the user should be on the 'What is the box number?' page
+    And the user enters 33 into the Box Number input field
+    When clicks the Continue button
+    Then the user should be on the 'What is the item number?' page
+    And the user enters 1 into the Item Number input field
+    When clicks the Continue button
+    Then the user should be on the 'Box 33 commodity code amendment for item 1' page
+    And the user enters 1234567891ABCD into the Original value input field
+    And the user enters 1987654321DCBA into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    And I check that within the Underpayment box summary that the Item level value of Box number is 33
+    And I check that within the Underpayment box summary that the Item level value of Item number is 1
+    And I check that within the Underpayment box summary that the Item level value of Original value is 1234567891ABCD
+    And I check that within the Underpayment box summary that the Item level value of Amended value is 1987654321DCBA
+    When the user clicks the 2nd change link for Item number on the Underpayment box summary page
+    Then the user should be on the 'What is the item number?' page
+    When the user clicks browser back
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    When the user clicks the 3rd change link for Original value on the Underpayment box summary page
+    Then the user should be on the 'Box 33 commodity code amendment for item 1' page
+    When the user clicks browser back
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    When the user clicks the 3rd change link for Amended value on the Underpayment box summary page
+    Then the user should be on the 'Box 33 commodity code amendment for item 1' page
+    When the user clicks browser back
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    When the user clicks the 1st change link for Box number on the Underpayment box summary page
+    Then the user should be on the 'What is the box number?' page
+    And the user enters 22 into the Box Number input field
+    When clicks the Continue button
+    Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
+    And the user enters EUR125.00 into the Original value input field
+    And the user enters GBP190.50 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    And I check that within the Underpayment box summary that the Entry level value of Box number is 22
+    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR125.00
+    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP190.50
     When clicks the Continue button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
     And the user selects the No radio button
@@ -66,6 +110,9 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters 0123456789 into the UK telephone number input field
     When clicks the Continue button
     Then the user should be on the 'Is this your correct address?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Are you paying by deferment?' page
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Are you paying by deferment?' page

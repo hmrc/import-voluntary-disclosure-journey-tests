@@ -5,8 +5,7 @@
       Given a user logs in to access the Import Voluntary Disclosure Service
       And the user selects the Representative radio button
       And clicks the Continue button
-      And the user navigates the 'supporting-documentation' page
-      Then the user should be on the 'Supporting documentation' page
+      And the user navigates the 'upload-supporting-documentation' page
 
     Scenario: The user continues to Upload a file
       And clicks the Continue button

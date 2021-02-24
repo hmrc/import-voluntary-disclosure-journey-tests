@@ -24,48 +24,8 @@ Feature: Check the flow of the Box amendments reasons journey
     And I check that within the Underpayment box summary that the Entry level value of Box number is 22
     And I check that within the Underpayment box summary that the Entry level value of Original value is EUR125.00
     And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP190.50
-    When the user clicks the 1st change link for Box number on the Underpayment box summary page
-    Then the user should be on the 'What is the box number?' page
-    And the user enters 33 into the Box Number input field
     When clicks the Continue button
-    Then the user should be on the 'What is the item number?' page
-    And the user enters 1 into the Item Number input field
-    When clicks the Continue button
-    Then the user should be on the 'Box 33 commodity code amendment for item 1' page
-    And the user enters 1234567891ABCD into the Original value input field
-    And the user enters 1987654321DCBA into the Amended value input field
-    When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    And I check that within the Underpayment box summary that the Item level value of Box number is 33
-    And I check that within the Underpayment box summary that the Item level value of Item number is 1
-    And I check that within the Underpayment box summary that the Item level value of Original value is 1234567891ABCD
-    And I check that within the Underpayment box summary that the Item level value of Amended value is 1987654321DCBA
-    When the user clicks the 2nd change link for Item number on the Underpayment box summary page
-    Then the user should be on the 'What is the item number?' page
-    When the user clicks browser back
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When the user clicks the 3rd change link for Original value on the Underpayment box summary page
-    Then the user should be on the 'Box 33 commodity code amendment for item 1' page
-    When the user clicks browser back
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When the user clicks the 3rd change link for Amended value on the Underpayment box summary page
-    Then the user should be on the 'Box 33 commodity code amendment for item 1' page
-    When the user clicks browser back
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When the user clicks the 1st change link for Box number on the Underpayment box summary page
-    Then the user should be on the 'What is the box number?' page
-    And the user enters 22 into the Box Number input field
-    When clicks the Continue button
-    Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
-    And the user enters EUR125.00 into the Original value input field
-    And the user enters GBP190.50 into the Amended value input field
-    When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    And I check that within the Underpayment box summary that the Entry level value of Box number is 22
-    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR125.00
-    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP190.50
-    When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 33 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -84,7 +44,7 @@ Feature: Check the flow of the Box amendments reasons journey
     And I check that within the Underpayment box summary that the Item level value of Original value is 1234567891ABCD
     And I check that within the Underpayment box summary that the Item level value of Amended value is 1987654321DCBA
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 34 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -103,7 +63,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is CY
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is GB
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 35 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -122,7 +82,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is 205.50
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is 310.10
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 36 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -141,7 +101,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is 150
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is 200
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 37 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -160,7 +120,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is 1234A67
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is 7654C21
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 38 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -179,7 +139,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is 45
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is 60
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 39 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -198,7 +158,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is ABC1234
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is DEF1234
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 41 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -217,7 +177,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is 35.50
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is 55.50
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 42 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -236,7 +196,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is 100.50
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is 200.50
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 43 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -255,7 +215,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is 1
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is 4
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 45 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -274,7 +234,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is A12.5
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is B12.5
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 46 item level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -293,7 +253,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Item level value of Original value is 200.50
 #    And I check that within the Underpayment box summary that the Item level value of Amended value is 210
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 62 entry level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -308,7 +268,7 @@ Feature: Check the flow of the Box amendments reasons journey
     And I check that within the Underpayment box summary that the Entry level value of Original value is GBP250.00
     And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 63 entry level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -323,7 +283,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
 #    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 66 entry level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -338,7 +298,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
 #    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 67 entry level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -353,7 +313,7 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
 #    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 68 entry level underpayment flow
     Then the user should be on the 'What is the box number?' page
@@ -368,4 +328,4 @@ Feature: Check the flow of the Box amendments reasons journey
 #    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
 #    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
 #    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+#    Then the user should be on the 'You have added 1 reason for the underpayment' page

@@ -31,7 +31,7 @@ class UpscanStepDef extends ShutdownStepDef {
 
   Then("""^the user navigates the '(.*)' page$""") { (page: String) =>
     page match {
-      case "supporting-documentation" => driver.navigate().to(ImportVoluntaryDisclosureLandingPage.url + "/disclosure/supporting-documentation-format")
+      case "upload-supporting-documentation" => driver.navigate().to(ImportVoluntaryDisclosureLandingPage.url + "/disclosure/upload-file")
       case "box-guidance" => driver.navigate().to(ImportVoluntaryDisclosureLandingPage.url + "/disclosure/reason-introduction")
       case _ => fail(s"$page is not a directly navigable page")
     }

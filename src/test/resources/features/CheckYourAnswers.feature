@@ -4,7 +4,7 @@
     Scenario: User navigates to check your answers
       Given a user logs in to access the Import Voluntary Disclosure Service
       Then the user should be on the 'Are you the importer or their representative?' page
-      And the user selects the Representative radio button
+      And the user selects the Importer radio button
       When clicks the Continue button
       Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
       And the user selects the One Entry radio button

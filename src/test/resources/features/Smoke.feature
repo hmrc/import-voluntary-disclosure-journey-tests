@@ -1,10 +1,10 @@
 @smoke
   Feature: Smoke tests for Import Voluntary Disclosure
 
-    Scenario: A user successfully submits their voluntary disclosure
+    Scenario: A user successfully submits their voluntary disclosure as an importer
       Given a user logs in to access the Import Voluntary Disclosure Service
       Then the user should be on the 'Are you the importer or their representative?' page
-      And the user selects the Representative radio button
+      And the user selects the Importer radio button
       When clicks the Continue button
       Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
       And the user selects the One Entry radio button
@@ -81,3 +81,13 @@
       Then the user should be on the 'Check your answers before sending your disclosure' page
       When clicks the Accept and send button
       Then the user should be on the 'Disclosure complete' page
+
+    Scenario: A user successfully submits their voluntary disclosure as a representative
+      Given a user logs in to access the Import Voluntary Disclosure Service
+      Then the user should be on the 'Are you the importer or their representative?' page
+      And the user selects the Representative radio button
+      When clicks the Continue button
+      Then the user should be on the 'What is the importer’s name?' page
+      And the user enters Test User into the importers name input field
+      When clicks the Continue button
+      Then the user should be on the 'What is the importer’s name?' page

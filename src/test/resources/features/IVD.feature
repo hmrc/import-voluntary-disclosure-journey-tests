@@ -83,7 +83,7 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
   Scenario: A logged in user is able to walk through the flow of IVD - entry date is 31/12/2020
     Given a user logs in to access the Import Voluntary Disclosure Service
     Then the user should be on the 'Are you the importer or their representative?' page
-    And the user selects the Representative radio button
+    And the user selects the Importer radio button
     When clicks the Continue button
     Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
     And the user selects the One Entry radio button

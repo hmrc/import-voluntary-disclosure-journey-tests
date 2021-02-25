@@ -60,6 +60,8 @@ Feature: Representative submitting an Import Voluntary Disclosure on behalf of a
     Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
     And the user selects the No radio button
     When clicks the Continue button
+    Then the user should be on the 'Supporting documentation' page
+    When clicks the Continue button
     Then the user should be on the 'Upload supporting documentation' page
     And I get the data from the page
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field

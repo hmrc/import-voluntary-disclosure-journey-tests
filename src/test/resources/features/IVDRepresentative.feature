@@ -20,6 +20,6 @@ Feature: Representative submitting an Import Voluntary Disclosure on behalf of a
 
   Scenario: A logged in representative is able to walk through the flow of IVD and doesn't have an EORI
     Then the user should be on the 'Does the importer have an EORI number?' page
-    And the user selects the yes radio button
+    And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Does the importer have an EORI number?' page

@@ -90,4 +90,7 @@
       Then the user should be on the 'What is the importer’s name?' page
       And the user enters Test User into the importers name input field
       When clicks the Continue button
-      Then the user should be on the 'What is the importer’s name?' page
+      Then the user should be on the 'Does the importer have an EORI number?' page
+      And the user selects the Yes radio button
+      When clicks the Continue button
+      Then the user should be on the 'Does the importer have an EORI number?' page

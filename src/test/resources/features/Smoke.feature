@@ -90,7 +90,15 @@
       Then the user should be on the 'What is the importer’s name?' page
       And the user enters Test User into the importers name input field
       When clicks the Continue button
-      Then the user should be on the 'Does the importer have an EORI number?' page
-      And the user selects the Yes radio button
+      Then the user should be on the 'What address should we send the importer's copy of the demand note to?' page
+      And the user clicks the enter address manually link
+      Then the user should be on the 'Enter address' page
+      And the user enters 21 some address into the address line one input field
+      And the user enters some address into the address line two input field
+      And the user enters some address into the address line three input field
+      And the user enters Manchester into the town input field
+      And the user enters ZZ1 1ZZ into the postcode input field
       When clicks the Continue button
+      Then the user should be on the 'Confirm address' page
+      When clicks the Confirm Address button
       Then the user should be on the 'Does the importer have an EORI number?' page

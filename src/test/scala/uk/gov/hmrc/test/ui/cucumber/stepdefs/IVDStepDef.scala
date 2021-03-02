@@ -81,6 +81,7 @@ class IVDStepDef extends ShutdownStepDef {
       case "Original value" => findById("original").sendKeys(value)
       case "Amended value" => findById("amended").sendKeys(value)
       case "importers name" => findById("fullName").sendKeys(value)
+      case "EORI" => findById("importerEORI").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 

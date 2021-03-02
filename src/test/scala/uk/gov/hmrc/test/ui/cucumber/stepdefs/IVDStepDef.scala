@@ -46,7 +46,7 @@ class IVDStepDef extends ShutdownStepDef {
       case "Importer" | "One Entry" | "Yes" => clickById("value")
       case "Representative" => clickById("value-2")
       case "No" => clickById("value-no")
-      case "2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ" => clickById("TBC")
+      case "2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ" => clickById("addressId") // first element
       case _ => fail(s"$button is not a valid radio button")
     }
   }
@@ -82,7 +82,12 @@ class IVDStepDef extends ShutdownStepDef {
       case "Original value" => findById("original").sendKeys(value)
       case "Amended value" => findById("amended").sendKeys(value)
       case "importers name" => findById("fullName").sendKeys(value)
-      case "postcode" => findById("TBC").sendKeys(value)
+      case "postcode" => findById("postcode").sendKeys(value)
+      case "Country" => findById("countryCode").sendKeys(s"$value\n")
+      case "Address Line 1" => findById("line1").sendKeys(value)
+      case "Address Line 2" => findById("line2").sendKeys(value)
+      case "Address Line 3" => findById("line3").sendKeys(value)
+      case "Town" => findById("town").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 
@@ -90,7 +95,7 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^clicks the (.*) button$""") { button: String =>
     button match {
-      case "Continue" | "Refresh" | "Accept and send" | "Confirm Address" => findBy(By.className("govuk-button")).click()
+      case "Continue" | "Refresh" | "Accept and send" | "Confirm address" => findBy(By.className("govuk-button")).click()
       case _ => fail(s"$button is not a valid button")
     }
   }

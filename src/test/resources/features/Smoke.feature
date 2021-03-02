@@ -97,3 +97,4 @@
       And the user enters GB345834921000 into the EORI input field
       When clicks the Continue button
       Then the user should be on the 'What is the importer’s EORI number?' page
+      Then the user should be on the 'How many entries are you disclosing an underpayment for?' page

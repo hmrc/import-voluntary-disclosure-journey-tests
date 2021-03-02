@@ -88,6 +88,7 @@ class IVDStepDef extends ShutdownStepDef {
       case "Address Line 2" => findById("line2").sendKeys(value)
       case "Address Line 3" => findById("line3").sendKeys(value)
       case "Town" => findById("town").sendKeys(value)
+      case "EORI" => findById("importerEORI").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 

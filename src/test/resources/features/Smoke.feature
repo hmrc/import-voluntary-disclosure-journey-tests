@@ -102,3 +102,9 @@
       Then the user should be on the 'Confirm address' page
       When clicks the Confirm Address button
       Then the user should be on the 'Does the importer have an EORI number?' page
+      And the user selects the Yes radio button
+      When clicks the Continue button
+      Then the user should be on the 'What is the importer’s EORI number?' page
+      And the user enters GB345834921000 into the EORI input field
+      When clicks the Continue button
+      Then the user should be on the 'How many entries are you disclosing an underpayment for?' page

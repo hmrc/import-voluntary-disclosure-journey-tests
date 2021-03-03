@@ -274,58 +274,58 @@ Feature: Check the flow of the Box amendments reasons journey
     Then the user should be on the 'What is the box number?' page
     And the user enters 63 into the Box Number input field
     When clicks the Continue button
-#    Then the user should be on the 'Box 63 AWB or freight charges amendment' page
-#    And the user enters EUR250.00 into the Original value input field
-#    And the user enters GBP300.00 into the Amended value input field
-#    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-#    And I check that within the Underpayment box summary that the Entry level value of Box number is 63
-#    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
-#    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
-#    When clicks the Continue button
-#    Then the user should be on the 'You have added 1 reason for the underpayment' page
+    Then the user should be on the 'Box 63 AWB or freight charges amendment' page
+    And the user enters EUR250.00 into the Original value input field
+    And the user enters GBP300.00 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    And I check that within the Underpayment box summary that the Entry level value of Box number is 63
+    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
+    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
+    When clicks the Continue button
+    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 66 entry level underpayment flow
     Then the user should be on the 'What is the box number?' page
     And the user enters 66 into the Box Number input field
     When clicks the Continue button
-#    Then the user should be on the 'Box 66 insurance amendment' page
-#    And the user enters EUR250.00 into the Original value input field
-#    And the user enters EUR300.00 into the Amended value input field
-#    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-#    And I check that within the Underpayment box summary that the Entry level value of Box number is 66
-#    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
-#    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
-#    When clicks the Continue button
-#    Then the user should be on the 'You have added 1 reason for the underpayment' page
+    Then the user should be on the 'Box 66 insurance amendment' page
+    And the user enters EUR250.00 into the Original value input field
+    And the user enters EUR300.00 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    And I check that within the Underpayment box summary that the Entry level value of Box number is 66
+    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
+    And I check that within the Underpayment box summary that the Entry level value of Amended value is EUR300.00
+    When clicks the Continue button
+    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 67 entry level underpayment flow
     Then the user should be on the 'What is the box number?' page
     And the user enters 67 into the Box Number input field
     When clicks the Continue button
-#    Then the user should be on the 'Box 67 other charges or deductions amendment' page
-#    And the user enters GBP250.00 into the Original value input field
-#    And the user enters EUR300.00 into the Amended value input field
-#    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-#    And I check that within the Underpayment box summary that the Entry level value of Box number is 67
-#    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
-#    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
-#    When clicks the Continue button
-#    Then the user should be on the 'You have added 1 reason for the underpayment' page
+    Then the user should be on the 'Box 67 other charges or deductions amendment' page
+    And the user enters GBP250.00 into the Original value input field
+    And the user enters EUR300.00 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    And I check that within the Underpayment box summary that the Entry level value of Box number is 67
+    And I check that within the Underpayment box summary that the Entry level value of Original value is GBP250.00
+    And I check that within the Underpayment box summary that the Entry level value of Amended value is EUR300.00
+    When clicks the Continue button
+    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 68 entry level underpayment flow
     Then the user should be on the 'What is the box number?' page
     And the user enters 68 into the Box Number input field
     When clicks the Continue button
-#    Then the user should be on the 'Box 68 adjustment for VAT value amendment' page
-#    And the user enters GBP250.00 into the Original value input field
-#    And the user enters EUR300.00 into the Amended value input field
-#    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-#    And I check that within the Underpayment box summary that the Entry level value of Box number is 68
-#    And I check that within the Underpayment box summary that the Entry level value of Original value is EUR250.00
-#    And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP300.00
-#    When clicks the Continue button
-#    Then the user should be on the 'You have added 1 reason for the underpayment' page
+    Then the user should be on the 'Box 68 adjustment for VAT value amendment' page
+    And the user enters GBP250.00 into the Original value input field
+    And the user enters EUR300.00 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    And I check that within the Underpayment box summary that the Entry level value of Box number is 68
+    And I check that within the Underpayment box summary that the Entry level value of Original value is GBP250.00
+    And I check that within the Underpayment box summary that the Entry level value of Amended value is EUR300.00
+    When clicks the Continue button
+    Then the user should be on the 'You have added 1 reason for the underpayment' page

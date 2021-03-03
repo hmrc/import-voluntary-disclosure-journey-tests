@@ -73,8 +73,13 @@
       And the user enters 0123456789 into the UK telephone number input field
       When clicks the Continue button
       Then the user should be on the 'Is this your correct address?' page
-      And the user selects the Yes radio button
+      And the user selects the No radio button
       When clicks the Continue button
+      Then the user should be on the 'Find the address' page
+      And the user enters AA000AA into the postcode input field
+      When clicks the Continue button
+      Then the user should be on the 'Confirm the address' page
+      When clicks the Confirm address button
       Then the user should be on the 'Are you paying by deferment?' page
       And the user selects the No radio button
       When clicks the Continue button

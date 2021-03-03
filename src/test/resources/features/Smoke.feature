@@ -76,7 +76,14 @@
       And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'Find the address' page
-      And the user enters AA000AA into the postcode input field
+      And the user clicks the enter address manually link
+      Then the user should be on the 'Enter the address' page
+      And the user enters 21 some address into the Address Line 1 input field
+      And the user enters some address into the Address Line 2 input field
+      And the user enters some address into the Address Line 3 input field
+      And the user enters Manchester into the Town input field
+      And the user enters ZZ1 1ZZ into the postcode input field
+      And the user enters United Kingdom into the Country input field
       When clicks the Continue button
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button

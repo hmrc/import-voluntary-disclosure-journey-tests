@@ -96,5 +96,5 @@
       And I check that within the Your details summary that the value of Name is First last
       And I check that within the Your details summary that the value of Email address is email@email.com
       And I check that within the Your details summary that the value of Telephone number is 0123456789
-      And I check that within the Your details summary that the Address contains 1st line: 99 Avenue Road, 2nd line: Anyold Town, postcode: 99JZ 1AA and country: United Kingdom
+      And I check that within the Your details summary that the Address contains 1st line: 99 Avenue Road, 2nd line: Anyold Town, postcode: 99JZ 1AA and country: GB
       And I check that within the Payment information summary that the value of By deferment? is No

@@ -50,7 +50,10 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
-    And the user selects the No radio button
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Tell us the extra information about the underpayment' page
+    And the user enters More Information into the More Information input field
     When clicks the Continue button
     Then the user should be on the 'Supporting documentation' page
     When clicks the Continue button

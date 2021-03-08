@@ -3,6 +3,8 @@
 
     Scenario: A logged in representative is able make changes to all of their underpayment amounts
       Given a user logs in to access the Import Voluntary Disclosure Service
+      Then the user should be on the 'Confirm your EORI details' page
+      When clicks the Confirm and continue button
       Then the user should be on the 'Are you the importer or their representative?' page
       And the user selects the Importer radio button
       When clicks the Continue button

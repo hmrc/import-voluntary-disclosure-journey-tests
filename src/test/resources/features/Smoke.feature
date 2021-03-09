@@ -101,6 +101,8 @@
 
     Scenario: A user successfully submits their voluntary disclosure as a representative
       Given a user logs in to access the Import Voluntary Disclosure Service
+      Then the user should be on the 'Confirm your EORI details' page
+      When clicks the Confirm and continue button
       Then the user should be on the 'Are you the importer or their representative?' page
       And the user selects the Representative radio button
       When clicks the Continue button

@@ -1,4 +1,4 @@
-@all
+@all @cya
   Feature: Testing check your answers
 
     Scenario: User navigates to check your answers

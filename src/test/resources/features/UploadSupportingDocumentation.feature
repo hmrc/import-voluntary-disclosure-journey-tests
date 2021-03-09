@@ -3,6 +3,8 @@
 
     Scenario: A logged in representative is able to navigate to the supporting documentation page
       Given a user logs in to access the Import Voluntary Disclosure Service
+      Then the user should be on the 'Confirm your EORI details' page
+      When clicks the Confirm and continue button
       And the user selects the Representative radio button
       And clicks the Continue button
       And the user navigates the 'upload-supporting-documentation' page

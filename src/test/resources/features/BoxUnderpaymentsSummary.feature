@@ -5,6 +5,8 @@ Feature: Check the flow of the Box underpayments summary journey
 
   Scenario: A logged in user is able to walk through the Box 22 entry level underpayment flow and opts to add another box
     Given a user logs in to access the Import Voluntary Disclosure Service
+    Then the user should be on the 'Confirm your EORI details' page
+    When clicks the Confirm and continue button
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Importer radio button
     When clicks the Continue button

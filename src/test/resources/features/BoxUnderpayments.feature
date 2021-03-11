@@ -188,17 +188,17 @@ Feature: Check the flow of the Box amendments reasons journey
     Then the user should be on the 'What is the item number?' page
     And the user enters 1 into the Item Number input field
     When clicks the Continue button
-#    Then the user should be on the 'Box 42 item price amendment for item 1' page
-#    And the user enters 100.50 into the Original value input field
-#    And the user enters 200.50 into the Amended value input field
-#    When clicks the Continue button
-#    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-#    And I check that within the Underpayment box summary that the Item level value of Box number is 32
-#    And I check that within the Underpayment box summary that the Item level value of Item number is 1
-#    And I check that within the Underpayment box summary that the Item level value of Original value is 100.50
-#    And I check that within the Underpayment box summary that the Item level value of Amended value is 200.50
-#    When clicks the Continue button
-#    Then the user should be on the 'You have added 1 reason for the underpayment' page
+    Then the user should be on the 'Box 42 item price amendment for item 1' page
+    And the user enters 100.50 into the Original value input field
+    And the user enters 200.50 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    And I check that within the Underpayment box summary that the Item level value of Box number is 42
+    And I check that within the Underpayment box summary that the Item level value of Item number is 1
+    And I check that within the Underpayment box summary that the Item level value of Original value is 100.50
+    And I check that within the Underpayment box summary that the Item level value of Amended value is 200.50
+    When clicks the Continue button
+    Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to walk through the Box 43 item level underpayment flow
     Then the user should be on the 'What is the box number?' page

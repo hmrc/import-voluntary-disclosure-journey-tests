@@ -25,16 +25,11 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'What have you underpaid?' page
-    And they select the Customs Duty checkbox
-    And they select the Excise Duty checkbox
+    And they select the Import VAT checkbox
     When clicks the Continue button
-    Then the user should be on the 'Customs Duty underpayment details' page
-    And the user enters 200 into the Original amount input field
-    And the user enters 350 into the Amended amount input field
-    When clicks the Continue button
-    Then the user should be on the 'Excise Duty underpayment details' page
-    And the user enters 390 into the Original amount input field
-    And the user enters 425 into the Amended amount input field
+    Then the user should be on the 'Import VAT underpayment details' page
+    And the user enters 440 into the Original amount input field
+    And the user enters 520 into the Amended amount input field
     When clicks the Continue button
     Then the user should be on the 'Underpayment amount summary' page
     When clicks the Continue button
@@ -119,10 +114,10 @@ Feature: Check the change flow of the Box amendments reasons journey
     Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
     And the user selects the Yes radio button
     When clicks the Continue button
-    Then the user should be on the 'How will you pay for the duty owed?' page
+    Then the user should be on the 'How will you pay for the import VAT owed?' page
     And the user selects the By duty deferment account radio button
     When clicks the Continue button
-    Then the user should be on the 'How will you pay for the duty owed?' page
+    Then the user should be on the 'How will you pay for the import VAT owed?' page
     And the user selects the Another payment method radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page

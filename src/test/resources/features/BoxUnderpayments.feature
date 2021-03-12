@@ -151,14 +151,14 @@ Feature: Check the flow of the Box amendments reasons journey
     And the user enters 1 into the Item Number input field
     When clicks the Continue button
     Then the user should be on the 'Box 39 quota amendment for item 1' page
-    And the user enters ABC1234 into the Original value input field
-    And the user enters DEF1234 into the Amended value input field
+    And the user enters 051187 into the Original value input field
+    And the user enters 051188 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the details of the reason for underpayment' page
     And I check that within the Underpayment box summary that the Item level value of Box number is 39
     And I check that within the Underpayment box summary that the Item level value of Item number is 1
-    And I check that within the Underpayment box summary that the Item level value of Original value is ABC1234
-    And I check that within the Underpayment box summary that the Item level value of Amended value is DEF1234
+    And I check that within the Underpayment box summary that the Item level value of Original value is 051187
+    And I check that within the Underpayment box summary that the Item level value of Amended value is 051188
     When clicks the Continue button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
 

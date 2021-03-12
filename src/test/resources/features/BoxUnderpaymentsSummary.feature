@@ -94,7 +94,7 @@ Feature: Check the flow of the Box underpayments summary journey
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'How will you pay for the duty owed?' page
-    And the user selects the Yes radio button
+    And the user selects the By duty deferment account radio button
     When clicks the Continue button
     Then the user should be on the 'How will you pay for the duty owed?' page
     And the user selects the Another payment method radio button

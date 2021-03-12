@@ -119,11 +119,11 @@ Feature: Check the change flow of the Box amendments reasons journey
     Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
     And the user selects the Yes radio button
     When clicks the Continue button
-    Then the user should be on the 'Are you paying by deferment?' page
-    And the user selects the Yes radio button
+    Then the user should be on the 'How will you pay for the duty owed?' page
+    And the user selects the By duty deferment account radio button
     When clicks the Continue button
-    Then the user should be on the 'Are you paying by deferment?' page
-    And the user selects the No radio button
+    Then the user should be on the 'How will you pay for the duty owed?' page
+    And the user selects the Another payment method radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     When clicks the Accept and send button

@@ -60,6 +60,12 @@ class IVDStepDef extends ShutdownStepDef {
       case "Importer" | "One Entry" | "Yes" => clickById("value")
       case "Representative" => clickById("value-2")
       case "No" => clickById("value-no")
+      case "Another payment method" => findBy(
+        By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")
+      ).click()
+      case "By duty deferment account" => findBy(
+        By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")
+      ).click()
       case "2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ" => clickById("addressId") // first element
       case _ => fail(s"$button is not a valid radio button")
     }

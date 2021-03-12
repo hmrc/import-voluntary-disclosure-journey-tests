@@ -92,7 +92,7 @@
       When clicks the Continue button
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
-      Then the user should be on the 'Are you paying by deferment?' page
+      Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
       And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'Check your answers before sending your disclosure' page

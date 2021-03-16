@@ -23,6 +23,8 @@ Feature: Check the flow of the Box underpayments summary journey
     Then the user should be on the 'What is the customs procedure code?' page
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
+    Then the user should be on the 'Tell us what was underpaid' page
+    When clicks the Continue button
     Then the user should be on the 'What have you underpaid?' page
     And they select the Customs Duty checkbox
     And they select the Excise Duty checkbox

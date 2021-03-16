@@ -119,8 +119,8 @@ Feature: Check the change flow of the Box amendments reasons journey
     Then the user should be on the 'How will you pay for the import VAT owed?' page
     And the user selects the By duty deferment account radio button
     When clicks the Continue button
-    Then the user should be on the 'How will you pay for the import VAT owed?' page
-    And the user selects the Another payment method radio button
+    Then the user should be on the 'What is the deferment account number?' page
+    And the user enters 0123456 into the Deferment account number input field
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     When clicks the Accept and send button

@@ -186,7 +186,7 @@
       Then the user should be on the 'Upload supporting documentation' page
       And I get the data from the page
       And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-      And I call the success redirect
+      When clicks the Continue button
       Then the user should be on the 'Upload progress' page
       And I call the upscan callback handler and get response 204
       And clicks the Refresh button

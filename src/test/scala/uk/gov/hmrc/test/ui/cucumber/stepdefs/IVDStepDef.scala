@@ -67,6 +67,8 @@ class IVDStepDef extends ShutdownStepDef {
         By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")
       ).click()
       case "2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ" => clickById("addressId") // first element
+      case "Yes, I want to use two deferment accounts" => clickById("value")
+      case "No, I want to use one deferment account" => clickById("value-2")
       case _ => fail(s"$button is not a valid radio button")
     }
   }

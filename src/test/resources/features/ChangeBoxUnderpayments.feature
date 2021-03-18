@@ -5,36 +5,9 @@ Feature: Check the change flow of the Box amendments reasons journey
 
   Scenario: A logged in user is able to walk through the Box 22 entry level underpayment flow, opt to change to box 33,
     and then opt to change back to box 22
-    Given a user logs in to access the Import Voluntary Disclosure Service
-    Then the user should be on the 'Confirm your EORI details' page
-    When clicks the Confirm and continue button
-    Then the user should be on the 'Are you the importer or their representative?' page
-    And the user selects the Importer radio button
-    When clicks the Continue button
-    Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
-    And the user selects the One Entry radio button
-    When clicks the Continue button
-    Then the user should be on the 'Entry details' page
-    And the user enters 123 into the EPU number input field
-    And the user enters 123456Q into the Entry number input field
-    And the user enters 01 into the Entry date day input field
-    And the user enters 01 into the Entry date month input field
-    And the user enters 2021 into the Entry date year input field
-    When clicks the Continue button
-    Then the user should be on the 'What is the customs procedure code?' page
-    And the user enters 1234A67 into the Customs procedure code input field
-    When clicks the Continue button
-    Then the user should be on the 'Tell us what was underpaid' page
-    When clicks the Continue button
-    Then the user should be on the 'What have you underpaid?' page
-    And they select the Import VAT checkbox
-    When clicks the Continue button
-    Then the user should be on the 'Import VAT underpayment details' page
-    And the user enters 440 into the Original amount input field
-    And the user enters 520 into the Amended amount input field
-    When clicks the Continue button
-    Then the user should be on the 'Underpayment amount summary' page
-    When clicks the Continue button
+    Given I want to complete section 1: Service Entry
+    And I want to complete section 2: Entry Details as Importer
+    And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What is the box number?' page

@@ -2,28 +2,8 @@
   Feature: Testing the underpayment amount summary page
 
     Scenario: A logged in representative is able make changes to all of their underpayment amounts
-      Given a user logs in to access the Import Voluntary Disclosure Service
-      Then the user should be on the 'Confirm your EORI details' page
-      When clicks the Confirm and continue button
-      Then the user should be on the 'Are you the importer or their representative?' page
-      And the user selects the Importer radio button
-      When clicks the Continue button
-      Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
-      And the user selects the One Entry radio button
-      When clicks the Continue button
-      Then the user should be on the 'Entry details' page
-      And the user enters 123 into the EPU number input field
-      And the user enters 123456Q into the Entry number input field
-      And the user enters 31 into the Entry date day input field
-      And the user enters 12 into the Entry date month input field
-      And the user enters 2020 into the Entry date year input field
-      When clicks the Continue button
-      Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
-      And the user selects the Yes radio button
-      And clicks the Continue button
-      Then the user should be on the 'What is the customs procedure code?' page
-      And the user enters 1234A67 into the Customs procedure code input field
-      When clicks the Continue button
+      Given I want to complete section 1: Service Entry
+      And I want to complete section 2: Entry Details as Importer
       Then the user should be on the 'Tell us what was underpaid' page
       When clicks the Continue button
       Then the user should be on the 'What have you underpaid?' page

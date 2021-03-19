@@ -16,10 +16,18 @@
 
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
+import java.nio.file.Paths
+
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
+import uk.gov.hmrc.test.ui.utils.UpscanJson
 
 class SectionsStepDef extends ShutdownStepDef {
+  // Variables for upscan functionality
+  var callbackUrl: String = ""
+  var redirectUrl: String = ""
+  var refKey: String = ""
+
 
   Given("""^I want to complete section 1: Service Entry""") { () =>
     // Login through Auth
@@ -91,6 +99,85 @@ class SectionsStepDef extends ShutdownStepDef {
     }
     // Confirm Summary
     findBy(By.className("govuk-button")).click()
+  }
+
+  And("""^I want to complete section 4: Underpayment Reasons""") { () =>
+    // Underpayment Reasons Guidance page
+    findBy(By.className("govuk-button")).click()
+    // Enter Box 33
+    findById("value").clear()
+    findById("value").sendKeys("33")
+    findBy(By.className("govuk-button")).click()
+    // Enter Item 1
+    findById("itemNumber").clear()
+    findById("itemNumber").sendKeys("1")
+    findBy(By.className("govuk-button")).click()
+    // Enter Original and Amended values
+    findById("original").clear()
+    findById("original").sendKeys("1234567891ABCD")
+    findById("amended").clear()
+    findById("amended").sendKeys("1987654321DCBA")
+    findBy(By.className("govuk-button")).click()
+    // Click through confirmation and select No to adding more
+    findBy(By.className("govuk-button")).click()
+    clickById("value-no")
+    findBy(By.className("govuk-button")).click()
+    // Add some extra information
+    clickById("value")
+    findBy(By.className("govuk-button")).click()
+    findById("value").clear()
+    findById("value").sendKeys("More Information")
+    findBy(By.className("govuk-button")).click()
+  }
+
+  And("""^I want to complete section 5: Supporting Documentation""") { () =>
+    // Supporting Documentation Guidance page
+    findBy(By.className("govuk-button")).click()
+    // Upload a file and dummy upscan callback
+    callbackUrl = driver.findElement(By.name("x-amz-meta-callback-url")).getAttribute("value")
+    redirectUrl = driver.findElement(By.name("success_action_redirect")).getAttribute("value")
+    refKey = driver.findElement(By.name("key")).getAttribute("value")
+    val path = Paths.get("").toAbsolutePath
+    findById("file").sendKeys(path + "/src/test/resources/data/TestDocument.pdf")
+    driver.navigate().to(redirectUrl)
+    requestPOST(callbackUrl, UpscanJson.upscanSuccessCallback(refKey), Map("Content-Type" -> "application/json"))
+    // Click to refresh the Upload Progress Page then select not to upload any further docs
+    findBy(By.className("govuk-button")).click()
+    clickById("value-no")
+    findBy(By.className("govuk-button")).click()
+  }
+
+  And("""^I want to complete section 6: Contact Details""") { () =>
+    // Discloser's Details
+    findById("fullName").sendKeys("First last")
+    findById("email").sendKeys("email@email.com")
+    findById("phoneNumber").sendKeys("0123456789")
+    findBy(By.className("govuk-button")).click()
+    // Change Address through ALF
+    clickById("value-no")
+    findBy(By.className("govuk-button")).click()
+    findById("postcode").sendKeys("AA000AA")
+    findBy(By.className("govuk-button")).click()
+    findBy(By.className("govuk-button")).click()
+  }
+
+  And("""^I want to complete section 7: Deferment Details as (.*)""") { (userType: String) =>
+    // Select payment by deferement
+    clickById("value")
+    findBy(By.className("govuk-button")).click()
+    if (userType == "Importer") {
+      clickById("value")
+      findBy(By.className("govuk-button")).click()
+      // Add DAN and click through to CYA
+      findById("value").sendKeys("1234567")
+      findBy(By.className("govuk-button")).click()
+    } else {
+      // Select not to split
+      clickById("value-2")
+      findBy(By.className("govuk-button")).click()
+      // TODO: Add further pages here
+    }
+
   }
 
 }

@@ -6,7 +6,7 @@ Feature: Check the flow of the Box underpayments summary journey
   Scenario: A logged in user is able to walk through the Box 22 entry level underpayment flow and opts to add another box
     Given I want to complete section 1: Service Entry
     And I want to complete section 2: Entry Details as Importer
-    And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
+    And I want to complete section 3: Underpayments with Customs Duty~Excise Duty
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What is the box number?' page

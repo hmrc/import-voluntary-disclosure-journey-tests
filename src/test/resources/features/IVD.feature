@@ -128,7 +128,7 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
-    And I want to complete section 3: Underpayments with Excise Duty
+    And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What is the box number?' page

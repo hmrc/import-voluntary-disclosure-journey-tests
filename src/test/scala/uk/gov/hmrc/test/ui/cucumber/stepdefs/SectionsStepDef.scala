@@ -161,7 +161,7 @@ class SectionsStepDef extends ShutdownStepDef {
     findBy(By.className("govuk-button")).click()
   }
 
-  And("""^I want to complete section 7: Deferment Details as (.*)""") { (userType: String) =>
+  And("""^I want to complete section 7: Deferment Details as (.*) with (.*)""") { (userType: String, split: String) =>
     // Select payment by deferement
     clickById("value")
     findBy(By.className("govuk-button")).click()
@@ -172,10 +172,20 @@ class SectionsStepDef extends ShutdownStepDef {
       findById("value").sendKeys("1234567")
       findBy(By.className("govuk-button")).click()
     } else {
-      // Select not to split
-      clickById("value-2")
-      findBy(By.className("govuk-button")).click()
-      // TODO: Add further pages here
+      if(split == "split") {
+        // Select to split
+        // TODO: Add further pages here
+        clickById("value")
+        findBy(By.className("govuk-button")).click()
+      } else {
+        // Select not to split
+        clickById("value-2")
+        findBy(By.className("govuk-button")).click()
+        // Add DAN and click My deferment radio button
+        findById("accountNumber").sendKeys("1234567")
+        findById("value").click()
+        findBy(By.className("govuk-button")).click()
+      }
     }
 
   }

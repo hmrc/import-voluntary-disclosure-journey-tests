@@ -4,9 +4,7 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
 
   @ZAP
   Scenario: A logged in user is able to walk through the flow of IVD - entry date is 01/01/2021
-    Given a user logs in to access the Import Voluntary Disclosure Service
-    Then the user should be on the 'Confirm your EORI details' page
-    When clicks the Confirm and continue button
+    Given I want to complete section 1: Service Entry
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Importer radio button
     When clicks the Continue button
@@ -24,21 +22,7 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
-    When clicks the Continue button
-    Then the user should be on the 'What have you underpaid?' page
-    And they select the Customs Duty checkbox
-    And they select the Excise Duty checkbox
-    When clicks the Continue button
-    Then the user should be on the 'Customs Duty underpayment details' page
-    And the user enters 200 into the Original amount input field
-    And the user enters 350 into the Amended amount input field
-    When clicks the Continue button
-    Then the user should be on the 'Excise Duty underpayment details' page
-    And the user enters 390 into the Original amount input field
-    And the user enters 425 into the Amended amount input field
-    When clicks the Continue button
-    Then the user should be on the 'Underpayment amount summary' page
-    When clicks the Continue button
+    And I want to complete section 3: Underpayments with Customs Duty~Excise Duty
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What is the box number?' page
@@ -123,9 +107,7 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     Then the user should be on the 'Disclosure complete' page
 
   Scenario: A logged in user is able to walk through the flow of IVD - entry date is 31/12/2020
-    Given a user logs in to access the Import Voluntary Disclosure Service
-    Then the user should be on the 'Confirm your EORI details' page
-    When clicks the Confirm and continue button
+    Given I want to complete section 1: Service Entry
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Importer radio button
     When clicks the Continue button
@@ -146,26 +128,7 @@ Feature: Check the full flow of Import Voluntary Disclosure Journey
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
-    When clicks the Continue button
-    Then the user should be on the 'What have you underpaid?' page
-    And they select the Customs Duty checkbox
-    And they select the Import VAT checkbox
-    And they select the Excise Duty checkbox
-    When clicks the Continue button
-    Then the user should be on the 'Customs Duty underpayment details' page
-    And the user enters 200 into the Original amount input field
-    And the user enters 350 into the Amended amount input field
-    When clicks the Continue button
-    Then the user should be on the 'Import VAT underpayment details' page
-    And the user enters 440 into the Original amount input field
-    And the user enters 520 into the Amended amount input field
-    When clicks the Continue button
-    Then the user should be on the 'Excise Duty underpayment details' page
-    And the user enters 390 into the Original amount input field
-    And the user enters 425 into the Amended amount input field
-    When clicks the Continue button
-    Then the user should be on the 'Underpayment amount summary' page
-    When clicks the Continue button
+    And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What is the box number?' page

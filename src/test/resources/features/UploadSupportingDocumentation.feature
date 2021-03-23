@@ -2,11 +2,9 @@
   Feature: Testing the upload of a file
 
     Scenario: A logged in representative is able to navigate to the supporting documentation page
-      Given a user logs in to access the Import Voluntary Disclosure Service
-      Then the user should be on the 'Confirm your EORI details' page
-      When clicks the Confirm and continue button
-      And the user selects the Representative radio button
-      And clicks the Continue button
+      Given I want to complete section 1: Service Entry
+      And I want to complete section 2: Entry Details as Representative
+      And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
       And the user navigates the 'upload-supporting-documentation' page
 
     Scenario: The user continues to Upload a file

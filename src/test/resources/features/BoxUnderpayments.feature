@@ -4,13 +4,9 @@
 Feature: Check the flow of the Box amendments reasons journey
 
   Background:
-    Given a user logs in to access the Import Voluntary Disclosure Service
-    Then the user should be on the 'Confirm your EORI details' page
-    When clicks the Confirm and continue button
-    Then the user should be on the 'Are you the importer or their representative?' page
-    And the user selects the Importer radio button
-    When clicks the Continue button
-    And the user navigates the 'box-guidance' page
+    Given I want to complete section 1: Service Entry
+    And I want to complete section 2: Entry Details as Importer
+    And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
 

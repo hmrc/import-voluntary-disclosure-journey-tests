@@ -57,18 +57,15 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^the user selects the (.*) radio button$""") { button: String =>
     button match {
-      case "Importer" | "One Entry" | "Yes" => clickById("value")
-      case "Representative" => clickById("value-2")
+      case "Importer" | "One Entry" | "Yes" | "Yes, I want to use two deferment accounts" |
+           "My deferment account" => clickById("value")
+      case "Representative" | "No, I want to use one deferment account" |
+           "The importer’s account and I have authority to use it" => clickById("value-2")
+      case "The importer’s account and I have standing authority to use it" => clickById("value-3")
       case "No" => clickById("value-no")
-      case "Another payment method" => findBy(
-        By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")
-      ).click()
-      case "By duty deferment account" => findBy(
-        By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")
-      ).click()
+      case "Another payment method" => findBy(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).click()
+      case "By duty deferment account" => findBy(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).click()
       case "2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ" => clickById("addressId") // first element
-      case "Yes, I want to use two deferment accounts" => clickById("value")
-      case "No, I want to use one deferment account" => clickById("value-2")
       case _ => fail(s"$button is not a valid radio button")
     }
   }
@@ -113,6 +110,7 @@ class IVDStepDef extends ShutdownStepDef {
       case "EORI" => findById("importerEORI").sendKeys(value)
       case "More Information" => findById("value").sendKeys(value)
       case "Deferment account number" => findById("value").sendKeys(value)
+      case "Deferment account number (representative)" => findById("accountNumber").sendKeys(value)
       case _ => fail(s"$field is not a valid input field")
     }
 

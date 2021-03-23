@@ -94,9 +94,7 @@
       And I get the data from the page
       And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
       When clicks the Continue button
-      Then the user should be on the 'Upload progress' page
-      And I call the upscan callback handler and get response 204
-      And clicks the Refresh button
+      And the user should be either waiting for file upload or completed upload
       Then the user should be on the 'You have uploaded 1 file' page
       And there should be '1' files on the page
       And the user selects the No radio button
@@ -121,7 +119,7 @@
       When clicks the Continue button
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
-      Then the user should be on the 'How will you pay for the duty owed?' page
+      Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
       And the user selects the Another payment method radio button
       When clicks the Continue button
       Then the user should be on the 'Check your answers before sending your disclosure' page

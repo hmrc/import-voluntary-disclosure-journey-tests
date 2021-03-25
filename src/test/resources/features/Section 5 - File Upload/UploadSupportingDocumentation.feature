@@ -5,7 +5,8 @@
       Given I want to complete section 1: Service Entry
       And I want to complete section 2: Entry Details as Representative
       And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
-      And the user navigates the 'upload-supporting-documentation' page
+      And I want to complete section 4: Underpayment Reasons
+      Then the user should be on the 'Supporting documentation' page
 
     Scenario: The user continues to Upload a file
       And clicks the Continue button

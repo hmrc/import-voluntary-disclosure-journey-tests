@@ -196,6 +196,10 @@ class IVDStepDef extends ShutdownStepDef {
     findById("manualAddress").click()
   }
 
+  And("""^the user clicks the search again link$""") {
+    findById("searchAgainLink").click()
+  }
+
   And("""^the user clicks the back link$""") {
     findById("back-link").click()
   }

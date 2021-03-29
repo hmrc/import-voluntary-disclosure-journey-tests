@@ -1,4 +1,4 @@
-@all
+@all @accessibility
 
 Feature: Single flow for Importer and Representative
 

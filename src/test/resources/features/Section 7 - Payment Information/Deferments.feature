@@ -105,6 +105,15 @@ Feature: Testing Deferments for importers and representatives
     And the user enters 1234567 into the Deferment account number (representative) input field
     And the user selects the The importer’s account and I have authority to use it radio button
     When clicks the Continue button
+#    Then the user should be on the 'Upload proof of authority to use this deferment account' page
+#    And I get the data from the page
+#    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+#    And I call the success redirect
+#    Then the user should be on the 'Upload progress' page
+#    And I call the upscan callback handler and get response 204
+#    And clicks the Refresh button
+#    Then the user should be on the 'The file has been uploaded successfully' page
+#    When clicks the Continue button
     Then the user should be on the 'Deferment account details for the duty owed' page
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,

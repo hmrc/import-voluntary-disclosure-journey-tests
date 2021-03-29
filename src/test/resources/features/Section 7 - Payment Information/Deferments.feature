@@ -144,7 +144,7 @@ Feature: Testing Deferments for importers and representatives
 #    When clicks the Continue button
 #    Then the user should be on the 'Deferment account details for the duty owed' page
 #    And the user enters 1234567 into the Deferment account number (representative) input field
-#    And the user selects the The importer’s account and I have standing authority to use it radio button
+#    And the user selects the The importer’s account and I have authority to use it radio button
 #    When clicks the Continue button
 #    Then the user should be on the 'Upload proof of authority to use this deferment account' page
 #    And I get the data from the page
@@ -157,7 +157,7 @@ Feature: Testing Deferments for importers and representatives
 #    When clicks the Continue button
 #    Then the user should be on the 'Deferment account details for the duty owed' page
 #    And the user enters 1234567 into the Deferment account number (representative) input field
-#    And the user selects the The importer’s account and I have standing authority to use it radio button
+#    And the user selects the The importer’s account and I have authority to use it radio button
 #    When clicks the Continue button
 #    Then the user should be on the 'Upload proof of authority to use this deferment account' page
 #    And I get the data from the page

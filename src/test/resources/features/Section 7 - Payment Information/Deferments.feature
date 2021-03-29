@@ -194,7 +194,6 @@ Feature: Testing Deferments for importers and representatives
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure complete' page
 
-    # TODO - one payment account (vat and duty)
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by one deferment account - enters DAN and
   clicks 'The importer’s account and I have authority to use it'

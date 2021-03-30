@@ -86,48 +86,21 @@ Feature: Testing Deferments for importers and representatives
     And the user selects the My deferment account radio button
     When clicks the Continue button
     Then the user should be on the 'Deferment account details for the import VAT owed' page
-      And the user enters 7654321 into the Deferment account number (representative) input field
-      And the user selects the My deferment account radio button
-      When clicks the Continue button
-      Then the user should be on the 'Check your answers before sending your disclosure' page
-      When clicks the Accept and send button
-      Then the user should be on the 'Disclosure complete' page
-
-  Scenario: Representative declares that they have import VAT and other duties, selects to split by two deferment accounts,
-  selects My deferment account for duty
-    Given I want to complete section 1: Service Entry
-    And I want to complete section 2: Entry Details as Representative
-    And I want to complete section 3: Underpayments with Customs Duty~Import VAT
-    And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
-    And I want to complete section 6: Contact Details
-    Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-    And the user selects the By duty deferment account radio button
-    When clicks the Continue button
-    Then the user should be on the 'Do you want to split payment between two deferment accounts?' page
-    And the user selects the Yes, I want to use two deferment accounts radio button
-    When clicks the Continue button
-    Then the user should be on the 'Deferment account details for the duty owed' page
-    And the user enters 1234567 into the Deferment account number (representative) input field
+    And the user enters 7654321 into the Deferment account number (representative) input field
     And the user selects the The importer’s account and I have authority to use it radio button
     When clicks the Continue button
-#    Then the user should be on the 'Upload proof of authority to use this deferment account' page
-#    And I get the data from the page
-#    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-#    And I call the success redirect
-#    Then the user should be on the 'Upload progress' page
-#    And I call the upscan callback handler and get response 204
-#    And clicks the Refresh button
-#    Then the user should be on the 'The file has been uploaded successfully' page
-#    When clicks the Continue button
-    Then the user should be on the 'Deferment account details for the duty owed' page
-#      Then the user should be on the 'Deferment account details for the import VAT owed' page
-#      And the user enters 7654321 into the Deferment account number (representative) input field
-#      And the user selects the The importer’s account and I have authority to use it radio button
-#      When clicks the Continue button
-#      Then the user should be on the 'Check your answers before sending your disclosure' page
-#      When clicks the Accept and send button
-#      Then the user should be on the 'Disclosure complete' page
+    Then the user should be on the 'Upload proof of authority to use this deferment account' page
+    And I get the data from the page
+    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+    And I call the success redirect
+    Then the user should be on the 'Upload progress' page
+    And I call the upscan callback handler and get response 204
+    And clicks the Refresh button
+    Then the user should be on the 'The file has been uploaded successfully' page
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    When clicks the Accept and send button
+    Then the user should be on the 'Disclosure complete' page
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by two deferment accounts
@@ -148,57 +121,56 @@ Feature: Testing Deferments for importers and representatives
     And the user selects the The importer’s account and I have standing authority to use it radio button
     When clicks the Continue button
     Then the user should be on the 'Deferment account details for the import VAT owed' page
-      And the user enters 7654321 into the Deferment account number (representative) input field
-      And the user selects the The importer’s account and I have standing authority to use it radio button
-      When clicks the Continue button
-      Then the user should be on the 'Check your answers before sending your disclosure' page
-      When clicks the Accept and send button
-      Then the user should be on the 'Disclosure complete' page
+    And the user enters 7654321 into the Deferment account number (representative) input field
+    And the user selects the The importer’s account and I have standing authority to use it radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    When clicks the Accept and send button
+    Then the user should be on the 'Disclosure complete' page
 
-  # TODO - split payment (VAT and duty) when Charlies code goes in
-#  Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
-#  and is redirected to the split payments flow - chooses to pay by two deferment accounts
-#    Given I want to complete section 1: Service Entry
-#    And I want to complete section 2: Entry Details as Representative
-#    And I want to complete section 3: Underpayments with Customs Duty~Import VAT
-#    And I want to complete section 4: Underpayment Reasons
-#    And I want to complete section 5: Supporting Documentation
-#    And I want to complete section 6: Contact Details
-#    Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-#    And the user selects the By duty deferment account radio button
-#    When clicks the Continue button
-#    Then the user should be on the 'Do you want to split payment between two deferment accounts?' page
-#    And the user selects the Yes, I want to use two deferment accounts radio button
-#    When clicks the Continue button
-#    Then the user should be on the 'Deferment account details for the duty owed' page
-#    And the user enters 1234567 into the Deferment account number (representative) input field
-#    And the user selects the The importer’s account and I have authority to use it radio button
-#    When clicks the Continue button
-#    Then the user should be on the 'Upload proof of authority to use this deferment account' page
-#    And I get the data from the page
-#    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-#    And I call the success redirect
-#    Then the user should be on the 'Upload progress' page
-#    And I call the upscan callback handler and get response 204
-#    And clicks the Refresh button
-#    Then the user should be on the 'The file has been uploaded successfully' page
-#    When clicks the Continue button
-#    Then the user should be on the 'Deferment account details for the duty owed' page
-#    And the user enters 1234567 into the Deferment account number (representative) input field
-#    And the user selects the The importer’s account and I have authority to use it radio button
-#    When clicks the Continue button
-#    Then the user should be on the 'Upload proof of authority to use this deferment account' page
-#    And I get the data from the page
-#    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-#    And I call the success redirect
-#    Then the user should be on the 'Upload progress' page
-#    And I call the upscan callback handler and get response 204
-#    And clicks the Refresh button
-#    Then the user should be on the 'The file has been uploaded successfully' page
-#    When clicks the Continue button
-#    Then the user should be on the 'Check your answers before sending your disclosure' page
-#    When clicks the Accept and send button
-#    Then the user should be on the 'Disclosure complete' page
+  Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
+  and is redirected to the split payments flow - chooses to pay by two deferment accounts
+    Given I want to complete section 1: Service Entry
+    And I want to complete section 2: Entry Details as Representative
+    And I want to complete section 3: Underpayments with Customs Duty~Import VAT
+    And I want to complete section 4: Underpayment Reasons
+    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 6: Contact Details
+    Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
+    And the user selects the By duty deferment account radio button
+    When clicks the Continue button
+    Then the user should be on the 'Do you want to split payment between two deferment accounts?' page
+    And the user selects the Yes, I want to use two deferment accounts radio button
+    When clicks the Continue button
+    Then the user should be on the 'Deferment account details for the duty owed' page
+    And the user enters 1234567 into the Deferment account number (representative) input field
+    And the user selects the The importer’s account and I have authority to use it radio button
+    When clicks the Continue button
+    Then the user should be on the 'Upload proof of authority to use this deferment account' page
+    And I get the data from the page
+    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+    And I call the success redirect
+    Then the user should be on the 'Upload progress' page
+    And I call the upscan callback handler and get response 204
+    And clicks the Refresh button
+    Then the user should be on the 'The file has been uploaded successfully' page
+    When clicks the Continue button
+    Then the user should be on the 'Deferment account details for the import VAT owed' page
+    And the user enters 1234567 into the Deferment account number (representative) input field
+    And the user selects the The importer’s account and I have authority to use it radio button
+    When clicks the Continue button
+    Then the user should be on the 'Upload proof of authority to use this deferment account' page
+    And I get the data from the page
+    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+    And I call the success redirect
+    Then the user should be on the 'Upload progress' page
+    And I call the upscan callback handler and get response 204
+    And clicks the Refresh button
+    Then the user should be on the 'The file has been uploaded successfully' page
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    When clicks the Accept and send button
+    Then the user should be on the 'Disclosure complete' page
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by one deferment account - enters DAN and clicks 'My deferment account'

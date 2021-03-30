@@ -85,7 +85,13 @@ Feature: Testing Deferments for importers and representatives
     And the user enters 1234567 into the Deferment account number (representative) input field
     And the user selects the My deferment account radio button
     When clicks the Continue button
-    Then the user should be on the 'Deferment account details for the duty owed' page
+    Then the user should be on the 'Deferment account details for the import VAT owed' page
+      And the user enters 7654321 into the Deferment account number (representative) input field
+      And the user selects the My deferment account radio button
+      When clicks the Continue button
+      Then the user should be on the 'Check your answers before sending your disclosure' page
+      When clicks the Accept and send button
+      Then the user should be on the 'Disclosure complete' page
 
   Scenario: Representative declares that they have import VAT and other duties, selects to split by two deferment accounts,
   selects My deferment account for duty
@@ -115,6 +121,13 @@ Feature: Testing Deferments for importers and representatives
 #    Then the user should be on the 'The file has been uploaded successfully' page
 #    When clicks the Continue button
     Then the user should be on the 'Deferment account details for the duty owed' page
+#      Then the user should be on the 'Deferment account details for the import VAT owed' page
+#      And the user enters 7654321 into the Deferment account number (representative) input field
+#      And the user selects the The importer’s account and I have authority to use it radio button
+#      When clicks the Continue button
+#      Then the user should be on the 'Check your answers before sending your disclosure' page
+#      When clicks the Accept and send button
+#      Then the user should be on the 'Disclosure complete' page
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by two deferment accounts
@@ -134,7 +147,13 @@ Feature: Testing Deferments for importers and representatives
     And the user enters 1234567 into the Deferment account number (representative) input field
     And the user selects the The importer’s account and I have standing authority to use it radio button
     When clicks the Continue button
-    Then the user should be on the 'Deferment account details for the duty owed' page
+    Then the user should be on the 'Deferment account details for the import VAT owed' page
+      And the user enters 7654321 into the Deferment account number (representative) input field
+      And the user selects the The importer’s account and I have standing authority to use it radio button
+      When clicks the Continue button
+      Then the user should be on the 'Check your answers before sending your disclosure' page
+      When clicks the Accept and send button
+      Then the user should be on the 'Disclosure complete' page
 
   # TODO - split payment (VAT and duty) when Charlies code goes in
 #  Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,

@@ -1,4 +1,4 @@
-@all @underpayments @alexa
+@all @underpayments
 
 @ZAP
 Feature: Check the flow of the Underpayments journey

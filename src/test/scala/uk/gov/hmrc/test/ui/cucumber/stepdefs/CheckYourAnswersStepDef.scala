@@ -54,30 +54,6 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     }
   }
 
-  And("""^I check that within the Underpayment details summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
-    val actualHeader = findBy(By.cssSelector("#main-content > div > div > h2:nth-child(4)")).getText
-    assertResult("Underpayment details")(actualHeader)
-
-    field match {
-      case "Customs Duty" =>
-        val actualField = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(1) > dt")).getText
-        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(1) > dd.govuk-summary-list__value")).getText
-        assertResult(field)(actualField)
-        assertResult(value)(actualFieldValue)
-      case "Import VAT" =>
-        val actualField = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(2) > dt")).getText
-        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(2) > dd.govuk-summary-list__value")).getText
-        assertResult(field)(actualField)
-        assertResult(value)(actualFieldValue)
-      case "Excise Duty" =>
-        val actualField = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(3) > dt")).getText
-        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(3) > dd.govuk-summary-list__value")).getText
-        assertResult(field)(actualField)
-        assertResult(value)(actualFieldValue)
-      case _ => fail(s"Field: $field is not valid, please investigate")
-    }
-  }
-
   And("""^I check that within the Amendment details summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
     val actualHeader = findBy(By.cssSelector("#main-content > div > div > h2:nth-child(6)")).getText
     assertResult("Amendment details")(actualHeader)

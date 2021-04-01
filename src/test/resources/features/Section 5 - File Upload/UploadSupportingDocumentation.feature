@@ -4,7 +4,7 @@
     Scenario: A logged in representative is able to navigate to the supporting documentation page
       Given I want to complete section 1: Service Entry
       And I want to complete section 2: Entry Details as Representative
-      And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
+      And I want to complete section 3.1: Underpayments with Customs Duty
       And I want to complete section 4: Underpayment Reasons
       Then the user should be on the 'Supporting documentation' page
 

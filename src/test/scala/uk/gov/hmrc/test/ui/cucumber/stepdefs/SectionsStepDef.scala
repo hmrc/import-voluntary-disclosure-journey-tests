@@ -101,6 +101,35 @@ class SectionsStepDef extends ShutdownStepDef {
     findBy(By.className("govuk-button")).click()
   }
 
+  And("""^I want to complete section 3.1: Underpayments with (.*)""") { (underpayments: String) =>
+    // Click through guidance page
+    findBy(By.className("govuk-button")).click()
+    // Select the underpayment type radio button
+    if (underpayments == "Import VAT") clickById("B00")
+    if (underpayments == "Customs Duty") clickById("A00")
+    if (underpayments == "Excise Duty") clickById("E00")
+    if (underpayments == "Additional Duty") clickById("A20")
+    if (underpayments == "Definitive Anti-Dumping Duty") clickById("A30")
+    if (underpayments == "Provisional Anti-Dumping Duty") clickById("A35")
+    if (underpayments == "Definitive Countervailing Duty") clickById("A40")
+    if (underpayments == "Provisional Countervailing Duty") clickById("A45")
+    if (underpayments == "Customs Duty on Agricultural Duty") clickById("A10")
+    if (underpayments == "Compensatory Duty") clickById("D10")
+    findBy(By.className("govuk-button")).click()
+    // Enter Original and Amended values
+      findById("original").clear()
+      findById("original").sendKeys("100")
+      findById("amended").clear()
+      findById("amended").sendKeys("200")
+      findBy(By.className("govuk-button")).click()
+    // Confirm Summary
+    findBy(By.className("govuk-button")).click()
+    // Underpayment Summary
+    clickById("value-no")
+    findBy(By.className("govuk-button")).click()
+
+  }
+
   And("""^I want to complete section 4: Underpayment Reasons""") { () =>
     // Underpayment Reasons Guidance page
     findBy(By.className("govuk-button")).click()

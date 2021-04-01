@@ -66,6 +66,16 @@ class IVDStepDef extends ShutdownStepDef {
       case "Another payment method" => findBy(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).click()
       case "By duty deferment account" => findBy(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).click()
       case "2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ" => clickById("addressId") // first element
+      case "Import VAT" => clickById("B00")
+      case "Customs Duty" => clickById("A00")
+      case "Excise Duty" => clickById("E00")
+      case "Additional Duty" => clickById("A20")
+      case "Definitive Anti-Dumping Duty" => clickById("A30")
+      case "Provisional Anti-Dumping Duty" => clickById("A35")
+      case "Definitive Countervailing Duty" => clickById("A40")
+      case "Provisional Countervailing Duty" => clickById("A45")
+      case "Customs Duty on Agricultural Products" => clickById("A10")
+      case "Compensatory Duty" => clickById("D10")
       case _ => fail(s"$button is not a valid radio button")
     }
   }

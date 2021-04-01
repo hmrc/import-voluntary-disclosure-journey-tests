@@ -6,7 +6,7 @@ Feature: Check the flow of the Box amendments reasons journey
   Background:
     Given I want to complete section 1: Service Entry
     And I want to complete section 2: Entry Details as Importer
-    And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
+    And I want to complete section 3.1: Underpayments with Import VAT
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
 

@@ -105,8 +105,7 @@ class SectionsStepDef extends ShutdownStepDef {
     // Underpayment Reasons Guidance page
     findBy(By.className("govuk-button")).click()
     // Enter Box 33
-    findById("value").clear()
-    findById("value").sendKeys("33")
+    findById("value-2").click
     findBy(By.className("govuk-button")).click()
     // Enter Item 1
     findById("itemNumber").clear()

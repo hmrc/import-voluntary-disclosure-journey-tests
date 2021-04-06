@@ -58,10 +58,25 @@ class IVDStepDef extends ShutdownStepDef {
   And("""^the user selects the (.*) radio button$""") { button: String =>
     button match {
       case "Importer" | "One Entry" | "Yes" | "Yes, I want to use two deferment accounts" |
-           "My deferment account" => clickById("value")
+           "My deferment account" | "Box 22 Invoice currency and total amount invoiced" => clickById("value")
       case "Representative" | "No, I want to use one deferment account" |
-           "The importer’s account and I have authority to use it" => clickById("value-2")
-      case "The importer’s account and I have standing authority to use it" => clickById("value-3")
+           "The importer’s account and I have authority to use it" | "Box 33 Commodity code" => clickById("value-2")
+      case "The importer’s account and I have standing authority to use it" | "Box 34 Country of origin code" => clickById("value-3")
+      case "Box 35 Gross mass" => clickById("value-4")
+      case "Box 36 Preference" => clickById("value-5")
+      case "Box 37 Procedure (customs procedure code)" => clickById("value-6")
+      case "Box 38 Net mass" => clickById("value-7")
+      case "Box 39 Quota" => clickById("value-8")
+      case "Box 41 Supplementary units" => clickById("value-9")
+      case "Box 42 Item price" => clickById("value-10")
+      case "Box 43 Valuation method code" => clickById("value-11")
+      case "Box 45 Adjustment" => clickById("value-12")
+      case "Box 46 Statistical value" => clickById("value-13")
+      case "Box 62 Air transport costs" => clickById("value-14")
+      case "Box 63 AWB or freight charges" => clickById("value-15")
+      case "Box 66 Insurance" => clickById("value-16")
+      case "Box 67 Other charges of deductions" => clickById("value-17")
+      case "Box 68 Adjustment for VAT value" => clickById("value-18")
       case "No" => clickById("value-no")
       case "Another payment method" => findBy(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")).click()
       case "By duty deferment account" => findBy(By.cssSelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")).click()

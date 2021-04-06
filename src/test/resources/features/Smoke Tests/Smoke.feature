@@ -47,8 +47,8 @@ Feature: Smoke tests for Import Voluntary Disclosure
     When clicks the Continue button
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
-    Then the user should be on the 'What is the box number?' page
-    And the user enters 22 into the Box Number input field
+    Then the user should be on the 'What was the reason for the underpayment?' page
+    And the user selects the Box 22 Invoice currency and total amount invoiced radio button
     When clicks the Continue button
     Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
     And the user enters EUR125.00 into the Original value input field
@@ -163,8 +163,8 @@ Feature: Smoke tests for Import Voluntary Disclosure
     When clicks the Continue button
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
-    Then the user should be on the 'What is the box number?' page
-    And the user enters 22 into the Box Number input field
+    Then the user should be on the 'What was the reason for the underpayment?' page
+    And the user selects the Box 22 Invoice currency and total amount invoiced radio button
     When clicks the Continue button
     Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
     And the user enters EUR125.00 into the Original value input field

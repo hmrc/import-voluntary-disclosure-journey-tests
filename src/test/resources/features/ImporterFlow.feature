@@ -6,7 +6,7 @@ Feature: Single flow for Importer and Representative
     Given I want to complete section 1: Service Entry
     And I want to complete section 2: Entry Details as Importer
     Then the user should be on the 'Tell us what was underpaid' page
-    And I want to complete section 3.1: Underpayments with "Customs Duty"
+    And I want to complete section 3: Underpayments with A00~B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Supporting documentation' page

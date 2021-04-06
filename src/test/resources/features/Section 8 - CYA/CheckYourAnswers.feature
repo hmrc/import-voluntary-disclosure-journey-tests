@@ -4,7 +4,7 @@
     Scenario: User navigates to check your answers
       Given I want to complete section 1: Service Entry
       And I want to complete section 2: Entry Details as Importer
-      And I want to complete section 3.1: Underpayments with B00~A00
+      And I want to complete section 3: Underpayments with B00~A00
       Then the user should be on the 'You must tell us the reason for the underpayment' page
       When clicks the Continue button
       Then the user should be on the 'What is the box number?' page

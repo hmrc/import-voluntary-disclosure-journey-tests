@@ -132,4 +132,3 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Confirm the Compensatory Duty underpayment details' page
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
-    When clicks the Continue button

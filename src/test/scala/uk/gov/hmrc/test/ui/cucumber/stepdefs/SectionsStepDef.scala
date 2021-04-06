@@ -84,26 +84,6 @@ class SectionsStepDef extends ShutdownStepDef {
   And("""^I want to complete section 3: Underpayments with (.*)""") { (underpayments: String) =>
     // Click through guidance page
     findBy(By.className("govuk-button")).click()
-    // Select the desired underpayment types
-    if (underpayments.contains("Customs Duty")) clickById("value")
-    if (underpayments.contains("Import VAT")) clickById("value-2")
-    if (underpayments.contains("Excise Duty")) clickById("value-3")
-    findBy(By.className("govuk-button")).click()
-    // loop through adding original and amended amounts
-    underpayments.split("~").map { ut =>
-      findById("original").clear()
-      findById("original").sendKeys("100")
-      findById("amended").clear()
-      findById("amended").sendKeys("200")
-      findBy(By.className("govuk-button")).click()
-    }
-    // Confirm Summary
-    findBy(By.className("govuk-button")).click()
-  }
-
-  And("""^I want to complete section 3.1: Underpayments with (.*)""") { (underpayments: String) =>
-    // Click through guidance page
-    findBy(By.className("govuk-button")).click()
     val underpaymentsList = underpayments.split("~").zipWithIndex
     for (underpayment <- underpaymentsList) {
       // Select the underpayment type radio button

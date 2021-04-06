@@ -22,7 +22,7 @@ Feature: Checking the acceptance date flow through the service
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
-    And I want to complete section 3.1: Underpayments with Import VAT
+    And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Supporting documentation' page
@@ -57,7 +57,7 @@ Feature: Checking the acceptance date flow through the service
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
-    And I want to complete section 3.1: Underpayments with Import VAT
+    And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Supporting documentation' page
@@ -103,7 +103,7 @@ Feature: Checking the acceptance date flow through the service
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
-    And I want to complete section 3.1: Underpayments with Import VAT
+    And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Supporting documentation' page
@@ -152,7 +152,7 @@ Feature: Checking the acceptance date flow through the service
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
-    And I want to complete section 3.1: Underpayments with Import VAT
+    And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Supporting documentation' page

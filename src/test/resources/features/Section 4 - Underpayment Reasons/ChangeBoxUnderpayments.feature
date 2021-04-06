@@ -7,7 +7,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     and then opt to change back to box 22
     Given I want to complete section 1: Service Entry
     And I want to complete section 2: Entry Details as Importer
-    And I want to complete section 3: Underpayments with Import VAT
+    And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What is the box number?' page

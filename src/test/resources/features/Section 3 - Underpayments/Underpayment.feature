@@ -107,6 +107,20 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
+  Scenario: A logged in importer is able to add Provisional Countervailing Duty underpayment
+    Then the user should be on the 'Which type of tax or duty was underpaid?' page
+    And the user selects the Provisional Countervailing Duty radio button
+    When clicks the Continue button
+    Then the user should be on the 'Provisional Countervailing Duty underpayment details' page
+    And the user enters 100 into the Original value input field
+    And the user enters 200 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the Provisional Countervailing Duty underpayment details' page
+    When clicks the Continue button
+    Then the user should be on the 'Underpayment summary' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+
   Scenario: A logged in importer is able to add Customs Duty on Agricultural Products underpayment
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Customs Duty on Agricultural Products radio button
@@ -132,3 +146,5 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Confirm the Compensatory Duty underpayment details' page
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
+    When clicks the Continue button
+    Then the user should be on the 'You must tell us the reason for the underpayment' page

@@ -83,7 +83,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Find the address' page
-    And the user clicks the enter address manually link
+    And the user clicks the Edit the address manually link
     Then the user should be on the 'Enter the address' page
     And the user enters 21 some address into the Address Line 1 input field
     And the user enters some address into the Address Line 2 input field
@@ -115,7 +115,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And the user enters Test User into the importers name input field
     When clicks the Continue button
     Then the user should be on the 'What address should we send the importer’s copy of the demand note to?' page
-    And the user clicks the enter address manually link
+    And the user clicks the Edit the address manually link
     Then the user should be on the 'Enter the importer’s address' page
     And the user enters 21 some address into the Address Line 1 input field
     And the user enters some address into the Address Line 2 input field
@@ -201,7 +201,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Find the address' page
-    And the user clicks the enter address manually link
+    And the user clicks the Edit the address manually link
     Then the user should be on the 'Enter the address' page
     And the user enters 21 some address into the Address Line 1 input field
     And the user enters some address into the Address Line 2 input field

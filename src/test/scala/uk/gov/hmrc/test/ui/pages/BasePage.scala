@@ -33,6 +33,7 @@ trait BasePage extends Matchers with BrowserDriver {
   // ID Wrappers
   def findById(id: String) = findBy(By.id(id))
   def clickById(id: String) = findById(id).click()
+  def clickBySelector(selector: String) = findBy(By.cssSelector(selector)).click()
 
   // Find By Syntax Sugar
   def findBy(by: By) = driver.findElement(by)

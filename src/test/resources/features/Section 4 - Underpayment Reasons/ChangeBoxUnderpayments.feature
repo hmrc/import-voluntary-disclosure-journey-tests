@@ -81,7 +81,7 @@ Feature: Check the change flow of the Box amendments reasons journey
   Scenario: A logged in user is able to Change an entry level reason from Underpayment Reason Summary page
     Given I want to complete section 1: Service Entry
     And I want to complete section 2: Entry Details as Importer
-    And I want to complete section 3: Underpayments with Import VAT
+    And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What was the reason for the underpayment?' page
@@ -124,7 +124,7 @@ Feature: Check the change flow of the Box amendments reasons journey
   Scenario: A logged in user is able to Change an item level reason from Underpayment Reason Summary page
     Given I want to complete section 1: Service Entry
     And I want to complete section 2: Entry Details as Importer
-    And I want to complete section 3: Underpayments with Import VAT
+    And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What was the reason for the underpayment?' page
@@ -179,7 +179,7 @@ Feature: Check the change flow of the Box amendments reasons journey
   Scenario: A logged in user is able to Remove an unwanted reason from the Underpayment Reason Summary page
     Given I want to complete section 1: Service Entry
     And I want to complete section 2: Entry Details as Importer
-    And I want to complete section 3: Underpayments with Import VAT
+    And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What was the reason for the underpayment?' page
@@ -223,7 +223,7 @@ Feature: Check the change flow of the Box amendments reasons journey
   Scenario: A logged in user is able to Remove all reasons from the Underpayment Reason Summary page
     Given I want to complete section 1: Service Entry
     And I want to complete section 2: Entry Details as Importer
-    And I want to complete section 3: Underpayments with Import VAT
+    And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'What was the reason for the underpayment?' page

@@ -4,7 +4,7 @@
     Scenario: User navigates to check your answers
       Given I want to complete section 1: Service Entry
       And I want to complete section 2: Entry Details as Importer
-      And I want to complete section 3: Underpayments with Customs Duty~Import VAT~Excise Duty
+      And I want to complete section 3: Underpayments with B00~A00
       Then the user should be on the 'You must tell us the reason for the underpayment' page
       When clicks the Continue button
       Then the user should be on the 'What was the reason for the underpayment?' page
@@ -52,9 +52,6 @@
       And I check that within the Disclosure details summary that the value of Entry number is 123456Q
       And I check that within the Disclosure details summary that the value of Entry date is 01 January 2020
       And I check that within the Disclosure details summary that the value of Entry acceptance date before 1 January 2021? is Yes
-      And I check that within the Underpayment details summary that the value of Customs Duty is £100.00
-      And I check that within the Underpayment details summary that the value of Import VAT is £100.00
-      And I check that within the Underpayment details summary that the value of Excise Duty is £100.00
       And I check that within the Amendment details summary that the value of Customs procedure code is 1234A67
       And I check that within the Supporting documents summary that the value of 1 file uploaded is TestDocument.pdf
       And I check that within the Your details summary that the value of Name is First last

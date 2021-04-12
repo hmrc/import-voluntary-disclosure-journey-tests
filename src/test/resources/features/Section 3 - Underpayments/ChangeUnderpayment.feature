@@ -90,7 +90,7 @@ Feature: Check the change flow of the Underpayments journey
     When the user clicks the 1st change link for Import VAT on the Underpayment summary page
     Then the user should be on the 'Change the import VAT underpayment details' page
     Then the user clicks the Remove this import VAT underpayment link
-#    ^ add the above button once code is available (find button id)
+#    ^ add the above link once code is available (find link id)
     Then the user should be on the 'Are you sure you want to remove this import VAT underpayment?' page
     And the user selects the Yes radio button
     When clicks the Continue button
@@ -99,7 +99,7 @@ Feature: Check the change flow of the Underpayments journey
     When the user clicks the 1st change link for Import VAT on the Underpayment summary page
     Then the user should be on the 'Change the Customs Duty underpayment details' page
     Then the user clicks the Remove this Customs Duty underpayment link
-    #    ^ add the above button once code is available (find button id)
+    #    ^ add the above link once code is available (find link id)
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page

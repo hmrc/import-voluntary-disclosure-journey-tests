@@ -17,7 +17,7 @@ Feature: Testing the handoff to address lookup for capturing Representatives Add
     Then the user should be on the 'Confirm the importer’s address' page
     When clicks the Confirm address button
     Then the user should be on the 'Does the importer have an EORI number?' page
-    When the user clicks the back link
+    When the user clicks the Back link
     Then the user should be on the 'What is the importer’s name?' page
     When clicks the Continue button
     Then the user should be on the 'What address should we send the importer’s copy of the demand note to?' page
@@ -29,11 +29,11 @@ Feature: Testing the handoff to address lookup for capturing Representatives Add
     Then the user should be on the 'Confirm the importer’s address' page
     When clicks the Confirm address button
     Then the user should be on the 'Does the importer have an EORI number?' page
-    When the user clicks the back link
+    When the user clicks the Back link
     Then the user should be on the 'What is the importer’s name?' page
     When clicks the Continue button
     Then the user should be on the 'What address should we send the importer’s copy of the demand note to?' page
-    And the user clicks the enter address manually link
+    And the user clicks the Enter the address manually link
     Then the user should be on the 'Enter the importer’s address' page
     And the user enters 21 some address into the Address Line 1 input field
     And the user enters some address into the Address Line 2 input field

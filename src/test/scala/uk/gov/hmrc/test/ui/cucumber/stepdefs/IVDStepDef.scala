@@ -126,8 +126,12 @@ class IVDStepDef extends ShutdownStepDef {
         val path = Paths.get("").toAbsolutePath
         findById("file").sendKeys(path + value)
       }
-      case "Original value" => findById("original").sendKeys(value)
-      case "Amended value" => findById("amended").sendKeys(value)
+      case "Original value" =>
+        findById("original").clear()
+        findById("original").sendKeys(value)
+      case "Amended value" =>
+        findById("amended").clear()
+        findById("amended").sendKeys(value)
       case "importers name" => findById("fullName").sendKeys(value)
       case "postcode" => findById("postcode").sendKeys(value)
       case "Country" => findById("countryCode").sendKeys(s"$value\n")
@@ -160,22 +164,34 @@ class IVDStepDef extends ShutdownStepDef {
     }
   }
 
-  And("""^the user clicks the (.*) (.*) link for (.*) on the Underpayment amount summary page$""") { (linkPos: String, link: String, field: String) =>
+  And("""^the user clicks the (.*) link$""") { (link: String) =>
+    findBy(By.linkText(link)).click()
+  }
+
+  And("""^the user clicks the (.*) (.*) link for (.*) on the (.*)$""") { (linkPos: String, link: String, field: String, page: String) =>
     link match {
-      case "change" =>
+      case "change" if page == "Underpayment amount summary page" =>
         linkPos match {
           case "1st" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
           case "2nd" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
           case "3rd" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
           case _ => fail(s"$link is not a valid link")
         }
-      case _ => fail(s"$link is not a valid link")
-    }
-  }
-
-  And("""^the user clicks the (.*) (.*) link for (.*) on the Underpayment box summary page$""") { (linkPos: String, link: String, field: String) =>
-    link match {
       case "change" =>
+        linkPos match {
+          case "1st" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a")).click()
+          case "2nd" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")).click()
+          case "3rd" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(3) > dd.govuk-summary-list__actions > a")).click()
+          case _ => fail(s"$link is not a valid link")
+        }
+      case "remove" if page == "Upload Another page" =>
+        linkPos match {
+          case "1st" => findBy(By.cssSelector("li:nth-child(1) > .hmrc-add-to-a-list__remove > a")).click()
+          case "2nd" => findBy(By.cssSelector("li:nth-child(2) > .hmrc-add-to-a-list__remove > a")).click()
+          case "3rd" => findBy(By.cssSelector("li:nth-child(3) > .hmrc-add-to-a-list__remove > a")).click()
+          case _ => fail(s"$link is not a valid link")
+        }
+      case "remove" =>
         linkPos match {
           case "1st" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a")).click()
           case "2nd" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__actions > a")).click()
@@ -218,22 +234,6 @@ class IVDStepDef extends ShutdownStepDef {
 
       case _ => fail(s"$field is not a valid field")
     }
-  }
-
-  And("""^the user clicks the enter address manually link$""") {
-    findById("manualAddress").click()
-  }
-
-  And("""^the user clicks the search again link$""") {
-    findById("searchAgainLink").click()
-  }
-
-  And("""^the user clicks the back link$""") {
-    findById("back-link").click()
-  }
-
-  And("""^the user clicks the Remove link$""") {
-    findBy(By.className("govuk-link")).click()
   }
 
   And("""^the user clicks browser back""") {

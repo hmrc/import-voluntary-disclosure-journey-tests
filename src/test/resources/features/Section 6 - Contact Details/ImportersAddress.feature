@@ -24,7 +24,7 @@
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
       Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-      When the user clicks the back link
+      When the user clicks the Back link
       Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
       And the user selects the No radio button
       When clicks the Continue button
@@ -37,12 +37,12 @@
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
       Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-      When the user clicks the back link
+      When the user clicks the Back link
       Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
       And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'Find the address' page
-      And the user clicks the enter address manually link
+      And the user clicks the Enter the address manually link
       Then the user should be on the 'Enter the address' page
       And the user enters 21 some address into the Address Line 1 input field
       And the user enters some address into the Address Line 2 input field
@@ -80,7 +80,7 @@
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
       Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-      When the user clicks the back link
+      When the user clicks the Back link
       Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
       And the user selects the No radio button
       When clicks the Continue button
@@ -93,12 +93,12 @@
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
       Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-      When the user clicks the back link
+      When the user clicks the Back link
       Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
       And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'Find the address' page
-      And the user clicks the enter address manually link
+      And the user clicks the Enter the address manually link
       Then the user should be on the 'Enter the address' page
       And the user enters 21 some address into the Address Line 1 input field
       And the user enters some address into the Address Line 2 input field

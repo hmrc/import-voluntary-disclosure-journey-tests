@@ -34,7 +34,7 @@
       And there should be '2' files on the page
 
     Scenario: The user removes a file
-      And the user clicks the Remove link
+      And the user clicks the 1st remove link for TestDocument on the Upload Another page
       Then the user should be on the 'Are you sure you want to remove this file?' page
       And the user selects the Yes radio button
       And clicks the Continue button
@@ -42,7 +42,7 @@
       And there should be '1' files on the page
 
     Scenario: The user removes another file
-      And the user clicks the Remove link
+      And the user clicks the 1st remove link for TestDocument on the Upload Another page
       Then the user should be on the 'Are you sure you want to remove this file?' page
       And the user selects the Yes radio button
       And clicks the Continue button

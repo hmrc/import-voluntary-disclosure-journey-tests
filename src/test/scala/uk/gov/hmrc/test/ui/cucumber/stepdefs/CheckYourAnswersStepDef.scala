@@ -236,4 +236,20 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
       case _ => fail(s"Position: $pos is not valid, please investigate")
     }
   }
+
+  And("""^I check that within the Confirm underpayment details page the total (.*) is a value of (.*)$""") { (field: String, value: String) =>
+    field match {
+      case "Amount that was paid to HMRC" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value.govuk-\\!-padding-bottom-0")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Amount that should have been paid" =>
+        val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case _ => fail(s"Field: $field is not valid, please investigate")
+    }
+  }
 }

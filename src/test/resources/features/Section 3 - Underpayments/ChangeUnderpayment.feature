@@ -87,19 +87,28 @@ Feature: Check the change flow of the Underpayments journey
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
 #    add test here to check there are 2 rows in the summary list
+    And I check that within the Underpayment summary that the 1st entry has a duty value of Import VAT and total value of £100.00
+    And I check that within the Underpayment summary that the 2nd entry has a duty value of Customs Duty and total value of £100.00
     When the user clicks the 1st change link for Import VAT on the Underpayment summary page
     Then the user should be on the 'Change the import VAT underpayment details' page
     Then the user clicks the Remove this import VAT underpayment link
     #    ^ add the above link to the Step Def once code is available (find link id)
     Then the user should be on the 'Are you sure you want to remove this import VAT underpayment?' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Change the import VAT underpayment details' page
+    Then the user clicks the Remove this import VAT underpayment link
+    Then the user should be on the 'Are you sure you want to remove this import VAT underpayment?' page
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
     #    add test here to check there is 1 row in the summary list
-    When the user clicks the 1st change link for Import VAT on the Underpayment summary page
+    And I check that within the Underpayment summary that the 1st entry has a duty value of Customs Duty and total value of £100.00
+    When the user clicks the 1st change link for Customs Duty on the Underpayment summary page
     Then the user should be on the 'Change the Customs Duty underpayment details' page
     Then the user clicks the Remove this Customs Duty underpayment link
     #    ^ add the above link to the Step Def once code is available (find link id)
+    Then the user should be on the 'Are you sure you want to remove this Customs Duty underpayment?' page
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page

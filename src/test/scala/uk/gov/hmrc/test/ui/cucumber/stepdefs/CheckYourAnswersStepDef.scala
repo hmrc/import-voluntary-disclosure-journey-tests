@@ -237,6 +237,22 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     }
   }
 
+  And("""^I check that within the Underpayment summary that the (.*) entry has a duty value of (.*) and total value of (.*)$""") { (pos: String, dutyType: String, dutyValue: String) =>
+    pos match {
+      case "1st" =>
+        val actualDutyType = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div:nth-child(1) > dt")).getText
+        val actualDutyValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div:nth-child(1) > dd.govuk-summary-list__value.govuk-summary-list__value")).getText
+        assertResult(dutyType)(actualDutyType)
+        assertResult(dutyValue)(actualDutyValue)
+      case "2nd" =>
+        val actualDutyType = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div:nth-child(2) > dt")).getText
+        val actualDutyValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(3) > div:nth-child(2) > dd.govuk-summary-list__value.govuk-summary-list__value")).getText
+        assertResult(dutyType)(actualDutyType)
+        assertResult(dutyValue)(actualDutyValue)
+      case _ => fail(s"Position: $pos is not valid, please investigate")
+    }
+  }
+
   And("""^I check that within the Confirm underpayment details page the total (.*) is a value of (.*)$""") { (field: String, value: String) =>
     field match {
       case "Amount that was paid to HMRC" =>

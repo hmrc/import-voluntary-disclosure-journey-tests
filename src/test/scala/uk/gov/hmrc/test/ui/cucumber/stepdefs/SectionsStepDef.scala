@@ -136,7 +136,7 @@ class SectionsStepDef extends ShutdownStepDef {
     findBy(By.className("govuk-button")).click()
   }
 
-  And("""^I want to complete section 5: Supporting Documentation""") { () =>
+  And("""^I want to complete section 5: Documents you must upload""") { () =>
     // Supporting Documentation Guidance page
     findBy(By.className("govuk-button")).click()
     // Upload a file and dummy upscan callback

@@ -68,8 +68,8 @@ Feature: Check the change flow of the Box amendments reasons journey
     Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
     And the user selects the No radio button
     When clicks the Continue button
-    Then the user should be on the 'Supporting documentation' page
-    And I want to complete section 5: Supporting Documentation
+    Then the user should be on the 'Documents you must upload' page
+    And I want to complete section 5: Documents you must upload
     Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT owed?' page

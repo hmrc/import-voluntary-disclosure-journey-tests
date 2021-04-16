@@ -70,7 +70,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Tell us the extra information about the underpayment' page
     And the user enters More Information into the More Information input field
     When clicks the Continue button
-    Then the user should be on the 'Supporting documentation' page
+    Then the user should be on the 'Documents you must upload' page
     When clicks the Continue button
     Then the user should be on the 'Upload supporting documentation' page
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
@@ -196,7 +196,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Tell us the extra information about the underpayment' page
     And the user enters More Information into the More Information input field
     When clicks the Continue button
-    Then the user should be on the 'Supporting documentation' page
+    Then the user should be on the 'Documents you must upload' page
     When clicks the Continue button
     Then the user should be on the 'Upload supporting documentation' page
     And I get the data from the page

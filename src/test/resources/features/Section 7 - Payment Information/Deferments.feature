@@ -7,7 +7,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the Another payment method radio button
@@ -22,7 +22,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -40,7 +40,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -58,7 +58,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the Another payment method radio button
@@ -73,7 +73,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -108,7 +108,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -134,7 +134,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -178,7 +178,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -201,7 +201,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -232,7 +232,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT owed?' page
     And the user selects the By duty deferment account radio button
@@ -260,7 +260,7 @@ Feature: Testing Deferments for importers and representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Supporting Documentation
+    And I want to complete section 5: Documents you must upload
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the duty owed?' page
     And the user selects the By duty deferment account radio button

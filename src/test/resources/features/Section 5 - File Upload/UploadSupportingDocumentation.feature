@@ -1,12 +1,12 @@
 @all @upload-supporting-documentation
   Feature: Testing the upload of a file
 
-    Scenario: A logged in representative is able to navigate to the supporting documentation page
+    Scenario: A logged in representative is able to navigate to the Documents you must upload page
       Given I want to complete section 1: Service Entry
       And I want to complete section 2: Entry Details as Representative
       And I want to complete section 3: Underpayments with A00
       And I want to complete section 4: Underpayment Reasons
-      Then the user should be on the 'Supporting documentation' page
+      Then the user should be on the 'Documents you must upload' page
 
     Scenario: The user continues to Upload a file
       And clicks the Continue button

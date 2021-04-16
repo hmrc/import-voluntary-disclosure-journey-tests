@@ -22,7 +22,7 @@
       Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
       And the user selects the No radio button
       When clicks the Continue button
-      Then the user should be on the 'Supporting documentation' page
+      Then the user should be on the 'Documents you must upload' page
       When clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
       And I get the data from the page

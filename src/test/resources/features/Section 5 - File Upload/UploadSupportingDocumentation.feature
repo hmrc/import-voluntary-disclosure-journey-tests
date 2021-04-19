@@ -10,6 +10,9 @@
 
     Scenario: The user continues to Upload a file
       And clicks the Continue button
+      Then the user should be on the 'Do you have any of these documents?' page
+      And the user selects the No radio button
+      And clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
       And I get the data from the page
       And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field

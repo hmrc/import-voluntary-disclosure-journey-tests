@@ -139,6 +139,9 @@ class SectionsStepDef extends ShutdownStepDef {
   And("""^I want to complete section 5: Documents you must upload""") { () =>
     // Supporting Documentation Guidance page
     findBy(By.className("govuk-button")).click()
+    // Further Supporting Documents page
+    clickById("value-no")
+    findBy(By.className("govuk-button")).click()
     // Upload a file and dummy upscan callback
     callbackUrl = driver.findElement(By.name("x-amz-meta-callback-url")).getAttribute("value")
     redirectUrl = driver.findElement(By.name("success_action_redirect")).getAttribute("value")

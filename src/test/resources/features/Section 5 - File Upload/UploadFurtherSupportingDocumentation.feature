@@ -1,7 +1,7 @@
 @all @upload-supporting-documentation
   Feature: Testing upload further documentation flow
 
-    Scenario: A logged in representative is able to navigate to the Documents you must upload page
+    Background:
       Given I want to complete section 1: Service Entry
       And I want to complete section 2: Entry Details as Representative
       And I want to complete section 3: Underpayments with A00

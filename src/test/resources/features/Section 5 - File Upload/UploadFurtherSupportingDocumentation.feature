@@ -13,7 +13,13 @@
       Then the user should be on the 'Do you have any of these documents?' page
       And the user selects the Yes radio button
       When clicks the Continue button
-      Then the user should be on the 'Do you have any of these documents?' page
+      Then the user should be on the 'Which of these documents will you be uploading?' page
+      And they select the Amendment import declaration checkbox
+      And they select the Airway bill checkbox
+      And they select the Proof of origin checkbox
+      And they select the Other documentation checkbox
+      When clicks the Continue button
+      Then the user should be on the 'Upload supporting documentation' page
 
     Scenario: A logged in user declares that they don't have additional documents
       When clicks the Continue button

@@ -150,6 +150,9 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And the user enters 01 into the Entry date month input field
     And the user enters 2021 into the Entry date year input field
     When clicks the Continue button
+    Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
     Then the user should be on the 'What is the customs procedure code?' page
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button

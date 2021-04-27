@@ -76,6 +76,9 @@ class SectionsStepDef extends ShutdownStepDef {
     // Acceptance entry date
     clickById("value")
     findBy(By.className("govuk-button")).click()
+    // More than one CPC page
+    clickById("value")
+    findBy(By.className("govuk-button")).click()
     // Enter CPC
     findById("cpc").sendKeys("1234A67")
     findBy(By.className("govuk-button")).click()

@@ -4,7 +4,7 @@
 Feature: Check the change flow of the Underpayments journey
 
   Scenario: A logged in importer is able to complete the underpayment flow for Import VAT and Customs Duty and make a change to the values
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button
@@ -56,7 +56,7 @@ Feature: Check the change flow of the Underpayments journey
     Then the user should be on the 'Underpayment summary' page
 
   Scenario: A logged in importer is able to complete the underpayment flow for Import VAT and Customs Duty and remove both Underpayment entries
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button

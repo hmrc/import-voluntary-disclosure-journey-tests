@@ -5,7 +5,7 @@ Feature: Check the change flow of the Box amendments reasons journey
 
   Scenario: A logged in user is able to walk through the Box 22 entry level underpayment flow, opt to change to box 33,
     and then opt to change back to box 22
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
@@ -79,7 +79,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     Then the user should be on the 'Disclosure complete' page
 
   Scenario: A logged in user is able to Change an entry level reason from Underpayment Reason Summary page
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
@@ -122,7 +122,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And I check that within the Underpayment Reason Change that the Entry level value of Amended value is GBP390.50
 
   Scenario: A logged in user is able to Change an item level reason from Underpayment Reason Summary page
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
@@ -177,7 +177,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And I check that within the Underpayment Reason Change that the Item level value of Amended value is 1234567891DDDD
 
   Scenario: A logged in user is able to Remove an unwanted reason from the Underpayment Reason Summary page
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page
@@ -221,7 +221,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     Then the user should be on the 'You have added 1 reason for the underpayment' page
 
   Scenario: A logged in user is able to Remove all reasons from the Underpayment Reason Summary page
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with B00
     Then the user should be on the 'You must tell us the reason for the underpayment' page

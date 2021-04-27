@@ -3,7 +3,7 @@
 Feature: Check doing everything in one go for Import Voluntary Disclosure Journey
 
   Scenario: A logged in user is able to walk through the entire flow of IVD as Importer
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     Then the user should be on the 'Tell us what was underpaid' page
     And I want to complete section 3: Underpayments with B00~A00~E00
@@ -18,7 +18,7 @@ Feature: Check doing everything in one go for Import Voluntary Disclosure Journe
     Then the user should be on the 'Check your answers before sending your disclosure' page
 
   Scenario: A logged in user is able to walk through the entire flow of IVD as Representative
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     Then the user should be on the 'Tell us what was underpaid' page
     And I want to complete section 3: Underpayments with B00~A00~E00

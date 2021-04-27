@@ -3,7 +3,7 @@
 Feature: Single flow for Importer and Representative
 
   Scenario: A logged in user is able to walk through the entire flow of IVD as Representative
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     Then the user should be on the 'Tell us what was underpaid' page
     And I want to complete section 3: Underpayments with B00~A00~E00

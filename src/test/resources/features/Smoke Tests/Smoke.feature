@@ -21,6 +21,9 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
     And the user selects the Yes radio button
     And clicks the Continue button
+    Then the user should be on the 'Is there only one customs procedure code for this entry?' page
+    And the user selects the Yes radio button
+    And clicks the Continue button
     Then the user should be on the 'What is the customs procedure code?' page
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
@@ -153,9 +156,9 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
     And the user selects the Yes radio button
     When clicks the Continue button
-    Then the user should be on the 'What is the customs procedure code?' page
-    And the user enters 1234A67 into the Customs procedure code input field
-    When clicks the Continue button
+    Then the user should be on the 'Is there only one customs procedure code for this entry?' page
+    And the user selects the No radio button
+    And clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button
     Then the user should be on the 'Which type of tax or duty was underpaid?' page

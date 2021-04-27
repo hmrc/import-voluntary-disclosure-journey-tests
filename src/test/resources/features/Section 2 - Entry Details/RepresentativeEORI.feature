@@ -30,6 +30,9 @@
       Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
       And the user selects the Yes radio button
       When clicks the Continue button
+      Then the user should be on the 'Is there only one customs procedure code for this entry?' page
+      And the user selects the Yes radio button
+      And clicks the Continue button
       Then the user should be on the 'What is the customs procedure code?' page
       And the user enters 1234A67 into the Customs procedure code input field
       When clicks the Continue button
@@ -79,9 +82,9 @@
       Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
       And the user selects the Yes radio button
       When clicks the Continue button
-      Then the user should be on the 'What is the customs procedure code?' page
-      And the user enters 1234A67 into the Customs procedure code input field
-      When clicks the Continue button
+      Then the user should be on the 'Is there only one customs procedure code for this entry?' page
+      And the user selects the No radio button
+      And clicks the Continue button
       Then the user should be on the 'Tell us what was underpaid' page
       And I want to complete section 3: Underpayments with B00~A00~E00
       Then the user should be on the 'You must tell us the reason for the underpayment' page

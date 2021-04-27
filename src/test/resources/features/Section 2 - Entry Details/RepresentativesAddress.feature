@@ -50,6 +50,9 @@ Feature: Testing the handoff to address lookup for capturing Representatives Add
     Then the user should be on the 'What is the importer’s EORI number?' page
     And the user enters GB345834921000 into the EORI input field
     When clicks the Continue button
+    Then the user should be on the 'Is the importer VAT registered?' page
+    And the user selects the No radio button
+    When clicks the Continue button
     Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
     And the user selects the One Entry radio button
     When clicks the Continue button

@@ -62,6 +62,8 @@ class SectionsStepDef extends ShutdownStepDef {
       findBy(By.className("govuk-button")).click()
       findById("importerEORI").sendKeys("GB345834921000")
       findBy(By.className("govuk-button")).click()
+      clickById("value")
+      findBy(By.className("govuk-button")).click()
     }
     // Select One Entry
     clickById("value")

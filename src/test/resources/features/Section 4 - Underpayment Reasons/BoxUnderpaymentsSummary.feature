@@ -4,7 +4,7 @@
 Feature: Check the flow of the Box underpayments summary journey
 
   Scenario: A logged in user is able to walk through the Box 22 entry level underpayment flow and opts to add another box
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with E00~A00
     Then the user should be on the 'You must tell us the reason for the underpayment' page

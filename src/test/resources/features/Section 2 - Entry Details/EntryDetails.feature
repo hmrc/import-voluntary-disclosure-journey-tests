@@ -4,7 +4,7 @@ Feature: Checking the acceptance date flow through the service
 
   @ZAP
   Scenario: An Importer is able to walk through the flow of IVD - entry date is 01/01/2021
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Importer radio button
     When clicks the Continue button
@@ -42,7 +42,7 @@ Feature: Checking the acceptance date flow through the service
     Then the user should be on the 'Disclosure complete' page
 
   Scenario: An Importer is able to walk through the flow of IVD - entry date is 31/12/2020
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Importer radio button
     When clicks the Continue button
@@ -80,7 +80,7 @@ Feature: Checking the acceptance date flow through the service
     Then the user should be on the 'Disclosure complete' page
 
   Scenario: A Representative is able to walk through the flow of IVD - entry date is 01/01/2021
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Representative radio button
     When clicks the Continue button
@@ -129,7 +129,7 @@ Feature: Checking the acceptance date flow through the service
     Then the user should be on the 'Disclosure complete' page
 
   Scenario: A Representative is able to walk through the flow of IVD - entry date is 31/12/2020
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Representative radio button
     When clicks the Continue button

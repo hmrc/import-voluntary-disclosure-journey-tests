@@ -34,12 +34,17 @@ class IVDStepDef extends ShutdownStepDef {
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).sendKeys("EORINumber")
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).clear()
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys("GB987654321000")
-
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
   }
 
-  Given("""^an unauthorised user attempts to log in to access the Import Voluntary Disclosure Service""") { () =>
+  Given("""^an unauthorised user attempts to log in to access the Import Voluntary Disclosure Service for (.*)""") { (affinityGroup: String) =>
+    val groupSelector = affinityGroup match {
+      case "Individual" => 1
+      case "Organisation" => 2
+      case _ => 3
+    }
     driver.navigate().to(AuthLoginStubPage.url)
+    driver.findElement(By.cssSelector(s"#affinityGroupSelect > option:nth-child($groupSelector)")).click()
     driver.findElement(By.name("redirectionUrl")).clear()
     driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclosureLandingPage.url)
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()

@@ -3,7 +3,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Importer declares that they have import VAT and other duties, selects to pay via another payment method,
   and is redirected to check your answers
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
@@ -18,7 +18,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Importer declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the enter DAN flow
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
@@ -36,7 +36,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Importer declares that they only have other duties, selects to pay by duty deferment account,
   and is redirected to the enter DAN flow
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     And I want to complete section 3: Underpayments with A00
     And I want to complete section 4: Underpayment Reasons
@@ -54,7 +54,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay via another payment method,
   and is redirected to check your answers
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
@@ -69,7 +69,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Representative declares that they have import VAT and other duties, selects to split by two deferment accounts,
   selects My deferment account for duty
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
@@ -104,7 +104,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by two deferment accounts
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
@@ -130,7 +130,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by two deferment accounts
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
@@ -174,7 +174,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by one deferment account - enters DAN and clicks 'My deferment account'
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
@@ -197,7 +197,7 @@ Feature: Testing Deferments for importers and representatives
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by one deferment account - enters DAN and
   clicks 'The importer’s account and I have authority to use it'
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
@@ -228,7 +228,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Representative declares that they only have import VAT, selects to pay by duty deferment account,
   and is redirected to the enter DAN flow - enters DAN and clicks 'The importer’s account and I have authority to use it'
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00
     And I want to complete section 4: Underpayment Reasons
@@ -256,7 +256,7 @@ Feature: Testing Deferments for importers and representatives
 
   Scenario: Representative declares that they only have other duties, selects to pay by duty deferment account,
   and is redirected to the enter DAN flow - enters DAN and clicks 'The importer’s account and I have standing authority to use it'
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with A00
     And I want to complete section 4: Underpayment Reasons

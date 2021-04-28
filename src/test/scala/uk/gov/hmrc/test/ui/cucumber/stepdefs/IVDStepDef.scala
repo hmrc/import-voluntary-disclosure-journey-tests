@@ -29,6 +29,7 @@ class IVDStepDef extends ShutdownStepDef {
     driver.findElement(By.name("redirectionUrl")).clear()
     driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclosureLandingPage.url)
     driver.findElement(By.name("enrolment[0].name")).clear()
+    driver.findElement(By.cssSelector(s"#affinityGroupSelect > option:nth-child(2)")).click()
     driver.findElement(By.name("enrolment[0].name")).sendKeys("HMRC-CTS-ORG")
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).clear()
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).sendKeys("EORINumber")

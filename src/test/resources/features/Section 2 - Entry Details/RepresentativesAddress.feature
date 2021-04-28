@@ -4,7 +4,7 @@
 Feature: Testing the handoff to address lookup for capturing Representatives Address
 
   Scenario: A Representative supplies their address details and completes the flow
-    Given I want to complete section 1: Service Entry
+    Given I want to complete section 1: Service Entry for Organisation
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Representative radio button
     When clicks the Continue button

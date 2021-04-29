@@ -10,7 +10,7 @@ Feature: Check the flow of the Underpayments journey
     When clicks the Continue button
 
     Scenario: A logged in importer is able to add Import VAT underpayment
-    Then the user should be on the 'Which type of tax or duty was underpaid?' page
+    Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
     And the user selects the Import VAT radio button
     When clicks the Continue button
     Then the user should be on the 'Import VAT underpayment details' page

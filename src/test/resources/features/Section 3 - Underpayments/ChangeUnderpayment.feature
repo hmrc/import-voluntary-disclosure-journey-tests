@@ -8,7 +8,7 @@ Feature: Check the change flow of the Underpayments journey
     And I want to complete section 2: Entry Details as Importer
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button
-    Then the user should be on the 'Which type of tax or duty was underpaid?' page
+    Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
     And the user selects the Import VAT radio button
     When clicks the Continue button
     Then the user should be on the 'Import VAT underpayment details' page
@@ -60,7 +60,7 @@ Feature: Check the change flow of the Underpayments journey
     And I want to complete section 2: Entry Details as Importer
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button
-    Then the user should be on the 'Which type of tax or duty was underpaid?' page
+    Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
     And the user selects the Import VAT radio button
     When clicks the Continue button
     Then the user should be on the 'Import VAT underpayment details' page

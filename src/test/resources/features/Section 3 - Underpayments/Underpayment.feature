@@ -13,7 +13,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
     And the user selects the Import VAT radio button
     When clicks the Continue button
-    Then the user should be on the 'Import VAT underpayment details' page
+    Then the user should be on the 'Import VAT underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
@@ -27,7 +27,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Customs Duty radio button
     When clicks the Continue button
-    Then the user should be on the 'Customs Duty underpayment details' page
+    Then the user should be on the 'Customs Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
@@ -41,7 +41,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Excise Duty radio button
     When clicks the Continue button
-    Then the user should be on the 'Excise duty underpayment details' page
+    Then the user should be on the 'Excise duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
@@ -55,7 +55,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Additional Duty radio button
     When clicks the Continue button
-    Then the user should be on the 'Additional Duty underpayment details' page
+    Then the user should be on the 'Additional Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
@@ -69,7 +69,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Definitive Anti-Dumping Duty radio button
     When clicks the Continue button
-    Then the user should be on the 'Definitive Anti-Dumping Duty underpayment details' page
+    Then the user should be on the 'Definitive Anti-Dumping Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
@@ -83,7 +83,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Provisional Anti-Dumping Duty radio button
     When clicks the Continue button
-    Then the user should be on the 'Provisional Anti-Dumping Duty underpayment details' page
+    Then the user should be on the 'Provisional Anti-Dumping Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
@@ -97,7 +97,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Definitive Countervailing Duty radio button
     When clicks the Continue button
-    Then the user should be on the 'Definitive Countervailing Duty underpayment details' page
+    Then the user should be on the 'Definitive Countervailing Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
@@ -111,7 +111,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Provisional Countervailing Duty radio button
     When clicks the Continue button
-    Then the user should be on the 'Provisional Countervailing Duty underpayment details' page
+    Then the user should be on the 'Provisional Countervailing Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
@@ -125,7 +125,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Customs Duty on Agricultural Products radio button
     When clicks the Continue button
-    Then the user should be on the 'Customs Duty on Agricultural Products underpayment details' page
+    Then the user should be on the 'Customs Duty on Agricultural Products underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
@@ -139,7 +139,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Compensatory Duty radio button
     When clicks the Continue button
-    Then the user should be on the 'Compensatory Duty underpayment details' page
+    Then the user should be on the 'Compensatory Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
     And the user enters 200 into the Amended value input field
     When clicks the Continue button

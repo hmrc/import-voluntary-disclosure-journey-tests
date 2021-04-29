@@ -112,3 +112,29 @@ Feature: Check the change flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
+
+  Scenario: A logged in importer is able to change the value of an underpayment from the confirm underpayment screen
+    Given I want to complete section 1: Service Entry for Organisation
+    And I want to complete section 2: Entry Details as Importer
+    Then the user should be on the 'Tell us what was underpaid' page
+    When clicks the Continue button
+    Then the user should be on the 'Which type of tax or duty was underpaid?' page
+    And the user selects the Import VAT radio button
+    When clicks the Continue button
+    Then the user should be on the 'Import VAT underpayment details' page
+    And the user enters 100 into the Original value input field
+    And the user enters 200 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the import VAT underpayment details' page
+    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £100.00
+    And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £200.00
+    When the user clicks the 1st change link for Import VAT on the Confirm underpayment page
+    Then the user should be on the 'Change the import VAT underpayment details' page
+    And the user enters 100 into the Original value input field
+    And the user enters 500 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the import VAT underpayment details' page
+    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £100.00
+    And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £500.00
+    When clicks the Continue button
+    Then the user should be on the 'Underpayment summary' page

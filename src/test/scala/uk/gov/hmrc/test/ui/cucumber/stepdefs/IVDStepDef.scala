@@ -196,6 +196,7 @@ class IVDStepDef extends ShutdownStepDef {
           case "3rd" => findBy(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div.govuk-summary-list__row.govuk-summary-list__row--no-border > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
           case _ => fail(s"$link is not a valid link")
         }
+      case "change" if page == "Confirm underpayment page" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions.govuk-\\!-padding-bottom-0 > a")).click()
       case "change" =>
         linkPos match {
           case "1st" => findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__actions > a")).click()

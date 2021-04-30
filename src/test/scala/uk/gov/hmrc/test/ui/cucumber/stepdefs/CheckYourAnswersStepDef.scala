@@ -259,4 +259,12 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }
+
+  //TODO - The step def below will need updating
+  And("""^I click the (.*) change link on the Check Your Answers page$""") { (pos: String) =>
+    pos match {
+      case "3rd" => findBy(By.cssSelector(s"#main-content > div > div > dl:nth-child(3) > div:nth-child(5) > dd.govuk-summary-list__actions > a")).click()
+      case _ => fail("No change link found")
+    }
+  }
 }

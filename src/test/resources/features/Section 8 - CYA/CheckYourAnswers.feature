@@ -62,3 +62,11 @@
       And I check that within the Your details summary that the value of Telephone number is 0123456789
       And I check that within the Your details summary that the Address contains 1st line: 99 Avenue Road, 2nd line: Anyold Town, postcode: 99JZ 1AA and country: GB
       And I check that within the Payment information summary that the value of By deferment? is No
+
+      #CYA - Acceptance Date
+      And I click the 3rd change link on the Check Your Answers page
+      Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
+      And the user selects the No radio button
+      When clicks the Continue button
+      Then the user should be on the 'Check your answers before sending your disclosure' page
+      And I check that within the Disclosure details summary that the value of Entry acceptance date before 1 January 2021? is No

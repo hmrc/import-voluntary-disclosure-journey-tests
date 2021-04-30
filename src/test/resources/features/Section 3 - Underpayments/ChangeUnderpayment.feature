@@ -16,7 +16,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the import VAT underpayment details' page
-    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £100.00
+    And I check that within the Confirm underpayment details page the total Amount that was paid is a value of £100.00
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £200.00
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
@@ -30,7 +30,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the Customs Duty underpayment details' page
-    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £100.00
+    And I check that within the Confirm underpayment details page the total Amount that was paid is a value of £100.00
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £200.00
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
@@ -40,7 +40,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user enters 280 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the import VAT underpayment details' page
-    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £150.00
+    And I check that within the Confirm underpayment details page the total Amount that was paid is a value of £150.00
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £280.00
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
@@ -50,7 +50,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user enters 320 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the Customs Duty underpayment details' page
-    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £240.00
+    And I check that within the Confirm underpayment details page the total Amount that was paid is a value of £240.00
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £320.00
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
@@ -68,7 +68,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the import VAT underpayment details' page
-    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £100.00
+    And I check that within the Confirm underpayment details page the total Amount that was paid is a value of £100.00
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £200.00
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
@@ -82,7 +82,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the Customs Duty underpayment details' page
-    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £100.00
+    And I check that within the Confirm underpayment details page the total Amount that was paid is a value of £100.00
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £200.00
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
@@ -126,7 +126,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user enters 200 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the import VAT underpayment details' page
-    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £100.00
+    And I check that within the Confirm underpayment details page the total Amount that was paid is a value of £100.00
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £200.00
     When the user clicks the 1st change link for Import VAT on the Confirm underpayment page
     Then the user should be on the 'Change the import VAT underpayment details' page
@@ -134,7 +134,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user enters 500 into the Amended value input field
     When clicks the Continue button
     Then the user should be on the 'Confirm the import VAT underpayment details' page
-    And I check that within the Confirm underpayment details page the total Amount that was paid to HMRC is a value of £100.00
+    And I check that within the Confirm underpayment details page the total Amount that was paid is a value of £100.00
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £500.00
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page

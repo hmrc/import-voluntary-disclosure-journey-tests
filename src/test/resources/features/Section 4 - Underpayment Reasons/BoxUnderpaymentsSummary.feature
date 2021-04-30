@@ -43,11 +43,3 @@ Feature: Check the flow of the Box underpayments summary journey
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Documents you must upload' page
-    And I want to complete section 5: Documents you must upload
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
-    And I want to complete section 6: Contact Details
-    Then the user should be on the 'How will you pay for the duty owed?' page
-    And I want to complete section 7: Deferment Details as Importer with no split
-    Then the user should be on the 'Check your answers before sending your disclosure' page
-    When clicks the Accept and send button
-    Then the user should be on the 'Disclosure complete' page

@@ -9,7 +9,7 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button
 
-    Scenario: A logged in importer is able to add Import VAT underpayment
+    #Import VAT Duty
     Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
     And the user selects the Import VAT radio button
     When clicks the Continue button
@@ -23,7 +23,7 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
-  Scenario: A logged in importer is able to add Customs Duty underpayment
+    #Customs Duty
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Customs Duty radio button
     When clicks the Continue button
@@ -37,7 +37,7 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
-  Scenario: A logged in importer is able to add Excise Duty underpayment
+    #Excise Duty
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Excise Duty radio button
     When clicks the Continue button
@@ -51,7 +51,7 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
-  Scenario: A logged in importer is able to add Additional Duty underpayment
+    #Additional Duty
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Additional Duty radio button
     When clicks the Continue button
@@ -65,7 +65,7 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
-  Scenario: A logged in importer is able to add Definitive Anti-Dumping Duty underpayment
+    #Definitive Anti-Dumping Duty
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Definitive Anti-Dumping Duty radio button
     When clicks the Continue button
@@ -79,7 +79,7 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
-  Scenario: A logged in importer is able to add Provisional Anti-Dumping Duty underpayment
+    #Provisional Anti-Dumping Duty
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Provisional Anti-Dumping Duty radio button
     When clicks the Continue button
@@ -93,7 +93,7 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
-  Scenario: A logged in importer is able to add Definitive Countervailing Duty underpayment
+    #Definitive Countervailing Duty
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Definitive Countervailing Duty radio button
     When clicks the Continue button
@@ -107,7 +107,7 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
-  Scenario: A logged in importer is able to add Provisional Countervailing Duty underpayment
+    #Provisional Countervailing Duty
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Provisional Countervailing Duty radio button
     When clicks the Continue button
@@ -121,7 +121,7 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
-  Scenario: A logged in importer is able to add Customs Duty on Agricultural Products underpayment
+    #Customs Duty on Agricultural Products
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Customs Duty on Agricultural Products radio button
     When clicks the Continue button
@@ -135,7 +135,7 @@ Feature: Check the flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
 
-  Scenario: A logged in importer is able to add Compensatory Duty underpayment
+    #Compensatory Duty
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
     And the user selects the Compensatory Duty radio button
     When clicks the Continue button

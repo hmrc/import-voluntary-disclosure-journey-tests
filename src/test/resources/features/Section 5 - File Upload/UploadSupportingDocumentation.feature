@@ -8,7 +8,7 @@
       And I want to complete section 4: Underpayment Reasons
       Then the user should be on the 'Documents you must upload' page
 
-    Scenario: The user continues to Upload a file
+    #Uploading a file
       And clicks the Continue button
       Then the user should be on the 'Do you have any of these documents?' page
       And the user selects the No radio button
@@ -23,7 +23,7 @@
       Then the user should be on the 'You have uploaded 1 file' page
       And there should be '1' files on the page
 
-    Scenario: The user uploads another file
+    #Uploding another file
       And the user selects the Yes radio button
       And clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
@@ -36,7 +36,7 @@
       Then the user should be on the 'You have uploaded 2 files' page
       And there should be '2' files on the page
 
-    Scenario: The user removes a file
+    #Removing a file
       And the user clicks the 1st remove link for TestDocument on the Upload Another page
       Then the user should be on the 'Are you sure you want to remove this file?' page
       And the user selects the Yes radio button
@@ -44,7 +44,7 @@
       Then the user should be on the 'You have uploaded 1 file' page
       And there should be '1' files on the page
 
-    Scenario: The user removes another file
+    #Removing another file
       And the user clicks the 1st remove link for TestDocument on the Upload Another page
       Then the user should be on the 'Are you sure you want to remove this file?' page
       And the user selects the Yes radio button

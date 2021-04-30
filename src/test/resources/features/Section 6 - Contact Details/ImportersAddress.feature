@@ -54,8 +54,6 @@
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
       Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-      And I want to complete section 7: Deferment Details as Importer with no split
-      Then the user should be on the 'Check your answers before sending your disclosure' page
 
     Scenario: A Representative navigates through the flow and enters the importers address
       Given I want to complete section 1: Service Entry for Organisation
@@ -110,5 +108,3 @@
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
       Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-      And I want to complete section 7: Deferment Details as Representative with no split
-      Then the user should be on the 'Check your answers before sending your disclosure' page

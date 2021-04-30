@@ -246,7 +246,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
 
   And("""^I check that within the Confirm underpayment details page the total (.*) is a value of (.*)$""") { (field: String, value: String) =>
     field match {
-      case "Amount that was paid to HMRC" =>
+      case "Amount that was paid" =>
         val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText
         val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value.govuk-\\!-padding-bottom-0")).getText
         assertResult(field)(actualField)

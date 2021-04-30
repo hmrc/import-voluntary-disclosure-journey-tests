@@ -73,15 +73,3 @@ Feature: Testing the handoff to address lookup for capturing Representatives Add
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
-    And I want to complete section 3: Underpayments with B00~A00~E00
-    Then the user should be on the 'You must tell us the reason for the underpayment' page
-    And I want to complete section 4: Underpayment Reasons
-    Then the user should be on the 'Documents you must upload' page
-    And I want to complete section 5: Documents you must upload
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
-    And I want to complete section 6: Contact Details
-    Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-    And I want to complete section 7: Deferment Details as Representative with no split
-    Then the user should be on the 'Check your answers before sending your disclosure' page
-    When clicks the Accept and send button
-    Then the user should be on the 'Disclosure complete' page

@@ -64,11 +64,11 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
         val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div > dd.govuk-summary-list__value")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
-//      case "Customs procedure code changed?" =>
-//        val actualField = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(2) > dt")).getText
-//        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div:nth-child(2) > dd.govuk-summary-list__value")).getText
-//        assertResult(field)(actualField)
-//        assertResult(value)(actualFieldValue)
+      //      case "Customs procedure code changed?" =>
+      //        val actualField = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(5) > div:nth-child(2) > dt")).getText
+      //        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(7) > div:nth-child(2) > dd.govuk-summary-list__value")).getText
+      //        assertResult(field)(actualField)
+      //        assertResult(value)(actualFieldValue)
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }
@@ -116,9 +116,9 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(9) > div:nth-child(4) > dd.govuk-summary-list__value")).getText.trim
     val expectedFieldValue =
       s"""|$line1
-         |$line2
-         |$postcode
-         |$country""".stripMargin
+          |$line2
+          |$postcode
+          |$country""".stripMargin
     assertResult(field)(actualField)
     assertResult(expectedFieldValue)(actualFieldValue)
   }
@@ -221,20 +221,11 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     }
   }
 
-  And("""^I check that within the Underpayment box summary that the (.*) entry has a value of (.*) and level of (.*)$""") { (pos: String, boxNumber: String, level: String) =>
-    pos match {
-      case "1st" =>
-        val actualBoxNumber = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText
-        val actualLevel = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value")).getText
-        assertResult(boxNumber)(actualBoxNumber)
-        assertResult(level)(actualLevel)
-      case "2nd" =>
-        val actualBoxNumber = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dt")).getText
-        val actualLevel = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(2) > dd.govuk-summary-list__value")).getText
-        assertResult(boxNumber)(actualBoxNumber)
-        assertResult(level)(actualLevel)
-      case _ => fail(s"Position: $pos is not valid, please investigate")
-    }
+  And("""^I check that within the Underpayment box summary that entry (.*) has a value of (.*) and level of (.*)$""") { (pos: String, boxNumber: String, level: String) =>
+    val actualBoxNumber = findBy(By.cssSelector(s"#main-content > div > div > dl > div:nth-child($pos) > dt")).getText
+    val actualLevel = findBy(By.cssSelector(s"#main-content > div > div > dl > div:nth-child($pos) > dd.govuk-summary-list__value")).getText
+    assertResult(boxNumber)(actualBoxNumber)
+    assertResult(level)(actualLevel)
   }
 
   And("""^I check that within the Underpayment summary that the (.*) entry has a duty value of (.*) and total value of (.*)$""") { (pos: String, dutyType: String, dutyValue: String) =>

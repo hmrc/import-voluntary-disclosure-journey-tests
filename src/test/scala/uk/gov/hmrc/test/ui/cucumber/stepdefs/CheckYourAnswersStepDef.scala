@@ -68,7 +68,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
 
   And("""^I check that within the Importer details summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
     val expectedHeading = "About the Importer"
-    val headingId = "About the Importer".replaceAll("\\s","")
+    val headingId = expectedHeading.replaceAll("\\s","")
     val actualHeading = findBy(By.cssSelector(s"""h2[id="${headingId}"]""")).getText
     assertResult(expectedHeading)(actualHeading)
 
@@ -104,7 +104,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
 
   And("""^I check that within the Underpayment details summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
     val expectedHeading = "Underpayment details"
-    val headingId = "Underpayment details".replaceAll("\\s","")
+    val headingId = expectedHeading.replaceAll("\\s","")
     val actualHeading = findBy(By.cssSelector(s"""h2[id="${headingId}"]""")).getText
     assertResult(expectedHeading)(actualHeading)
 
@@ -120,7 +120,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
 
   And("""^I check that within the Your details summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
     val expectedHeading = "Your details"
-    val headingId = "Your details".replaceAll("\\s","")
+    val headingId = expectedHeading.replaceAll("\\s","")
     val actualHeading = findBy(By.cssSelector(s"""h2[id="${headingId}"]""")).getText
     assertResult(expectedHeading)(actualHeading)
 

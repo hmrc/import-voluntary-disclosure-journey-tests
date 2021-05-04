@@ -293,12 +293,8 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     }
   }
 
-  And("""^I click the (.*) change link in the (.*) section on the Check Your Answers page$""") { (pos: String, section: String) =>
+  And("""^I click the change link on row (.*) in the (.*) section on the Check Your Answers page$""") { (pos: Int, section: String) =>
     val headingId = section.replaceAll("\\s","")
-    pos match {
-//      case "3rd" => findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__actions > a""")).click()
-      case "3rd" => findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div > dd.govuk-summary-list__actions > a""")).click()
-      case _ => fail("No change link found")
-    }
+    findElementsBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div > dd.govuk-summary-list__actions > a""")).get(pos-1).click()
   }
 }

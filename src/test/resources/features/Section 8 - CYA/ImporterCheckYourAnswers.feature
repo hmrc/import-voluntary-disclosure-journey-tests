@@ -105,6 +105,15 @@
       And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is Yes
 #      And I check that within the Entry details summary that the value of Customs procedure code is 1234A67
 
+        # Change Entry Details check
+      And I click the 3rd change link in the Disclosure details section on the Check Your Answers page
+      Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
+      And the user selects the No radio button
+      When clicks the Continue button
+      Then the user should be on the 'Check your answers before sending your disclosure' page
+      And I check that within the Disclosure details summary that the value of Entry acceptance date before 1 January 2021? is No
+
+
       # Underpayment details checks
 #      And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
 

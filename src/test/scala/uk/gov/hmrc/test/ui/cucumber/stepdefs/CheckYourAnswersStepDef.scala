@@ -294,8 +294,10 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
   }
 
   And("""^I click the (.*) change link in the (.*) section on the Check Your Answers page$""") { (pos: String, section: String) =>
+    val headingId = section.replaceAll("\\s","")
     pos match {
-      case "3rd" => findBy(By.cssSelector(s"#main-content > div > div > dl:nth-child(3) > div:nth-child(5) > dd.govuk-summary-list__actions > a")).click()
+//      case "3rd" => findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__actions > a""")).click()
+      case "3rd" => findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div > dd.govuk-summary-list__actions > a""")).click()
       case _ => fail("No change link found")
     }
   }

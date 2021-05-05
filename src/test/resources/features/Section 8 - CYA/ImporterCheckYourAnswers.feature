@@ -97,17 +97,18 @@
       When clicks the Continue button
       Then the user should be on the 'Check your answers before sending your disclosure' page
 
-      # Disclosure details checks
-      And I check that within the Entry details summary that the value of Number of entries is One
+      # Entry details checks
+      And I check that within the Entry details summary that the value of Number of entries is One Entry
       And I check that within the Entry details summary that the value of EPU is 123
       And I check that within the Entry details summary that the value of Entry number is 123456Q
       And I check that within the Entry details summary that the value of Entry date is 31 December 2020
-      And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is Yes
-#      And I check that within the Entry details summary that the value of Customs procedure code is 1234A67
+      And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is Before 1 January 2021
+      And I check that within the Entry details summary that the value of One customs procedure code? is Yes
+      And I check that within the Entry details summary that the value of Customs procedure code is 1234A67
 
-      # Change Disclosure details
+      # Change Entry details
         # Entry details change
-      And I click the change link on row 2 in the Disclosure details section on the Check Your Answers page
+      And I click the change link on row 2 in the Entry details section on the Check Your Answers page
       Then the user should be on the 'Entry details' page
       And the user enters 456 into the EPU number input field
       And the user enters 987654B into the Entry number input field
@@ -120,12 +121,12 @@
       And I check that within the Entry details summary that the value of Entry number is 987654B
       And I check that within the Entry details summary that the value of Entry date is 25 February 2021
         # Acceptance Date change
-      And I click the change link on row 3 in the Disclosure details section on the Check Your Answers page
+      And I click the change link on row 3 in the Entry details section on the Check Your Answers page
       Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
       And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'Check your answers before sending your disclosure' page
-      And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is No
+      And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is On or after 1 January 2021
 
 
       # Underpayment details checks

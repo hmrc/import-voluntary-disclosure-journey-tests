@@ -21,7 +21,7 @@ import org.openqa.selenium.By
 class CheckYourAnswersStepDef extends ShutdownStepDef {
 
   And("""^I check that within the Entry details summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
-    val expectedHeading = "Disclosure details"
+    val expectedHeading = "Entry details"
     val headingId = expectedHeading.replaceAll("\\s","")
     val actualHeading = findBy(By.cssSelector(s"""h2[id="${headingId}"]""")).getText
     assertResult(expectedHeading)(actualHeading)
@@ -52,7 +52,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(5) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
-      case "One customs procedure code" =>
+      case "One customs procedure code?" =>
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(6) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(6) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)

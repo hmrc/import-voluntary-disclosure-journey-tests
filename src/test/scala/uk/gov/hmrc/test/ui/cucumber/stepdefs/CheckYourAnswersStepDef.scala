@@ -292,4 +292,9 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }
+
+  And("""^I click the change link on row (.*) in the (.*) section on the Check Your Answers page$""") { (pos: Int, section: String) =>
+    val headingId = section.replaceAll("\\s","")
+    findElementsBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div > dd.govuk-summary-list__actions > a""")).get(pos-1).click()
+  }
 }

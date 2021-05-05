@@ -118,11 +118,21 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^the user enters (.*) into the (.*) input field$""") { (value: String, field: String) =>
     field match {
-      case "EPU number" => findById("epu").sendKeys(value)
-      case "Entry number" => findById("entryNumber").sendKeys(value)
-      case "Entry date day" => findById("entryDate.day").sendKeys(value)
-      case "Entry date month" => findById("entryDate.month").sendKeys(value)
-      case "Entry date year" => findById("entryDate.year").sendKeys(value)
+      case "EPU number" =>
+        findById("epu").clear()
+        findById("epu").sendKeys(value)
+      case "Entry number" =>
+        findById("entryNumber").clear()
+        findById("entryNumber").sendKeys(value)
+      case "Entry date day" =>
+        findById("entryDate.day").clear()
+        findById("entryDate.day").sendKeys(value)
+      case "Entry date month" =>
+        findById("entryDate.month").clear()
+        findById("entryDate.month").sendKeys(value)
+      case "Entry date year" =>
+        findById("entryDate.year").clear()
+        findById("entryDate.year").sendKeys(value)
       case "Original amount" =>
         findById("original").clear()
         findById("original").sendKeys(value)

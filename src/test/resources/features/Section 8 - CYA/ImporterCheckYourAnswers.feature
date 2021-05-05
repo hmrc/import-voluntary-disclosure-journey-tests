@@ -97,7 +97,7 @@
       When clicks the Continue button
       Then the user should be on the 'Check your answers before sending your disclosure' page
 
-      # Entry details checks
+      # Disclosure details checks
       And I check that within the Entry details summary that the value of Number of entries is One
       And I check that within the Entry details summary that the value of EPU is 123
       And I check that within the Entry details summary that the value of Entry number is 123456Q
@@ -105,7 +105,21 @@
       And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is Yes
 #      And I check that within the Entry details summary that the value of Customs procedure code is 1234A67
 
-      # Change Entry details - Acceptance Date change
+      # Change Disclosure details
+        # Entry details change
+      And I click the change link on row 2 in the Disclosure details section on the Check Your Answers page
+      Then the user should be on the 'Entry details' page
+      And the user enters 456 into the EPU number input field
+      And the user enters 987654B into the Entry number input field
+      And the user enters 25 into the Entry date day input field
+      And the user enters 02 into the Entry date month input field
+      And the user enters 2021 into the Entry date year input field
+      When clicks the Continue button
+      Then the user should be on the 'Check your answers before sending your disclosure' page
+      And I check that within the Entry details summary that the value of EPU is 456
+      And I check that within the Entry details summary that the value of Entry number is 987654B
+      And I check that within the Entry details summary that the value of Entry date is 25 February 2021
+        # Acceptance Date change
       And I click the change link on row 3 in the Disclosure details section on the Check Your Answers page
       Then the user should be on the 'Was the entry acceptance date before 1 January 2021?' page
       And the user selects the No radio button

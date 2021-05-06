@@ -122,11 +122,20 @@ Feature: Testing check your answers
       Then the user should be on the 'Check your answers before sending your disclosure' page
 
       # Importer details checks
-    And I check that within the Importer details summary that the value of Name is Test User
-    And I check that within the Importer details summary that the value of Address is 1 Test Street Testtown AA00 0AA GB
-    And I check that within the Importer details summary that the value of Importer has EORI number? is Yes
-    And I check that within the Importer details summary that the value of Importer EORI number is GB345834921000
-    And I check that within the Importer details summary that the value of Importer VAT registered? is Yes
+    And I check that within the About the Importer details summary that the value of Name is Test User
+    And I check that within the About the Importer details summary that the value of Address is 1 Test Street Testtown AA00 0AA GB
+    And I check that within the About the Importer details summary that the value of Importer has EORI number? is Yes
+    And I check that within the About the Importer details summary that the value of Importer EORI number is GB345834921000
+    And I check that within the About the Importer details summary that the value of Importer VAT registered? is Yes
+
+    #Change ImporterDetails section
+    #Change Importer Name
+    And I click the change link on row 1 in the About the Importer section on the Check Your Answers page
+    Then the user should be on the 'What is the importer’s name?' page
+    And the user enters Another User into the importers name input field
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the About the Importer details summary that the value of Name is Another User
 
       # Entry details checks
     And I check that within the Entry details summary that the value of Number of entries is One Entry

@@ -134,10 +134,8 @@ Feature: Testing check your answers
 
       # Your details checks
     And I check that within the Your details summary that the value of Importer or representative? is Importer
-    And I check that within the Your details summary that the value of Contact details row 1 is First last
-    And I check that within the Your details summary that the value of Contact details row 2 is email@email.com
-    And I check that within the Your details summary that the value of Contact details row 3 is 0123456789
-#      And I check that within the Your details summary that the Address contains 1st line: 99 Avenue Road, 2nd line: Anyold Town, postcode: 99JZ 1AA and country: GB
+    And I check that within the Your details summary that the value of Contact details is First last email@email.com 0123456789
+    And I check that within the Your details summary that the value of Address is 99 Avenue Road Anyold Town 99JZ 1AA GB
       # Change your details name, email and phone
     And I click the change link on row 2 in the Your details section on the Check Your Answers page
     Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
@@ -146,9 +144,7 @@ Feature: Testing check your answers
     And the user enters 0987654321 into the UK telephone number input field
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
-    And I check that within the Your details summary that the value of Contact details row 1 is New name
-    And I check that within the Your details summary that the value of Contact details row 2 is alternative@email.com
-    And I check that within the Your details summary that the value of Contact details row 3 is 0987654321
+    And I check that within the Your details summary that the value of Contact details is New name alternative@email.com 0987654321
 
       # Payment details checks
 #      And I check that within the Payment information summary that the value of By deferment? is No

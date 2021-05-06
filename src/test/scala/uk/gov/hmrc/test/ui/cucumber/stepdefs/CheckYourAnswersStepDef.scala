@@ -130,26 +130,16 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
-      case "Contact details row 1" =>
+      case "Contact details" =>
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
-        assertResult("Contact details")(actualField)
-        assertResult(value)(actualFieldValue)
-      case "Contact details row 2" =>
-        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
-        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd""")).getText
-        assertResult("Contact details")(actualField)
-        assertResult(value)(actualFieldValue)
-      case "Contact details row 3" =>
-        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
-        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(4) > dd""")).getText
-        assertResult("Contact details")(actualField)
-        assertResult(value)(actualFieldValue)
+        assertResult(field)(actualField)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
       case "Address" =>
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
-        assertResult(value)(actualFieldValue)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }

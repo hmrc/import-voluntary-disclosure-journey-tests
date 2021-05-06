@@ -130,6 +130,7 @@
 
 
       # Underpayment details checks
+      And I check that within the Underpayment details summary that the value of (.*) is (.*)
 #      And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
 
       # Your details checks

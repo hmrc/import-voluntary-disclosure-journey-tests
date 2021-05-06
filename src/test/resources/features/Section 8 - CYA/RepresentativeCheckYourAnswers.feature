@@ -87,8 +87,10 @@
       And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
-      And the user selects the No radio button
+      And the user selects the Yes radio button
       When clicks the Continue button
+      Then the user should be on the 'Tell us the extra information about the underpayment' page
+      And the user enters More Information into the More Information input field
       Then the user should be on the 'Documents you must upload' page
       When clicks the Continue button
       Then the user should be on the 'Do you have any of these documents?' page
@@ -157,7 +159,7 @@
       And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is On or after 1 January 2021
 
       # Underpayment details checks
-#      And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
+      And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
 
       # Your details checks
 #      And I check that within the Your details summary that the value of Name is First last

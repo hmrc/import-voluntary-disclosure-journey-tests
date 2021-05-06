@@ -136,7 +136,7 @@
       And I check that within the Your details summary that the value of Name is First last
       And I check that within the Your details summary that the value of Email address is email@email.com
       And I check that within the Your details summary that the value of Telephone number is 0123456789
-      And I check that within the Your details summary that the Address contains 1st line: 99 Avenue Road, 2nd line: Anyold Town, postcode: 99JZ 1AA and country: GB
+#      And I check that within the Your details summary that the Address contains 1st line: 99 Avenue Road, 2nd line: Anyold Town, postcode: 99JZ 1AA and country: GB
       # Change your details name, email and phone
       And I click the change link on row 1 in the Your details section on the Check Your Answers page
       Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page

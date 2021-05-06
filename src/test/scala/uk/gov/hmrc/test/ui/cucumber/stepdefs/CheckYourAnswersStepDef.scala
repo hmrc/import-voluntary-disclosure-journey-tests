@@ -135,6 +135,21 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
+      case "Name" => // TODO - remove when changeing to contact details
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Email address" => // TODO - remove when changeing to contact details
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Telephone number" => // TODO - remove when changeing to contact details
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
       case "Address" =>
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText

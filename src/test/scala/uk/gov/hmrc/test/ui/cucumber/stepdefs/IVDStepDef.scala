@@ -141,9 +141,15 @@ class IVDStepDef extends ShutdownStepDef {
         findById("amended").sendKeys(value)
       case "Customs procedure code" =>
         findById("cpc").sendKeys(value)
-      case "Name" => findById("fullName").sendKeys(value)
-      case "Email address" => findById("email").sendKeys(value)
-      case "UK telephone number" => findById("phoneNumber").sendKeys(value)
+      case "Name" =>
+        findById("fullName").clear()
+        findById("fullName").sendKeys(value)
+      case "Email address" =>
+        findById("email").clear()
+        findById("email").sendKeys(value)
+      case "UK telephone number" =>
+        findById("phoneNumber").clear()
+        findById("phoneNumber").sendKeys(value)
       case "Box Number" =>
         findById("value").clear()
         findById("value").sendKeys(value)

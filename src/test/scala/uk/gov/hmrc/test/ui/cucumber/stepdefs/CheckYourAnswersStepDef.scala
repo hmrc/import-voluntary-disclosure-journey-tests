@@ -66,7 +66,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     }
   }
 
-  And("""^I check that within the Importer details summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
+  And("""^I check that within the About the Importer details summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
     val expectedHeading = "About the Importer"
     val headingId = expectedHeading.replaceAll("\\s","")
     val actualHeading = findBy(By.cssSelector(s"""h2[id="${headingId}"]""")).getText

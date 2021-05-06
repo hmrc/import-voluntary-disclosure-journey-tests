@@ -1,4 +1,4 @@
-@all @cya
+@all @cya @cyatest
 Feature: Testing check your answers
 
   Scenario: User navigates to check your answers
@@ -91,6 +91,7 @@ Feature: Testing check your answers
       When clicks the Continue button
       Then the user should be on the 'Tell us the extra information about the underpayment' page
       And the user enters More Information into the More Information input field
+      When clicks the Continue button
       Then the user should be on the 'Documents you must upload' page
       When clicks the Continue button
       Then the user should be on the 'Do you have any of these documents?' page
@@ -159,6 +160,10 @@ Feature: Testing check your answers
     And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is On or after 1 January 2021
 
       # Underpayment details checks
+      And I check that within the Underpayment details summary that the value of Total owed to HMRC is £200.00
+      And I check that within the Underpayment details summary that the value of Reason for underpayment is 1 reason given
+      And I check that within the Underpayment details summary that the value of Tell us anything else? is Yes
+      And I check that within the Underpayment details summary that the value of Extra information is More Information
       And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
 
       # Your details checks

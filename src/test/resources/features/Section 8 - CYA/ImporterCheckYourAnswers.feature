@@ -66,7 +66,10 @@ Feature: Testing check your answers
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
-    And the user selects the No radio button
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Tell us the extra information about the underpayment' page
+    And the user enters More Information into the More Information input field
     When clicks the Continue button
     Then the user should be on the 'Documents you must upload' page
     When clicks the Continue button
@@ -130,8 +133,11 @@ Feature: Testing check your answers
 
 
       # Underpayment details checks
-      And I check that within the Underpayment details summary that the value of (.*) is (.*)
-#      And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
+    And I check that within the Underpayment details summary that the value of Total owed to HMRC is £200.00
+    And I check that within the Underpayment details summary that the value of Reason for underpayment is 1 reason given
+    And I check that within the Underpayment details summary that the value of Tell us anything else? is Yes
+    And I check that within the Underpayment details summary that the value of Extra information is More Information
+    And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
 
       # Your details checks
     And I check that within the Your details summary that the value of Name is First last

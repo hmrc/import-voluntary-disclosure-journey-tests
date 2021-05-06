@@ -166,7 +166,9 @@ class IVDStepDef extends ShutdownStepDef {
       case "Amended value" =>
         findById("amended").clear()
         findById("amended").sendKeys(value)
-      case "importers name" => findById("fullName").sendKeys(value)
+      case "importers name" =>
+        findById("fullName").clear()
+        findById("fullName").sendKeys(value)
       case "postcode" => findById("postcode").sendKeys(value)
       case "Country" => findById("countryCode").sendKeys(s"$value\n")
       case "Address Line 1" => findById("line1").sendKeys(value)

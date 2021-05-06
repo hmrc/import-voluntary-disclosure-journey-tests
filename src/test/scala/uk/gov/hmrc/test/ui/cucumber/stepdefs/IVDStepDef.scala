@@ -118,11 +118,21 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^the user enters (.*) into the (.*) input field$""") { (value: String, field: String) =>
     field match {
-      case "EPU number" => findById("epu").sendKeys(value)
-      case "Entry number" => findById("entryNumber").sendKeys(value)
-      case "Entry date day" => findById("entryDate.day").sendKeys(value)
-      case "Entry date month" => findById("entryDate.month").sendKeys(value)
-      case "Entry date year" => findById("entryDate.year").sendKeys(value)
+      case "EPU number" =>
+        findById("epu").clear()
+        findById("epu").sendKeys(value)
+      case "Entry number" =>
+        findById("entryNumber").clear()
+        findById("entryNumber").sendKeys(value)
+      case "Entry date day" =>
+        findById("entryDate.day").clear()
+        findById("entryDate.day").sendKeys(value)
+      case "Entry date month" =>
+        findById("entryDate.month").clear()
+        findById("entryDate.month").sendKeys(value)
+      case "Entry date year" =>
+        findById("entryDate.year").clear()
+        findById("entryDate.year").sendKeys(value)
       case "Original amount" =>
         findById("original").clear()
         findById("original").sendKeys(value)
@@ -131,9 +141,15 @@ class IVDStepDef extends ShutdownStepDef {
         findById("amended").sendKeys(value)
       case "Customs procedure code" =>
         findById("cpc").sendKeys(value)
-      case "Name" => findById("fullName").sendKeys(value)
-      case "Email address" => findById("email").sendKeys(value)
-      case "UK telephone number" => findById("phoneNumber").sendKeys(value)
+      case "Name" =>
+        findById("fullName").clear()
+        findById("fullName").sendKeys(value)
+      case "Email address" =>
+        findById("email").clear()
+        findById("email").sendKeys(value)
+      case "UK telephone number" =>
+        findById("phoneNumber").clear()
+        findById("phoneNumber").sendKeys(value)
       case "Box Number" =>
         findById("value").clear()
         findById("value").sendKeys(value)
@@ -150,7 +166,9 @@ class IVDStepDef extends ShutdownStepDef {
       case "Amended value" =>
         findById("amended").clear()
         findById("amended").sendKeys(value)
-      case "importers name" => findById("fullName").sendKeys(value)
+      case "importers name" =>
+        findById("fullName").clear()
+        findById("fullName").sendKeys(value)
       case "postcode" => findById("postcode").sendKeys(value)
       case "Country" => findById("countryCode").sendKeys(s"$value\n")
       case "Address Line 1" => findById("line1").sendKeys(value)

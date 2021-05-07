@@ -72,51 +72,54 @@ Feature: Testing check your answers
     And the user selects the No radio button
     When clicks the Continue button
 
-    Then the user should be on the 'You must tell us the reason for the underpayment' page
-    When clicks the Continue button
-    Then the user should be on the 'What was the reason for the underpayment?' page
-    And the user selects the Box 22 Invoice currency and total amount invoiced radio button
-    When clicks the Continue button
-    Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
-    And the user enters EUR125.00 into the Original value input field
-    And the user enters GBP190.50 into the Amended value input field
-    When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When clicks the Continue button
-    Then the user should be on the 'You have added 1 reason for the underpayment' page
-    And the user selects the No radio button
-    When clicks the Continue button
-    Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
-    And the user selects the No radio button
-    When clicks the Continue button
-    Then the user should be on the 'Documents you must upload' page
-    When clicks the Continue button
-    Then the user should be on the 'Do you have any of these documents?' page
-    And the user selects the No radio button
-    And clicks the Continue button
-    Then the user should be on the 'Upload supporting documentation' page
-    And I get the data from the page
-    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-    And I call the success redirect
-    Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler and get response 204
-    And clicks the Refresh button
-    Then the user should be on the 'You have uploaded 1 file' page
-    And there should be '1' files on the page
-    And the user selects the No radio button
-    And clicks the Continue button
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
-    And the user enters First last into the Name input field
-    And the user enters email@email.com into the Email address input field
-    And the user enters 0123456789 into the UK telephone number input field
-    When clicks the Continue button
-    Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
-    And the user selects the Yes radio button
-    When clicks the Continue button
-    Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-    And the user selects the Another payment method radio button
-    When clicks the Continue button
-    Then the user should be on the 'Check your answers before sending your disclosure' page
+      Then the user should be on the 'You must tell us the reason for the underpayment' page
+      When clicks the Continue button
+      Then the user should be on the 'What was the reason for the underpayment?' page
+      And the user selects the Box 22 Invoice currency and total amount invoiced radio button
+      When clicks the Continue button
+      Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
+      And the user enters EUR125.00 into the Original value input field
+      And the user enters GBP190.50 into the Amended value input field
+      When clicks the Continue button
+      Then the user should be on the 'Confirm the details of the reason for underpayment' page
+      When clicks the Continue button
+      Then the user should be on the 'You have added 1 reason for the underpayment' page
+      And the user selects the No radio button
+      When clicks the Continue button
+      Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
+      And the user selects the Yes radio button
+      When clicks the Continue button
+      Then the user should be on the 'Tell us the extra information about the underpayment' page
+      And the user enters More Information into the More Information input field
+      When clicks the Continue button
+      Then the user should be on the 'Documents you must upload' page
+      When clicks the Continue button
+      Then the user should be on the 'Do you have any of these documents?' page
+      And the user selects the No radio button
+      And clicks the Continue button
+      Then the user should be on the 'Upload supporting documentation' page
+      And I get the data from the page
+      And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+      And I call the success redirect
+      Then the user should be on the 'Upload progress' page
+      And I call the upscan callback handler and get response 204
+      And clicks the Refresh button
+      Then the user should be on the 'You have uploaded 1 file' page
+      And there should be '1' files on the page
+      And the user selects the No radio button
+      And clicks the Continue button
+      Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+      And the user enters First last into the Name input field
+      And the user enters email@email.com into the Email address input field
+      And the user enters 0123456789 into the UK telephone number input field
+      When clicks the Continue button
+      Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
+      And the user selects the Yes radio button
+      When clicks the Continue button
+      Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
+      And the user selects the Another payment method radio button
+      When clicks the Continue button
+      Then the user should be on the 'Check your answers before sending your disclosure' page
 
       # Importer details checks
     And I check that within the About the Importer details summary that the value of Name is Test User
@@ -166,7 +169,11 @@ Feature: Testing check your answers
     And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is On or after 1 January 2021
 
       # Underpayment details checks
-#      And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
+      And I check that within the Underpayment details summary that the value of Total owed to HMRC is £200.00
+      And I check that within the Underpayment details summary that the value of Reason for underpayment is 1 reason given
+      And I check that within the Underpayment details summary that the value of Tell us anything else? is Yes
+      And I check that within the Underpayment details summary that the value of Extra information is More Information
+      And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
 
       # Your details checks
     And I check that within the Your details summary that the value of Importer or representative? is Representative

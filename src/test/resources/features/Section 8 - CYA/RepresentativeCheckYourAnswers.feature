@@ -142,7 +142,7 @@ Feature: Testing check your answers
     And I check that within the Entry details summary that the value of EPU is 123
     And I check that within the Entry details summary that the value of Entry number is 123456Q
     And I check that within the Entry details summary that the value of Entry date is 31 December 2020
-    And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is Before 1 January 2021
+    And I check that within the Entry details summary that the value of Acceptance date is Before 1 January 2021
     And I check that within the Entry details summary that the value of One customs procedure code? is Yes
     And I check that within the Entry details summary that the value of Customs procedure code is 1234A67
 
@@ -166,7 +166,7 @@ Feature: Testing check your answers
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
-    And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is On or after 1 January 2021
+    And I check that within the Entry details summary that the value of Acceptance date is On or after 1 January 2021
 
       # Underpayment details checks
       And I check that within the Underpayment details summary that the value of Total owed to HMRC is £200.00

@@ -137,6 +137,19 @@ Feature: Testing check your answers
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the About the Importer details summary that the value of Name is Another User
 
+    #Change Importer Address
+    And I click the change link on row 2 in the About the Importer section on the Check Your Answers page
+    Then the user should be on the 'What address should we send the importer’s copy of the demand note to?' page
+    And the user enters ZZ11ZZ into the postcode input field
+    When clicks the Continue button
+    Then the user should be on the 'Select the importer’s address' page
+    And the user selects the 2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ radio button
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the importer’s address' page
+    When clicks the Confirm address button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the About the Importer details summary that the value of Address is 2 Other Place Some District Anytown ZZ1 1ZZ GB
+
       # Entry details checks
     And I check that within the Entry details summary that the value of Number of entries is One Entry
     And I check that within the Entry details summary that the value of EPU is 123

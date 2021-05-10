@@ -34,7 +34,7 @@ class IVDStepDef extends ShutdownStepDef {
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).clear()
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).sendKeys("EORINumber")
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).clear()
-    driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys("GB987654321000")
+    driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys("GB021111240000")
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
   }
 

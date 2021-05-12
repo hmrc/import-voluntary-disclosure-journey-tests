@@ -34,7 +34,7 @@ Feature: Checking the acceptance date flow through the service
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Representative radio button
     When clicks the Continue button
-    Then the user should be on the 'What is the importer’s name?' page
+    Then the user should be on the 'What is the name of the importer?' page
     And the user enters Test User into the importers name input field
     When clicks the Continue button
     Then the user should be on the 'What address should we send the importer’s copy of the demand note to?' page

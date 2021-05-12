@@ -47,7 +47,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(4) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
-      case "Entry acceptance date before 1 January 2021?" =>
+      case "Acceptance date" =>
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(5) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(5) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
@@ -109,9 +109,29 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     assertResult(expectedHeading)(actualHeading)
 
     field match {
-      case "1 file uploaded" =>
+      case "Total owed to HMRC" =>
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Reason for underpayment" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Tell us anything else?" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Extra information" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(4) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(4) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "1 file uploaded" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(5) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(5) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
       case _ => fail(s"Field: $field is not valid, please investigate")
@@ -134,27 +154,12 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
-        assertResult(value)(actualFieldValue)
-      case "Name" => // TODO - remove when changeing to contact details
-        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dt""")).getText
-        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dd.govuk-summary-list__value""")).getText
-        assertResult(field)(actualField)
-        assertResult(value)(actualFieldValue)
-      case "Email address" => // TODO - remove when changeing to contact details
-        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
-        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
-        assertResult(field)(actualField)
-        assertResult(value)(actualFieldValue)
-      case "Telephone number" => // TODO - remove when changeing to contact details
-        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dt""")).getText
-        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
-        assertResult(field)(actualField)
-        assertResult(value)(actualFieldValue)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
       case "Address" =>
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
-        assertResult(value)(actualFieldValue)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }

@@ -7,7 +7,7 @@ Feature: Testing check your answers
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Representative radio button
     When clicks the Continue button
-    Then the user should be on the 'What is the importer’s name?' page
+    Then the user should be on the 'What is the name of the importer?' page
     And the user enters Test User into the importers name input field
     When clicks the Continue button
     Then the user should be on the 'What address should we send the importer’s copy of the demand note to?' page
@@ -72,51 +72,54 @@ Feature: Testing check your answers
     And the user selects the No radio button
     When clicks the Continue button
 
-    Then the user should be on the 'You must tell us the reason for the underpayment' page
-    When clicks the Continue button
-    Then the user should be on the 'What was the reason for the underpayment?' page
-    And the user selects the Box 22 Invoice currency and total amount invoiced radio button
-    When clicks the Continue button
-    Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
-    And the user enters EUR125.00 into the Original value input field
-    And the user enters GBP190.50 into the Amended value input field
-    When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When clicks the Continue button
-    Then the user should be on the 'You have added 1 reason for the underpayment' page
-    And the user selects the No radio button
-    When clicks the Continue button
-    Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
-    And the user selects the No radio button
-    When clicks the Continue button
-    Then the user should be on the 'Documents you must upload' page
-    When clicks the Continue button
-    Then the user should be on the 'Do you have any of these documents?' page
-    And the user selects the No radio button
-    And clicks the Continue button
-    Then the user should be on the 'Upload supporting documentation' page
-    And I get the data from the page
-    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-    And I call the success redirect
-    Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler and get response 204
-    And clicks the Refresh button
-    Then the user should be on the 'You have uploaded 1 file' page
-    And there should be '1' files on the page
-    And the user selects the No radio button
-    And clicks the Continue button
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
-    And the user enters First last into the Name input field
-    And the user enters email@email.com into the Email address input field
-    And the user enters 0123456789 into the UK telephone number input field
-    When clicks the Continue button
-    Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
-    And the user selects the Yes radio button
-    When clicks the Continue button
-    Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-    And the user selects the Another payment method radio button
-    When clicks the Continue button
-    Then the user should be on the 'Check your answers before sending your disclosure' page
+      Then the user should be on the 'You must tell us the reason for the underpayment' page
+      When clicks the Continue button
+      Then the user should be on the 'What was the reason for the underpayment?' page
+      And the user selects the Box 22 Invoice currency and total amount invoiced radio button
+      When clicks the Continue button
+      Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
+      And the user enters EUR125.00 into the Original value input field
+      And the user enters GBP190.50 into the Amended value input field
+      When clicks the Continue button
+      Then the user should be on the 'Confirm the details of the reason for underpayment' page
+      When clicks the Continue button
+      Then the user should be on the 'You have added 1 reason for the underpayment' page
+      And the user selects the No radio button
+      When clicks the Continue button
+      Then the user should be on the 'Do you want to tell us anything else about the underpayment?' page
+      And the user selects the Yes radio button
+      When clicks the Continue button
+      Then the user should be on the 'Tell us the extra information about the underpayment' page
+      And the user enters More Information into the More Information input field
+      When clicks the Continue button
+      Then the user should be on the 'Documents you must upload' page
+      When clicks the Continue button
+      Then the user should be on the 'Do you have any of these documents?' page
+      And the user selects the No radio button
+      And clicks the Continue button
+      Then the user should be on the 'Upload supporting documentation' page
+      And I get the data from the page
+      And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+      And I call the success redirect
+      Then the user should be on the 'Upload progress' page
+      And I call the upscan callback handler and get response 204
+      And clicks the Refresh button
+      Then the user should be on the 'You have uploaded 1 file' page
+      And there should be '1' files on the page
+      And the user selects the No radio button
+      And clicks the Continue button
+      Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+      And the user enters First last into the Name input field
+      And the user enters email@email.com into the Email address input field
+      And the user enters 0123456789 into the UK telephone number input field
+      When clicks the Continue button
+      Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
+      And the user selects the Yes radio button
+      When clicks the Continue button
+      Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
+      And the user selects the Another payment method radio button
+      When clicks the Continue button
+      Then the user should be on the 'Check your answers before sending your disclosure' page
 
       # Importer details checks
     And I check that within the About the Importer details summary that the value of Name is Test User
@@ -128,18 +131,31 @@ Feature: Testing check your answers
     #Change ImporterDetails section
     #Change Importer Name
     And I click the change link on row 1 in the About the Importer section on the Check Your Answers page
-    Then the user should be on the 'What is the importer’s name?' page
+    Then the user should be on the 'What is the name of the importer?' page
     And the user enters Another User into the importers name input field
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the About the Importer details summary that the value of Name is Another User
+
+    #Change Importer Address
+    And I click the change link on row 2 in the About the Importer section on the Check Your Answers page
+    Then the user should be on the 'What address should we send the importer’s copy of the demand note to?' page
+    And the user enters ZZ11ZZ into the postcode input field
+    When clicks the Continue button
+    Then the user should be on the 'Select the importer’s address' page
+    And the user selects the 2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ radio button
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the importer’s address' page
+    When clicks the Confirm address button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the About the Importer details summary that the value of Address is 2 Other Place Some District Anytown ZZ1 1ZZ GB
 
       # Entry details checks
     And I check that within the Entry details summary that the value of Number of entries is One Entry
     And I check that within the Entry details summary that the value of EPU is 123
     And I check that within the Entry details summary that the value of Entry number is 123456Q
     And I check that within the Entry details summary that the value of Entry date is 31 December 2020
-    And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is Before 1 January 2021
+    And I check that within the Entry details summary that the value of Acceptance date is Before 1 January 2021
     And I check that within the Entry details summary that the value of One customs procedure code? is Yes
     And I check that within the Entry details summary that the value of Customs procedure code is 1234A67
 
@@ -163,27 +179,28 @@ Feature: Testing check your answers
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
-    And I check that within the Entry details summary that the value of Entry acceptance date before 1 January 2021? is On or after 1 January 2021
+    And I check that within the Entry details summary that the value of Acceptance date is On or after 1 January 2021
 
       # Underpayment details checks
-#      And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
+      And I check that within the Underpayment details summary that the value of Total owed to HMRC is £200.00
+      And I check that within the Underpayment details summary that the value of Reason for underpayment is 1 reason given
+      And I check that within the Underpayment details summary that the value of Tell us anything else? is Yes
+      And I check that within the Underpayment details summary that the value of Extra information is More Information
+      And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
 
-            # Your details checks
-    And I check that within the Your details summary that the value of Name is First last
-    And I check that within the Your details summary that the value of Email address is email@email.com
-    And I check that within the Your details summary that the value of Telephone number is 0123456789
-#      And I check that within the Your details summary that the Address contains 1st line: 99 Avenue Road, 2nd line: Anyold Town, postcode: 99JZ 1AA and country: GB
+      # Your details checks
+    And I check that within the Your details summary that the value of Importer or representative? is Representative
+    And I check that within the Your details summary that the value of Contact details is First last email@email.com 0123456789
+    And I check that within the Your details summary that the value of Address is 99 Avenue Road Anyold Town 99JZ 1AA GB
       # Change your details name, email and phone
-    And I click the change link on row 1 in the Your details section on the Check Your Answers page
+    And I click the change link on row 2 in the Your details section on the Check Your Answers page
     Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
     And the user enters New name into the Name input field
     And the user enters alternative@email.com into the Email address input field
     And the user enters 0987654321 into the UK telephone number input field
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
-    And I check that within the Your details summary that the value of Name is New name
-    And I check that within the Your details summary that the value of Email address is alternative@email.com
-    And I check that within the Your details summary that the value of Telephone number is 0987654321
+    And I check that within the Your details summary that the value of Contact details is New name alternative@email.com 0987654321
 
       # Payment details checks
 #      And I check that within the Payment information summary that the value of By deferment? is No

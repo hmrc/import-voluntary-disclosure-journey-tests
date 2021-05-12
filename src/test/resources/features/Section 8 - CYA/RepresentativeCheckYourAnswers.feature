@@ -7,7 +7,7 @@ Feature: Testing check your answers
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the Representative radio button
     When clicks the Continue button
-    Then the user should be on the 'What is the importer’s name?' page
+    Then the user should be on the 'What is the name of the importer?' page
     And the user enters Test User into the importers name input field
     When clicks the Continue button
     Then the user should be on the 'What address should we send the importer’s copy of the demand note to?' page
@@ -131,7 +131,7 @@ Feature: Testing check your answers
     #Change ImporterDetails section
     #Change Importer Name
     And I click the change link on row 1 in the About the Importer section on the Check Your Answers page
-    Then the user should be on the 'What is the importer’s name?' page
+    Then the user should be on the 'What is the name of the importer?' page
     And the user enters Another User into the importers name input field
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page

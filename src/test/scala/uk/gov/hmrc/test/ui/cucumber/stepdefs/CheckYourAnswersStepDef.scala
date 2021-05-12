@@ -177,15 +177,79 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
   }
 
   And("""^I check that within the Payment information summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
-    val actualHeader = findBy(By.cssSelector("#main-content > div > div > h2:nth-child(10)")).getText
-    assertResult("Payment information")(actualHeader)
+    val expectedHeading = "Payment details"
+    val headingId = expectedHeading.replaceAll("\\s","")
+    val actualHeading = findBy(By.cssSelector(s"""h2[id="${headingId}"]""")).getText
+    assertResult(expectedHeading)(actualHeading)
 
     field match {
-      case "By deferment?" =>
-        val actualField = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dt")).getText
-        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl:nth-child(11) > div > dd.govuk-summary-list__value")).getText
+      case "Payment method" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
+      case "Deferment account number" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
+      case "Split deferment payment?" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
+      case _ => fail(s"Field: $field is not valid, please investigate")
+    }
+  }
+
+  And("""^I check that within the Deferment account details for duty owed summary that the value of (.*) is (.*)""") { (field: String, value: String) =>
+    val expectedHeading = "Deferment account details for duty owed"
+    val headingId = expectedHeading.replaceAll("\\s","")
+    val actualHeading = findBy(By.cssSelector(s"""h3[id="${headingId}"]""")).getText
+    assertResult(expectedHeading)(actualHeading)
+
+    field match {
+      case "Account number" =>
+        val actualField = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(1) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(1) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Account owner" =>
+        val actualField = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
+      case "Proof of authority" =>
+        val actualField = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(3) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
+      case _ => fail(s"Field: $field is not valid, please investigate")
+    }
+  }
+
+  And("""^I check that within the Deferment account details for import VAT owed summary that the value of (.*) is (.*)""") { (field: String, value: String) =>
+    val expectedHeading = "Deferment account details for import VAT owed"
+    val headingId = expectedHeading.replaceAll("\\s","")
+    val actualHeading = findBy(By.cssSelector(s"""h3[id="${headingId}"]""")).getText
+    assertResult(expectedHeading)(actualHeading)
+
+    field match {
+      case "Account number" =>
+        val actualField = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(1) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(1) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Account owner" =>
+        val actualField = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
+      case "Proof of authority" =>
+        val actualField = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(3) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h3[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value.replaceAll("\\s", ""))(actualFieldValue.replaceAll("\\s", ""))
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }

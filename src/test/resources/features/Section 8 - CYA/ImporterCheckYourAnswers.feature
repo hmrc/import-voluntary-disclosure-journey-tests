@@ -138,6 +138,24 @@ Feature: Testing check your answers
     And I check that within the Underpayment details summary that the value of Tell us anything else? is Yes
     And I check that within the Underpayment details summary that the value of Extra information is More Information
     And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
+    And I click the change link on row 1 in the Underpayment details section on the Check Your Answers page
+    Then the user should be on the 'Underpayment summary' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Which type of tax or duty was underpaid?' page
+    And the user selects the Excise Duty radio button
+    When clicks the Continue button
+    Then the user should be on the 'Excise duty underpayment details, in pounds' page
+    And the user enters 100 into the Original value input field
+    And the user enters 200 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the excise duty underpayment details' page
+    When clicks the Continue button
+    Then the user should be on the 'Underpayment summary' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the Underpayment details summary that the value of Total owed to HMRC is £300.00
 
       # Your details checks
     And I check that within the Your details summary that the value of Importer or representative? is Importer

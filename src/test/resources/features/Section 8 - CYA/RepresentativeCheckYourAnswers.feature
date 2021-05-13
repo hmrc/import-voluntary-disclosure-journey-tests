@@ -148,6 +148,14 @@ Feature: Testing check your answers
     Then the user should be on the 'Confirm the importer’s address' page
     When clicks the Confirm address button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the About the Importer details summary that the value of Importer has EORI number? is No
+
+    #Change Does Importer have an EORI
+    And I click the change link on row 3 in the About the Importer section on the Check Your Answers page
+    Then the user should be on the 'Does the importer have an EORI number?' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the About the Importer details summary that the value of Address is 2 Other Place Some District Anytown ZZ1 1ZZ GB
 
       # Entry details checks

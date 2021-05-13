@@ -172,4 +172,4 @@ Feature: Testing check your answers
     And I check that within the Your details summary that the value of Contact details is New name alternative@email.com 0987654321
 
       # Payment details checks
-#      And I check that within the Payment information summary that the value of By deferment? is No
+    And I check that within the Payment information summary that the value of Payment method is By BACS, CHAPS, Faster Payments, cheque or banker’s draft.

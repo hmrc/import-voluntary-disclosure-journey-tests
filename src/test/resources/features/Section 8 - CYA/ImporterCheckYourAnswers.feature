@@ -156,6 +156,35 @@ Feature: Testing check your answers
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the Underpayment details summary that the value of Total owed to HMRC is £300.00
+    #Change Underpayment details - Remove Flow
+    And I click the change link on row 1 in the Underpayment details section on the Check Your Answers page
+    Then the user should be on the 'Underpayment summary' page
+    When the user clicks the 3rd change link for Excise duty on the Underpayment summary page
+    Then the user should be on the 'Change the excise duty underpayment details' page
+    Then the user clicks the Remove this excise duty underpayment link
+    Then the user should be on the 'Are you sure you want to remove this excise duty underpayment?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Underpayment summary' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the Underpayment details summary that the value of Total owed to HMRC is £200.00
+    #Change Underpayment details - Change Flow
+    And I click the change link on row 1 in the Underpayment details section on the Check Your Answers page
+    Then the user should be on the 'Underpayment summary' page
+    When the user clicks the 1st change link for Import VAT on the Underpayment summary page
+    Then the user should be on the 'Change the import VAT underpayment details' page
+    And the user enters 100 into the Original value input field
+    And the user enters 300 into the Amended value input field
+    When clicks the Continue button
+    Then the user should be on the 'Confirm the import VAT underpayment details' page
+    When clicks the Continue button
+    Then the user should be on the 'Underpayment summary' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the Underpayment details summary that the value of Total owed to HMRC is £300.00
 
       # Your details checks
     And I check that within the Your details summary that the value of Importer or representative? is Importer

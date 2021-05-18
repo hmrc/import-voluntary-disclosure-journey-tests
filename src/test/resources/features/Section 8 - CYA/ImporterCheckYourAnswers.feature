@@ -197,7 +197,7 @@ Feature: Testing check your answers
     And the user selects file /src/test/resources/data/SampleDocument.pdf in the file input field
     And I call the success redirect
     Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler and get response 204
+    And I call the upscan callback handler with Document: SampleDocument.pdf and get response 204
     And clicks the Refresh button
     Then the user should be on the 'You have uploaded 1 file' page
     And there should be '1' files on the page
@@ -205,23 +205,6 @@ Feature: Testing check your answers
     And clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the Underpayment details summary that the value of 1 file uploaded is SampleDocument.pdf
-#    And I click the change link on row 5 in the Underpayment details section on the Check Your Answers page
-#    Then the user should be on the 'You have uploaded 1 file' page
-#    And the user selects the Yes radio button
-#    When clicks the Continue button
-#    Then the user should be on the 'Upload supporting documentation' page
-#    And I get the data from the page
-#    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-#    And I call the success redirect
-#    Then the user should be on the 'Upload progress' page
-#    And I call the upscan callback handler and get response 204
-#    And clicks the Refresh button
-#    Then the user should be on the 'You have uploaded 2 files' page
-#    And there should be '2' files on the page
-#    And the user selects the No radio button
-#    And clicks the Continue button
-#    Then the user should be on the 'Check your answers before sending your disclosure' page
-#    And I check that within the Underpayment details summary that the value of 2 files uploaded is TestDocument.pdfTestDocument.pdf
 
       # Your details checks
     And I check that within the Your details summary that the value of Importer or representative? is Importer

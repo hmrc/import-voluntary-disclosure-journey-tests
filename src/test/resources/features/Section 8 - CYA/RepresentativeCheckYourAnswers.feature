@@ -179,6 +179,36 @@ Feature: Testing check your answers
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the About the Importer details summary that the value of Address is 2 Other Place Some District Anytown ZZ1 1ZZ GB
 
+    #Change Does Importer have an EORI
+    And I click the change link on row 3 in the About the Importer section on the Check Your Answers page
+    Then the user should be on the 'Does the importer have an EORI number?' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the About the Importer details summary that the value of Importer has EORI number? is No
+    And I click the change link on row 3 in the About the Importer section on the Check Your Answers page
+    Then the user should be on the 'Does the importer have an EORI number?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'What is the importer’s EORI number?' page
+    And the user enters GB345834921000 into the EORI input field
+    When clicks the Continue button
+    Then the user should be on the 'Is the importer VAT registered?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the About the Importer details summary that the value of Importer has EORI number? is Yes
+    And I check that within the About the Importer details summary that the value of Importer EORI number is GB345834921000
+    And I check that within the About the Importer details summary that the value of Importer VAT registered? is Yes
+    And I click the change link on row 4 in the About the Importer section on the Check Your Answers page
+    Then the user should be on the 'What is the importer’s EORI number?' page
+    And the user clicks the Back link
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I click the change link on row 5 in the About the Importer section on the Check Your Answers page
+    Then the user should be on the 'Is the importer VAT registered?' page
+    And the user clicks the Back link
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+
       # Entry details checks
     And I check that within the Entry details summary that the value of Number of entries is One Entry
     And I check that within the Entry details summary that the value of EPU is 123

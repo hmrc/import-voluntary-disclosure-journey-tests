@@ -24,7 +24,7 @@
       And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
       And I call the success redirect
       Then the user should be on the 'Upload progress' page
-      And I call the upscan callback handler and get response 204
+      And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
       And clicks the Refresh button
       Then the user should be on the 'You have uploaded 1 file' page
       And there should be '1' files on the page
@@ -39,7 +39,7 @@
       And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
       And I call the success redirect
       Then the user should be on the 'Upload progress' page
-      And I call the upscan callback handler and get response 204
+      And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
       And clicks the Refresh button
       Then the user should be on the 'You have uploaded 1 file' page
       And there should be '1' files on the page

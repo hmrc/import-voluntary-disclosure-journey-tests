@@ -47,8 +47,8 @@ class UpscanStepDef extends ShutdownStepDef {
     driver.navigate().to(redirectUrl)
   }
 
-  And("""^I call the upscan callback handler and get response (.*)$""") { (expectedStatus: Int) =>
-    val actualStatus = requestPOST(callbackUrl, UpscanJson.upscanSuccessCallback(refKey), Map("Content-Type" -> "application/json"))
+  And("""^I call the upscan callback handler with Document: (.*) and get response (.*)$""") { (filename: String, expectedStatus: Int) =>
+    val actualStatus = requestPOST(callbackUrl, UpscanJson.upscanSuccessCallback(refKey, filename), Map("Content-Type" -> "application/json"))
     assertResult(expectedStatus)(actualStatus)
   }
 

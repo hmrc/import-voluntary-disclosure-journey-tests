@@ -10,7 +10,7 @@ Feature: Check doing everything in one go for Import Voluntary Disclosure Journe
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Documents you must upload' page
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
@@ -25,7 +25,7 @@ Feature: Check doing everything in one go for Import Voluntary Disclosure Journe
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Documents you must upload' page
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page

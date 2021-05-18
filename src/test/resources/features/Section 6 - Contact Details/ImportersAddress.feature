@@ -9,7 +9,7 @@
       Then the user should be on the 'You must tell us the reason for the underpayment' page
       And I want to complete section 4: Underpayment Reasons
       Then the user should be on the 'Documents you must upload' page
-      And I want to complete section 5: Documents you must upload
+      And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
       Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
       And the user enters First last into the Name input field
       And the user enters email@email.com into the Email address input field
@@ -63,7 +63,7 @@
       Then the user should be on the 'You must tell us the reason for the underpayment' page
       And I want to complete section 4: Underpayment Reasons
       Then the user should be on the 'Documents you must upload' page
-      And I want to complete section 5: Documents you must upload
+      And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
       Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
       And the user enters First last into the Name input field
       And the user enters email@email.com into the Email address input field

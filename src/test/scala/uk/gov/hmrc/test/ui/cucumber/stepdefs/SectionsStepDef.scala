@@ -147,7 +147,7 @@ class SectionsStepDef extends ShutdownStepDef {
     findBy(By.className("govuk-button")).click()
   }
 
-  And("""^I want to complete section 5: Documents you must upload""") { () =>
+  And("""^I want to complete section 5: Documents you must upload - Document: (.*)""") { (fileName: String) =>
     // Supporting Documentation Guidance page
     findBy(By.className("govuk-button")).click()
     // Further Supporting Documents page
@@ -158,9 +158,9 @@ class SectionsStepDef extends ShutdownStepDef {
     redirectUrl = driver.findElement(By.name("success_action_redirect")).getAttribute("value")
     refKey = driver.findElement(By.name("key")).getAttribute("value")
     val path = Paths.get("").toAbsolutePath
-    findById("file").sendKeys(path + "/src/test/resources/data/TestDocument.pdf")
+    findById("file").sendKeys(path + s"/src/test/resources/data/$fileName")
     driver.navigate().to(redirectUrl)
-    requestPOST(callbackUrl, UpscanJson.upscanSuccessCallback(refKey), Map("Content-Type" -> "application/json"))
+    requestPOST(callbackUrl, UpscanJson.upscanSuccessCallback(refKey, fileName), Map("Content-Type" -> "application/json"))
     // Click to refresh the Upload Progress Page then select not to upload any further docs
     findBy(By.className("govuk-button")).click()
     clickById("value-no")

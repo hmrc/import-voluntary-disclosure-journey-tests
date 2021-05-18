@@ -7,7 +7,7 @@ Feature: Testing Deferments for representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the Another payment method radio button
@@ -20,7 +20,7 @@ Feature: Testing Deferments for representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -41,7 +41,7 @@ Feature: Testing Deferments for representatives
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
     And I call the success redirect
     Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler and get response 204
+    And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
     And clicks the Refresh button
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
@@ -53,7 +53,7 @@ Feature: Testing Deferments for representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -77,7 +77,7 @@ Feature: Testing Deferments for representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -94,7 +94,7 @@ Feature: Testing Deferments for representatives
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
     And I call the success redirect
     Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler and get response 204
+    And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
     And clicks the Refresh button
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
@@ -107,7 +107,7 @@ Feature: Testing Deferments for representatives
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
     And I call the success redirect
     Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler and get response 204
+    And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
     And clicks the Refresh button
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
@@ -119,7 +119,7 @@ Feature: Testing Deferments for representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -140,7 +140,7 @@ Feature: Testing Deferments for representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00~A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And the user selects the By duty deferment account radio button
@@ -157,7 +157,7 @@ Feature: Testing Deferments for representatives
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
     And I call the success redirect
     Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler and get response 204
+    And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
     And clicks the Refresh button
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
@@ -169,7 +169,7 @@ Feature: Testing Deferments for representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with B00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT owed?' page
     And the user selects the By duty deferment account radio button
@@ -183,7 +183,7 @@ Feature: Testing Deferments for representatives
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
     And I call the success redirect
     Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler and get response 204
+    And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
     And clicks the Refresh button
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
@@ -195,7 +195,7 @@ Feature: Testing Deferments for representatives
     And I want to complete section 2: Entry Details as Representative
     And I want to complete section 3: Underpayments with A00
     And I want to complete section 4: Underpayment Reasons
-    And I want to complete section 5: Documents you must upload
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the duty owed?' page
     And the user selects the By duty deferment account radio button

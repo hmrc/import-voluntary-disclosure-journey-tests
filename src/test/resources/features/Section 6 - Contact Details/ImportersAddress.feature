@@ -32,7 +32,7 @@
       And the user enters ZZ11ZZ into the postcode input field
       When clicks the Continue button
       Then the user should be on the 'Select the address' page
-      And the user selects the 2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ radio button
+      And the user selects the 2 Other Place, Some District, Anytown, ZZ1 1ZZ radio button
       When clicks the Continue button
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
@@ -86,7 +86,7 @@
       And the user enters ZZ11ZZ into the postcode input field
       When clicks the Continue button
       Then the user should be on the 'Select the address' page
-      And the user selects the 2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ radio button
+      And the user selects the 2 Other Place, Some District, Anytown, ZZ1 1ZZ radio button
       When clicks the Continue button
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button

@@ -40,6 +40,7 @@ trait BasePage extends Matchers with BrowserDriver {
   def findElementsBy(by: By) = driver.findElements(by)
   def findElementById(id: String): WebElement = driver.findElement(By.id(id))
   def findElementByName(name: String): WebElement = driver.findElement(By.name(name))
+  def findElementsByCSS(css: String) = driver.findElements(By.cssSelector(css))
 
   def asyncClient: StandaloneAhcWSClient = {
     implicit val system: ActorSystem = ActorSystem()

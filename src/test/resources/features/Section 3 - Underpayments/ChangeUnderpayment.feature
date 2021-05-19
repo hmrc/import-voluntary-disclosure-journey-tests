@@ -9,7 +9,7 @@ Feature: Check the change flow of the Underpayments journey
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button
     Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
-    And the user selects the Import VAT radio button
+    And the user selects the Import VAT (B00) radio button
     When clicks the Continue button
     Then the user should be on the 'Import VAT underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
@@ -23,7 +23,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
-    And the user selects the Customs Duty radio button
+    And the user selects the Customs Duty (A00) radio button
     When clicks the Continue button
     Then the user should be on the 'Customs Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
@@ -61,7 +61,7 @@ Feature: Check the change flow of the Underpayments journey
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button
     Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
-    And the user selects the Import VAT radio button
+    And the user selects the Import VAT (B00) radio button
     When clicks the Continue button
     Then the user should be on the 'Import VAT underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
@@ -75,7 +75,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
-    And the user selects the Customs Duty radio button
+    And the user selects the Customs Duty (A00) radio button
     When clicks the Continue button
     Then the user should be on the 'Customs Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
@@ -119,7 +119,7 @@ Feature: Check the change flow of the Underpayments journey
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button
     Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
-    And the user selects the Import VAT radio button
+    And the user selects the Import VAT (B00) radio button
     When clicks the Continue button
     Then the user should be on the 'Import VAT underpayment details, in pounds' page
     And the user enters 100 into the Original value input field

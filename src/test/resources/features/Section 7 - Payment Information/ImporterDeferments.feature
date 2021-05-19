@@ -1,4 +1,4 @@
-@all @deferment
+@all @deferment @1
 Feature: Testing Deferments for importers
 
   Scenario: Importer declares that they have import VAT and other duties, selects to pay via another payment method,

@@ -6,7 +6,7 @@ Feature: Testing the handoff to address lookup for capturing Representatives Add
   Scenario: A Representative supplies their address details and completes the flow
     Given I want to complete section 1: Service Entry for Organisation
     Then the user should be on the 'Are you the importer or their representative?' page
-    And the user selects the Representative radio button
+    And the user selects the I am a representative of the importer radio button
     When clicks the Continue button
     Then the user should be on the 'What is the name of the importer?' page
     And the user enters Test User into the importers name input field
@@ -24,7 +24,7 @@ Feature: Testing the handoff to address lookup for capturing Representatives Add
     And the user enters ZZ11ZZ into the postcode input field
     When clicks the Continue button
     Then the user should be on the 'Select the importer’s address' page
-    And the user selects the 2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ radio button
+    And the user selects the 2 Other Place, Some District, Anytown, ZZ1 1ZZ radio button
     When clicks the Continue button
     Then the user should be on the 'Confirm the importer’s address' page
     When clicks the Confirm address button

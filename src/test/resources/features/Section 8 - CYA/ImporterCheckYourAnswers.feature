@@ -185,6 +185,26 @@ Feature: Testing check your answers
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the Underpayment details summary that the value of Total owed to HMRC is £300.00
+        #Change Support Documents
+    And I click the change link on row 5 in the Underpayment details section on the Check Your Answers page
+    Then the user should be on the 'You have uploaded 1 file' page
+    And the user clicks the 1st remove link for TestDocument on the Upload Another page
+    Then the user should be on the 'Are you sure you want to remove this file?' page
+    And the user selects the Yes radio button
+    And clicks the Continue button
+    Then the user should be on the 'Upload supporting documentation' page
+    And I get the data from the page
+    And the user selects file /src/test/resources/data/SampleDocument.pdf in the file input field
+    And I call the success redirect
+    Then the user should be on the 'Upload progress' page
+    And I call the upscan callback handler with Document: SampleDocument.pdf and get response 204
+    And clicks the Refresh button
+    Then the user should be on the 'You have uploaded 1 file' page
+    And there should be '1' files on the page
+    And the user selects the No radio button
+    And clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the Underpayment details summary that the value of 1 file uploaded is SampleDocument.pdf
 
       # Your details checks
     And I check that within the Your details summary that the value of Importer or representative? is Importer

@@ -19,12 +19,14 @@ package uk.gov.hmrc.test.ui.pages
 import akka.actor.ActorSystem
 import akka.stream.ActorMaterializer
 import org.openqa.selenium.{By, WebElement}
+import org.scalatest.exceptions.TestFailedException
 import org.scalatest.matchers.should.Matchers
 import play.api.libs.ws.ahc.StandaloneAhcWSClient
 import play.api.libs.ws.DefaultBodyWritables._
 import uk.gov.hmrc.test.ui.driver.BrowserDriver
-import scala.concurrent.ExecutionContext.Implicits.global
+import scala.collection.JavaConverters._
 
+import scala.concurrent.ExecutionContext.Implicits.global
 import scala.concurrent.duration._
 import scala.concurrent.Await
 
@@ -40,6 +42,13 @@ trait BasePage extends Matchers with BrowserDriver {
   def findElementsBy(by: By) = driver.findElements(by)
   def findElementById(id: String): WebElement = driver.findElement(By.id(id))
   def findElementByName(name: String): WebElement = driver.findElement(By.name(name))
+  def findElementsByCSS(css: String) = driver.findElements(By.cssSelector(css))
+
+  def findRadioButtonByText(textToFind: String): WebElement = {
+    val radioButtons = findElementsByCSS(".govuk-radios__item").asScala.toList
+    radioButtons.find(_.getText.contains(textToFind)).map(_.findElement(By.tagName("label")))
+      .getOrElse(throw new TestFailedException("Couldn't find button/checkbox requested", 1))
+  }
 
   def asyncClient: StandaloneAhcWSClient = {
     implicit val system: ActorSystem = ActorSystem()

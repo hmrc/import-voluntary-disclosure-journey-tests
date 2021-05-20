@@ -5,7 +5,7 @@
       Given I want to complete section 1: Service Entry for Organisation
       And I want to complete section 2: Entry Details as Importer
       Then the user should be on the 'Tell us what was underpaid' page
-      And I want to complete section 3: Underpayments with B00~A00~E00
+      And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)~Excise Duty
       Then the user should be on the 'You must tell us the reason for the underpayment' page
       And I want to complete section 4: Underpayment Reasons
       Then the user should be on the 'Documents you must upload' page
@@ -32,7 +32,7 @@
       And the user enters ZZ11ZZ into the postcode input field
       When clicks the Continue button
       Then the user should be on the 'Select the address' page
-      And the user selects the 2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ radio button
+      And the user selects the 2 Other Place, Some District, Anytown, ZZ1 1ZZ radio button
       When clicks the Continue button
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
@@ -59,7 +59,7 @@
       Given I want to complete section 1: Service Entry for Organisation
       And I want to complete section 2: Entry Details as Representative
       Then the user should be on the 'Tell us what was underpaid' page
-      And I want to complete section 3: Underpayments with B00~A00~E00
+      And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)~Excise Duty
       Then the user should be on the 'You must tell us the reason for the underpayment' page
       And I want to complete section 4: Underpayment Reasons
       Then the user should be on the 'Documents you must upload' page
@@ -86,7 +86,7 @@
       And the user enters ZZ11ZZ into the postcode input field
       When clicks the Continue button
       Then the user should be on the 'Select the address' page
-      And the user selects the 2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ radio button
+      And the user selects the 2 Other Place, Some District, Anytown, ZZ1 1ZZ radio button
       When clicks the Continue button
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button

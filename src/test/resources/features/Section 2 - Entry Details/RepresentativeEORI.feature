@@ -4,7 +4,7 @@
     Scenario: A Representative user logs in and declares that they do not have an EORI
       Given I want to complete section 1: Service Entry for Organisation
       Then the user should be on the 'Are you the importer or their representative?' page
-      And the user selects the Representative radio button
+      And the user selects the I am a representative of the importer radio button
       When clicks the Continue button
       Then the user should be on the 'What is the name of the importer?' page
       And the user enters Test User into the importers name input field
@@ -22,7 +22,7 @@
     Scenario: A Representative user logs in and declares that they do have an EORI
       Given I want to complete section 1: Service Entry for Organisation
       Then the user should be on the 'Are you the importer or their representative?' page
-      And the user selects the Representative radio button
+      And the user selects the I am a representative of the importer radio button
       When clicks the Continue button
       Then the user should be on the 'What is the name of the importer?' page
       And the user enters Test User into the importers name input field

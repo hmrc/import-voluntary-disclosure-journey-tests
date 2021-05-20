@@ -6,10 +6,10 @@ Feature: Checking the acceptance date flow through the service
   Scenario: An Importer is able to walk through the flow of IVD
     Given I want to complete section 1: Service Entry for Organisation
     Then the user should be on the 'Are you the importer or their representative?' page
-    And the user selects the Importer radio button
+    And the user selects the I am the importer radio button
     When clicks the Continue button
     Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
-    And the user selects the One Entry radio button
+    And the user selects the One entry radio button
     When clicks the Continue button
     Then the user should be on the 'Entry details' page
     And the user enters 123 into the EPU number input field
@@ -32,7 +32,7 @@ Feature: Checking the acceptance date flow through the service
   Scenario: A Representative is able to walk through the flow of IVD
     Given I want to complete section 1: Service Entry for Organisation
     Then the user should be on the 'Are you the importer or their representative?' page
-    And the user selects the Representative radio button
+    And the user selects the I am a representative of the importer radio button
     When clicks the Continue button
     Then the user should be on the 'What is the name of the importer?' page
     And the user enters Test User into the importers name input field
@@ -52,7 +52,7 @@ Feature: Checking the acceptance date flow through the service
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
-    And the user selects the One Entry radio button
+    And the user selects the One entry radio button
     When clicks the Continue button
     Then the user should be on the 'Entry details' page
     And the user enters 123 into the EPU number input field

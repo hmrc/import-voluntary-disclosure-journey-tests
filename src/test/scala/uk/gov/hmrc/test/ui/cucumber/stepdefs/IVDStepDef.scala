@@ -21,7 +21,6 @@ import java.nio.file.Paths
 import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
 
-
 class IVDStepDef extends ShutdownStepDef {
 
   Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
@@ -74,46 +73,7 @@ class IVDStepDef extends ShutdownStepDef {
   }
 
   And("""^the user selects the (.*) radio button$""") { button: String =>
-    button match {
-      case "Importer" | "One Entry" | "Yes" | "Yes, I want to use two deferment accounts" |
-           "My deferment account"  => clickById("value")
-      case "Representative" | "No, I want to use one deferment account" |
-           "The importer’s account and I have authority to use it"  => clickById("value-2")
-      case "The importer’s account and I have standing authority to use it"  => clickById("value-3")
-      case "Box 22 Invoice currency and total amount invoiced" => clickBySelector("input[value=\"22\"]")
-      case "Box 33 Commodity code" => clickBySelector("input[value=\"33\"]")
-      case "Box 34 Country of origin code" => clickBySelector("input[value=\"34\"]")
-      case "Box 35 Gross mass" => clickBySelector("input[value=\"35\"]")
-      case "Box 36 Preference" => clickBySelector("input[value=\"36\"]")
-      case "Box 37 Procedure (customs procedure code)" => clickBySelector("input[value=\"37\"]")
-      case "Box 38 Net mass" => clickBySelector("input[value=\"38\"]")
-      case "Box 39 Quota" => clickBySelector("input[value=\"39\"]")
-      case "Box 41 Supplementary units" => clickBySelector("input[value=\"41\"]")
-      case "Box 42 Item price" => clickBySelector("input[value=\"42\"]")
-      case "Box 43 Valuation method code" => clickBySelector("input[value=\"43\"]")
-      case "Box 45 Adjustment" => clickBySelector("input[value=\"45\"]")
-      case "Box 46 Statistical value" => clickBySelector("input[value=\"46\"]")
-      case "Box 62 Air transport costs" => clickBySelector("input[value=\"62\"]")
-      case "Box 63 AWB or freight charges" => clickBySelector("input[value=\"63\"]")
-      case "Box 66 Insurance" => clickBySelector("input[value=\"66\"]")
-      case "Box 67 Other charges of deductions" => clickBySelector("input[value=\"67\"]")
-      case "Box 68 Adjustment for VAT value" => clickBySelector("input[value=\"68\"]")
-      case "No" => clickById("value-no")
-      case "Another payment method" => clickBySelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(2) > label")
-      case "By duty deferment account" => clickBySelector("#main-content > div > div > form > div > fieldset > div > div:nth-child(1) > label")
-      case "2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ" => clickById("addressId") // first element
-      case "Import VAT" => clickById("B00")
-      case "Customs Duty" => clickById("A00")
-      case "Excise Duty" => clickById("E00")
-      case "Additional Duty" => clickById("A20")
-      case "Definitive Anti-Dumping Duty" => clickById("A30")
-      case "Provisional Anti-Dumping Duty" => clickById("A35")
-      case "Definitive Countervailing Duty" => clickById("A40")
-      case "Provisional Countervailing Duty" => clickById("A45")
-      case "Customs Duty on Agricultural Products" => clickById("A10")
-      case "Compensatory Duty" => clickById("D10")
-      case _ => fail(s"$button is not a valid radio button")
-    }
+    findRadioButtonByText(button).click()
   }
 
   And("""^the user enters (.*) into the (.*) input field$""") { (value: String, field: String) =>

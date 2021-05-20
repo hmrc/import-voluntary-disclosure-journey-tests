@@ -5,7 +5,7 @@ Feature: Testing check your answers
     Given I want to complete section 1: Service Entry for Organisation
 
     Then the user should be on the 'Are you the importer or their representative?' page
-    And the user selects the Representative radio button
+    And the user selects the I am a representative of the importer radio button
     When clicks the Continue button
     Then the user should be on the 'What is the name of the importer?' page
     And the user enters Test User into the importers name input field
@@ -26,7 +26,7 @@ Feature: Testing check your answers
     When clicks the Continue button
     Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
 
-    And the user selects the One Entry radio button
+    And the user selects the One entry radio button
     When clicks the Continue button
     Then the user should be on the 'Entry details' page
     And the user enters 123 into the EPU number input field
@@ -48,7 +48,7 @@ Feature: Testing check your answers
     Then the user should be on the 'Tell us what was underpaid' page
     When clicks the Continue button
     Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
-    And the user selects the Import VAT radio button
+    And the user selects the Import VAT (B00) radio button
     When clicks the Continue button
     Then the user should be on the 'Import VAT underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
@@ -60,7 +60,7 @@ Feature: Testing check your answers
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
-    And the user selects the Customs Duty radio button
+    And the user selects the Customs Duty (A00) radio button
     When clicks the Continue button
     Then the user should be on the 'Customs Duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field
@@ -182,7 +182,7 @@ Feature: Testing check your answers
     And the user enters ZZ11ZZ into the postcode input field
     When clicks the Continue button
     Then the user should be on the 'Select the importer’s address' page
-    And the user selects the 2 Other Place, Some District, Anytown, Somerset, ZZ1 1ZZ radio button
+    And the user selects the 2 Other Place, Some District, Anytown, ZZ1 1ZZ radio button
     When clicks the Continue button
     Then the user should be on the 'Confirm the importer’s address' page
     When clicks the Confirm address button

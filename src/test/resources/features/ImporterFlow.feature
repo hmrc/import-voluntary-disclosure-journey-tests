@@ -2,7 +2,6 @@
 
 Feature: Single flow for Importer and Representative
 
-  @1
   Scenario: A logged in user is able to walk through the entire flow of IVD as Importer
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer

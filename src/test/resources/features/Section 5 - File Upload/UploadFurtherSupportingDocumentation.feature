@@ -4,7 +4,7 @@
     Background:
       Given I want to complete section 1: Service Entry for Organisation
       And I want to complete section 2: Entry Details as Representative
-      And I want to complete section 3: Underpayments with A00
+      And I want to complete section 3: Underpayments with Customs Duty (A00)
       And I want to complete section 4: Underpayment Reasons
       Then the user should be on the 'Documents you must upload' page
 

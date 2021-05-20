@@ -18,18 +18,10 @@ package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import java.nio.file.Paths
 
-import org.openqa.selenium.{By, WebElement}
-import org.scalatest.exceptions.TestFailedException
+import org.openqa.selenium.By
 import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
-import scala.collection.JavaConverters._
 
 class IVDStepDef extends ShutdownStepDef {
-
-  def findRadioButtonByText(textToFind: String): WebElement = {
-    val radioButtons = findElementsByCSS(".govuk-radios__item").asScala.toList
-    radioButtons.find(_.getText.contains(textToFind)).map(_.findElement(By.tagName("label")))
-      .getOrElse(throw new TestFailedException("Couldn't find button/checkbox requested", 1))
-  }
 
   Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
     driver.navigate().to(AuthLoginStubPage.url)

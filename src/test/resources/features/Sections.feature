@@ -6,7 +6,7 @@ Feature: Check doing everything in one go for Import Voluntary Disclosure Journe
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Importer
     Then the user should be on the 'Tell us what was underpaid' page
-    And I want to complete section 3: Underpayments with B00~A00~E00
+    And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)~Excise Duty
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Documents you must upload' page
@@ -21,7 +21,7 @@ Feature: Check doing everything in one go for Import Voluntary Disclosure Journe
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
     Then the user should be on the 'Tell us what was underpaid' page
-    And I want to complete section 3: Underpayments with B00~A00~E00
+    And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)~Excise Duty
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Documents you must upload' page

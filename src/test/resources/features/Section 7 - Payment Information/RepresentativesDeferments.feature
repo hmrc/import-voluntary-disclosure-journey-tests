@@ -5,7 +5,7 @@ Feature: Testing Deferments for representatives
   and is redirected to check your answers
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
-    And I want to complete section 3: Underpayments with B00~A00
+    And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)
     And I want to complete section 4: Underpayment Reasons
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
@@ -18,7 +18,7 @@ Feature: Testing Deferments for representatives
   selects My deferment account for duty
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
-    And I want to complete section 3: Underpayments with B00~A00
+    And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)
     And I want to complete section 4: Underpayment Reasons
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
@@ -51,7 +51,7 @@ Feature: Testing Deferments for representatives
   and is redirected to the split payments flow - chooses to pay by two deferment accounts
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
-    And I want to complete section 3: Underpayments with B00~A00
+    And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)
     And I want to complete section 4: Underpayment Reasons
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
@@ -75,7 +75,7 @@ Feature: Testing Deferments for representatives
   and is redirected to the split payments flow - chooses to pay by two deferment accounts
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
-    And I want to complete section 3: Underpayments with B00~A00
+    And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)
     And I want to complete section 4: Underpayment Reasons
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
@@ -117,7 +117,7 @@ Feature: Testing Deferments for representatives
   and is redirected to the split payments flow - chooses to pay by one deferment account - enters DAN and clicks 'My deferment account'
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
-    And I want to complete section 3: Underpayments with B00~A00
+    And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)
     And I want to complete section 4: Underpayment Reasons
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
@@ -138,7 +138,7 @@ Feature: Testing Deferments for representatives
   clicks 'The importer’s account and I have authority to use it'
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
-    And I want to complete section 3: Underpayments with B00~A00
+    And I want to complete section 3: Underpayments with Import VAT (B00)~Customs Duty (A00)
     And I want to complete section 4: Underpayment Reasons
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
@@ -167,7 +167,7 @@ Feature: Testing Deferments for representatives
   and is redirected to the enter DAN flow - enters DAN and clicks 'The importer’s account and I have authority to use it'
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
-    And I want to complete section 3: Underpayments with B00
+    And I want to complete section 3: Underpayments with Import VAT (B00)
     And I want to complete section 4: Underpayment Reasons
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details
@@ -193,7 +193,7 @@ Feature: Testing Deferments for representatives
   and is redirected to the enter DAN flow - enters DAN and clicks 'The importer’s account and I have standing authority to use it'
     Given I want to complete section 1: Service Entry for Organisation
     And I want to complete section 2: Entry Details as Representative
-    And I want to complete section 3: Underpayments with A00
+    And I want to complete section 3: Underpayments with Customs Duty (A00)
     And I want to complete section 4: Underpayment Reasons
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
     And I want to complete section 6: Contact Details

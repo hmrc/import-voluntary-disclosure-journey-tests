@@ -54,25 +54,25 @@ class SectionsStepDef extends ShutdownStepDef {
   And("""^I want to complete section 2: Entry Details as (.*)""") { (userType: String) =>
     // Select user type and click through to Num Entries
     if (userType == "Importer") {
-      clickById("value")
+      findRadioButtonByText("I am the importer").click()
       findBy(By.className("govuk-button")).click()
     } else {
-      clickById("value-2")
+      findRadioButtonByText("I am a representative of the importer").click()
       findBy(By.className("govuk-button")).click()
       findById("fullName").sendKeys("Importers Name")
       findBy(By.className("govuk-button")).click()
       findById("postcode").sendKeys("AA000AA")
       findBy(By.className("govuk-button")).click()
       findBy(By.className("govuk-button")).click()
-      clickById("value")
+      findRadioButtonByText("Yes").click()
       findBy(By.className("govuk-button")).click()
       findById("importerEORI").sendKeys("GB345834921000")
       findBy(By.className("govuk-button")).click()
-      clickById("value")
+      findRadioButtonByText("Yes").click()
       findBy(By.className("govuk-button")).click()
     }
     // Select One Entry
-    clickById("value")
+    findRadioButtonByText("One entry").click()
     findBy(By.className("govuk-button")).click()
     // Enter Entry Details
     findById("epu").sendKeys("123")
@@ -82,10 +82,10 @@ class SectionsStepDef extends ShutdownStepDef {
     findById("entryDate.year").sendKeys("2020")
     findBy(By.className("govuk-button")).click()
     // Acceptance entry date
-    clickById("value")
+    findRadioButtonByText("Yes").click()
     findBy(By.className("govuk-button")).click()
     // More than one CPC page
-    clickById("value")
+    findRadioButtonByText("Yes").click()
     findBy(By.className("govuk-button")).click()
     // Enter CPC
     findById("cpc").sendKeys("1234A67")
@@ -98,7 +98,8 @@ class SectionsStepDef extends ShutdownStepDef {
     val underpaymentsList = underpayments.split("~").zipWithIndex
     for (underpayment <- underpaymentsList) {
       // Select the underpayment type radio button
-      clickById(underpayment._1)
+      findRadioButtonByText(underpayment._1).click()
+//      clickById(underpayment._1)
       findBy(By.className("govuk-button")).click()
       // Enter Original and Amended values
       findById("original").clear()
@@ -110,9 +111,9 @@ class SectionsStepDef extends ShutdownStepDef {
       findBy(By.className("govuk-button")).click()
       // Underpayment Summary add another
       if (underpayment._2 < underpaymentsList.size - 1) {
-        clickById("value")
+        findRadioButtonByText("Yes").click()
       } else {
-        clickById("value-no")
+        findRadioButtonByText("No").click()
       }
       findBy(By.className("govuk-button")).click()
     }
@@ -123,7 +124,7 @@ class SectionsStepDef extends ShutdownStepDef {
     // Underpayment Reasons Guidance page
     findBy(By.className("govuk-button")).click()
     // Enter Box 33
-    findById("value-2").click
+    findRadioButtonByText("Box 33 Commodity code").click()
     findBy(By.className("govuk-button")).click()
     // Enter Item 1
     findById("itemNumber").clear()
@@ -137,10 +138,10 @@ class SectionsStepDef extends ShutdownStepDef {
     findBy(By.className("govuk-button")).click()
     // Click through confirmation and select No to adding more
     findBy(By.className("govuk-button")).click()
-    clickById("value-no")
+    findRadioButtonByText("No").click()
     findBy(By.className("govuk-button")).click()
     // Add some extra information
-    clickById("value")
+    findRadioButtonByText("Yes").click()
     findBy(By.className("govuk-button")).click()
     findById("value").clear()
     findById("value").sendKeys("More Information")
@@ -151,7 +152,7 @@ class SectionsStepDef extends ShutdownStepDef {
     // Supporting Documentation Guidance page
     findBy(By.className("govuk-button")).click()
     // Further Supporting Documents page
-    clickById("value-no")
+    findRadioButtonByText("No").click()
     findBy(By.className("govuk-button")).click()
     // Upload a file and dummy upscan callback
     callbackUrl = driver.findElement(By.name("x-amz-meta-callback-url")).getAttribute("value")
@@ -163,7 +164,7 @@ class SectionsStepDef extends ShutdownStepDef {
     requestPOST(callbackUrl, UpscanJson.upscanSuccessCallback(refKey, fileName), Map("Content-Type" -> "application/json"))
     // Click to refresh the Upload Progress Page then select not to upload any further docs
     findBy(By.className("govuk-button")).click()
-    clickById("value-no")
+    findRadioButtonByText("No").click()
     findBy(By.className("govuk-button")).click()
   }
 
@@ -174,7 +175,7 @@ class SectionsStepDef extends ShutdownStepDef {
     findById("phoneNumber").sendKeys("0123456789")
     findBy(By.className("govuk-button")).click()
     // Change Address through ALF
-    clickById("value-no")
+    findRadioButtonByText("No").click()
     findBy(By.className("govuk-button")).click()
     findById("postcode").sendKeys("AA000AA")
     findBy(By.className("govuk-button")).click()
@@ -183,11 +184,9 @@ class SectionsStepDef extends ShutdownStepDef {
 
   And("""^I want to complete section 7: Deferment Details as (.*) with (.*)""") { (userType: String, split: String) =>
     // Select payment by deferement
-    clickById("value")
+    findRadioButtonByText("By duty deferment account").click()
     findBy(By.className("govuk-button")).click()
     if (userType == "Importer") {
-      clickById("value")
-      findBy(By.className("govuk-button")).click()
       // Add DAN and click through to CYA
       findById("value").sendKeys("1234567")
       findBy(By.className("govuk-button")).click()
@@ -195,15 +194,15 @@ class SectionsStepDef extends ShutdownStepDef {
       if(split == "split") {
         // Select to split
         // TODO: Add further pages here
-        clickById("value")
+        findRadioButtonByText("Yes, I want to use two deferment accounts").click()
         findBy(By.className("govuk-button")).click()
       } else {
         // Select not to split
-        clickById("value-2")
+        findRadioButtonByText("No, I want to use one deferment account").click()
         findBy(By.className("govuk-button")).click()
         // Add DAN and click My deferment radio button
         findById("accountNumber").sendKeys("1234567")
-        findById("value").click()
+        findRadioButtonByText("My deferment account").click()
         findBy(By.className("govuk-button")).click()
       }
     }

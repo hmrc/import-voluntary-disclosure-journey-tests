@@ -150,6 +150,16 @@ Feature: Testing check your answers
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
 
+    # Payment details checks - First time
+    And I check that within the Payment information summary that the value of Payment method is By duty deferment
+    And I check that within the Payment information summary that the value of Split deferment payment? is Yes
+    And I check that within the Deferment account details for duty owed summary that the value of Account number is 1234567
+    And I check that within the Deferment account details for duty owed summary that the value of Account owner is The importer’s account and I have authority to use it
+    And I check that within the Deferment account details for duty owed summary that the value of Proof of authority is TestDocument.pdf
+    And I check that within the Deferment account details for import VAT owed summary that the value of Account number is 7654321
+    And I check that within the Deferment account details for import VAT owed summary that the value of Account owner is The importer’s account and I have authority to use it
+    And I check that within the Deferment account details for import VAT owed summary that the value of Proof of authority is TestDocument.pdf
+
       # Importer details checks
     And I check that within the About the Importer details summary that the value of Name is Test User
     And I check that within the About the Importer details summary that the value of Address is 1 Test Street Testtown AA00 0AA GB
@@ -246,6 +256,41 @@ Feature: Testing check your answers
     And I check that within the Underpayment details summary that the value of Tell us anything else? is Yes
     And I check that within the Underpayment details summary that the value of Extra information is More Information
     And I check that within the Underpayment details summary that the value of 1 file uploaded is TestDocument.pdf
+    # Change underpayment details
+    And I click the change link on row 1 in the Underpayment details section on the Check Your Answers page
+    Then the user should be on the 'Underpayment summary' page
+    When the user clicks the 1st change link for Import VAT on the Underpayment summary page
+    Then the user should be on the 'Change the import VAT underpayment details' page
+    Then the user clicks the Remove this import VAT underpayment link
+    Then the user should be on the 'Are you sure you want to remove this import VAT underpayment?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    Then the user should be on the 'Underpayment summary' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'How will you pay for the duty owed?' page
+    And the user selects the By duty deferment account radio button
+    When clicks the Continue button
+    Then the user should be on the 'Deferment account details' page
+    And the user enters 1234567 into the Deferment account number (representative) input field
+    And the user selects the The importer’s account and I have authority to use it radio button
+    When clicks the Continue button
+    Then the user should be on the 'Upload proof of authority to use this deferment account' page
+    And I get the data from the page
+    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+    And I call the success redirect
+    Then the user should be on the 'Upload progress' page
+    And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
+    And clicks the Refresh button
+    Then the user should be on the 'The file has been uploaded successfully' page
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the Underpayment details summary that the value of Total owed to HMRC is £100.00
+    # Payment details checks - Second time
+    And I check that within the Payment information summary that the value of Payment method is By duty deferment
+    And I check that within the Payment information summary that the value of Account number is 1234567
+    And I check that within the Payment information summary that the value of Account owner is The importer’s account and I have authority to use it
+    And I check that within the Payment information summary that the value of Proof of authority is TestDocument.pdf
 
       # Your details checks
     And I check that within the Your details summary that the value of Importer or representative? is Representative
@@ -260,13 +305,3 @@ Feature: Testing check your answers
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the Your details summary that the value of Contact details is New name alternative@email.com 0987654321
-
-      # Payment details checks
-    And I check that within the Payment information summary that the value of Payment method is By duty deferment
-    And I check that within the Payment information summary that the value of Split deferment payment? is Yes
-    And I check that within the Deferment account details for duty owed summary that the value of Account number is 1234567
-    And I check that within the Deferment account details for duty owed summary that the value of Account owner is The importer’s account and I have authority to use it
-    And I check that within the Deferment account details for duty owed summary that the value of Proof of authority is TestDocument.pdf
-    And I check that within the Deferment account details for import VAT owed summary that the value of Account number is 7654321
-    And I check that within the Deferment account details for import VAT owed summary that the value of Account owner is The importer’s account and I have authority to use it
-    And I check that within the Deferment account details for import VAT owed summary that the value of Proof of authority is TestDocument.pdf

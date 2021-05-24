@@ -37,7 +37,7 @@ class IVDStepDef extends ShutdownStepDef {
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
   }
 
-  Given("""^an unauthorised user attempts to log in to access the Import Voluntary Disclosure Service for (.*)""") { (affinityGroup: String) =>
+  Given("""^a user attempts to log in to access the Import Voluntary Disclosure Service with (.*) CTS enrolment and (.*) affinity group""") { (enrolment: String, affinityGroup: String) =>
     val groupSelector = affinityGroup match {
       case "Individual" => 1
       case "Organisation" => 2
@@ -47,7 +47,7 @@ class IVDStepDef extends ShutdownStepDef {
     driver.findElement(By.cssSelector(s"#affinityGroupSelect > option:nth-child($groupSelector)")).click()
     driver.findElement(By.name("redirectionUrl")).clear()
     driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclosureLandingPage.url)
-    if(groupSelector == 1 || groupSelector == 3) {
+    if(enrolment == "valid") {
       driver.findElement(By.name("enrolment[0].name")).sendKeys("HMRC-CTS-ORG")
       driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).clear()
       driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).sendKeys("EORINumber")
@@ -55,6 +55,11 @@ class IVDStepDef extends ShutdownStepDef {
       driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys("GB987654321000")
     }
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
+  }
+
+  Then("""^the url should contain '(.*)'$""") { (url: String) =>
+    val actualUrl: String = driver.getCurrentUrl
+    assertResult(true)(actualUrl.contains(url))
   }
 
   Then("""^the user should be on the '(.*)' page$""") { (page: String) =>

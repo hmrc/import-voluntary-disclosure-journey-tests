@@ -113,7 +113,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     When clicks the Accept and send button
-    Then the user should be on the 'Disclosure complete' page
+    Then the user should be on the 'Disclosure sent' page
 
   Scenario: A user successfully submits their voluntary disclosure as a representative
     Given a user logs in to access the Import Voluntary Disclosure Service
@@ -253,4 +253,4 @@ Feature: Smoke tests for Import Voluntary Disclosure
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     When clicks the Accept and send button
-    Then the user should be on the 'Disclosure complete' page
+    Then the user should be on the 'Disclosure sent' page

@@ -380,7 +380,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     field match {
       case "Amount that was paid" =>
         val actualField = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dt")).getText
-        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value.govuk-\\!-padding-bottom-0")).getText
+        val actualFieldValue = findBy(By.cssSelector("#main-content > div > div > dl > div:nth-child(1) > dd.govuk-summary-list__value.govuk-\\!-padding-bottom-1")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
       case "Amount that should have been paid" =>

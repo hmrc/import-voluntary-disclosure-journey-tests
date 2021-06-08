@@ -305,3 +305,12 @@ Feature: Testing check your answers
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the Your details summary that the value of Contact details is New name alternative@email.com 0987654321
+
+    #Payment Details
+    And I check that within the Payment information summary that the value of Payment method is By duty deferment
+    And I click the change link on row 1 in the Payment details section on the Check Your Answers page
+    Then the user should be on the 'How will you pay for the duty owed?' page
+    And the user selects the Another payment method radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the Payment information summary that the value of Payment method is By BACS, CHAPS, Faster Payments, cheque or banker’s draft.

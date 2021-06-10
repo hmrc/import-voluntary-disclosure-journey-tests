@@ -15,9 +15,9 @@
 
     Scenario: An Organisation with valid enrolment is allowed to access service
       When a user attempts to log in to access the Import Voluntary Disclosure Service with valid CTS enrolment and Organisation affinity group
-      Then the user should be on the 'Confirm your EORI details' page
+      Then the user should be on the 'Confirm you want to disclose an underpayment using this EORI number' page
 
     Scenario: An individual with valid enrolment is allowed to access service
       When a user attempts to log in to access the Import Voluntary Disclosure Service with valid CTS enrolment and Individual affinity group
-      Then the user should be on the 'Confirm your EORI details' page
+      Then the user should be on the 'Confirm you want to disclose an underpayment using this EORI number' page
 

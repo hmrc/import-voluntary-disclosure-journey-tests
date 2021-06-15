@@ -27,3 +27,28 @@ Feature: Checking the bulk entry flow through the service
     Then the user should be on the 'Underpayment summary' page
     And the user selects the No radio button
     When clicks the Continue button
+    Then the user should be on the 'Upload a file containing the underpayment details for each entry' page
+    And I get the data from the page
+    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+    And I call the success redirect
+    Then the user should be on the 'Upload progress' page
+    And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
+    And clicks the Refresh button
+    Then the user should be on the 'The file has been uploaded successfully' page
+    When clicks the Continue button
+    Then the user should be on the 'What were the reasons for the underpayment of tax or duty?' page
+    And the user enters Bulk More Information into the More Information input field
+    When clicks the Continue button
+    Then the user should be on the 'What are your contact details?' page
+    And the user enters First last into the Name input field
+    And the user enters email@email.com into the Email address input field
+    And the user enters 0123456789 into the UK telephone number input field
+    When clicks the Continue button
+    Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    And the user selects the Another payment method radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    When clicks the Accept and send button
+    Then the user should be on the 'Disclosure sent' page

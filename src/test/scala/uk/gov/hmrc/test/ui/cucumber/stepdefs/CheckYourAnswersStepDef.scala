@@ -396,4 +396,39 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     val headingId = section.replaceAll("\\s","")
     findElementsBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div > dd.govuk-summary-list__actions > a""")).get(pos-1).click()
   }
+
+  And("""^I check that within the Underpayment details summary in the bulk journey that the value of (.*) is (.*)$""") { (field: String, value: String) =>
+    val expectedHeading = "Underpayment details"
+    val headingId = expectedHeading.replaceAll("\\s","")
+    val actualHeading = findBy(By.cssSelector(s"""h2[id="${headingId}"]""")).getText
+    assertResult(expectedHeading)(actualHeading)
+    field match {
+      case "Number of entries" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(1) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Acceptance dates" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Total owed to HMRC" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Reason for underpayment" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(4) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(4) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Multiple entries file" =>
+        val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(5) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(5) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case _ => fail(s"Field: $field is not valid, please investigate")
+    }
+  }
 }

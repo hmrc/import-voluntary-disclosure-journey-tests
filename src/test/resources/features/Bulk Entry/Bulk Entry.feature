@@ -39,7 +39,7 @@ Feature: Checking the bulk entry flow through the service
     Then the user should be on the 'What were the reasons for the underpayment of tax or duty?' page
     And the user enters Bulk More Information into the More Information input field
     When clicks the Continue button
-    Then the user should be on the 'What are your contact details?' page
+    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
     And the user enters First last into the Name input field
     And the user enters email@email.com into the Email address input field
     And the user enters 0123456789 into the UK telephone number input field
@@ -50,5 +50,10 @@ Feature: Checking the bulk entry flow through the service
     And the user selects the Another payment method radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I check that within the Underpayment details summary in the bulk journey that the value of Number of entries is More than one entry
+    And I check that within the Underpayment details summary in the bulk journey that the value of Acceptance dates is On or before 31 December 2020
+    And I check that within the Underpayment details summary in the bulk journey that the value of Total owed to HMRC is £100.00
+    And I check that within the Underpayment details summary in the bulk journey that the value of Reason for underpayment is Bulk More Information
+    And I check that within the Underpayment details summary in the bulk journey that the value of Multiple entries file is TestDocument.pdf
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure sent' page

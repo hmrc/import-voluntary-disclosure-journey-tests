@@ -292,7 +292,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'What were the reasons for the underpayment of tax or duty?' page
     And the user enters Bulk More Information into the More Information input field
     When clicks the Continue button
-    Then the user should be on the 'What are your contact details?' page
+    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
     And the user enters First last into the Name input field
     And the user enters email@email.com into the Email address input field
     And the user enters 0123456789 into the UK telephone number input field

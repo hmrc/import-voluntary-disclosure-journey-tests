@@ -220,7 +220,7 @@ Feature: Testing check your answers
     Then the user should be on the 'Check your answers before sending your disclosure' page
 
       # Entry details checks
-    And I check that within the Entry details summary that the value of Number of entries is One Entry
+    And I check that within the Entry details summary that the value of Number of entries is One entry
     And I check that within the Entry details summary that the value of EPU is 123
     And I check that within the Entry details summary that the value of Entry number is 123456Q
     And I check that within the Entry details summary that the value of Entry date is 31 December 2020

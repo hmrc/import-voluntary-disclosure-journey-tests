@@ -81,7 +81,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Upload supporting documentation' page
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
     And clicks the Continue button
-    And the user should be either waiting for file upload or completed upload
+    And the user should be either waiting for file upload or You have uploaded 1 file
     Then the user should be on the 'You have uploaded 1 file' page
     And the user selects the No radio button
     And clicks the Continue button
@@ -223,7 +223,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And I get the data from the page
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
     When clicks the Continue button
-    And the user should be either waiting for file upload or completed upload
+    And the user should be either waiting for file upload or You have uploaded 1 file
     Then the user should be on the 'You have uploaded 1 file' page
     And there should be '1' files on the page
     And the user selects the No radio button
@@ -283,10 +283,8 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Upload a file containing the underpayment details for each entry' page
     And I get the data from the page
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-    And I call the success redirect
-    Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
-    And clicks the Refresh button
+    When clicks the Continue button
+    And the user should be either waiting for file upload or The file has been uploaded successfully
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
     Then the user should be on the 'What were the reasons for the underpayment of tax or duty?' page

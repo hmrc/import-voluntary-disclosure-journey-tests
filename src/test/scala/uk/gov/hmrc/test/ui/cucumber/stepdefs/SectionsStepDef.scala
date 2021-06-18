@@ -45,7 +45,7 @@ class SectionsStepDef extends ShutdownStepDef {
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).clear()
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).sendKeys("EORINumber")
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).clear()
-    driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys("GB987654321000")
+    driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys("GB991200122000")
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
     // Click continue on Confirm EORI
     findBy(By.className("govuk-button")).click()

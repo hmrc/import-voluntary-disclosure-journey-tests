@@ -52,13 +52,13 @@ class UpscanStepDef extends ShutdownStepDef {
     assertResult(expectedStatus)(actualStatus)
   }
 
-  And("""^the user should be either waiting for file upload or completed upload$""") { () =>
+  And("""^the user should be either waiting for file upload or (.*)$""") { (expectedPage: String) =>
 
     def sleep(millis: Int = 1000) = Thread.sleep(millis)
 
     def comparisonCheck(count: Int): Boolean = {
       val actualPage = driver.findElement(By.cssSelector("h1")).getText
-      if (actualPage != "You have uploaded 1 file" && count < 60) {
+      if (actualPage != expectedPage && count < 60) {
         sleep(1500)
         if (findBy(By.className("govuk-button")).isDisplayed) {
           findBy(By.className("govuk-button")).click()
@@ -70,7 +70,7 @@ class UpscanStepDef extends ShutdownStepDef {
           comparisonCheck(count + 1)
         }
       } else {
-        if (actualPage == "You have uploaded 1 file") true
+        if (actualPage == expectedPage) true
         else {
           fail("Failed to redirect to the 'The file has been uploaded successfully' page")
         }

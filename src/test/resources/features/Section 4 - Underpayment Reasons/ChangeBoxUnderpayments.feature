@@ -10,7 +10,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And I want to complete section 3: Underpayments with Import VAT (B00)
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
-    Then the user should be on the 'What was the reason for the underpayment?' page
+    Then the user should be on the 'Which reason for the underpayment do you want to tell us about first?' page
     And the user selects the Box 22 Invoice currency and total amount invoiced radio button
     When clicks the Continue button
     Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
@@ -22,7 +22,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And I check that within the Underpayment box summary that the Entry level value of Original value is EUR125.00
     And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP190.50
     When the user clicks the 1st change link for Box number on the Underpayment box summary page
-    Then the user should be on the 'What was the reason for the underpayment?' page
+    Then the user should be on the 'Which reason for the underpayment do you want to tell us about first?' page
     And the user selects the Box 33 Commodity code radio button
     When clicks the Continue button
     Then the user should be on the 'What is the item number?' page
@@ -50,7 +50,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     When the user clicks browser back
     Then the user should be on the 'Confirm the details of the reason for underpayment' page
     When the user clicks the 1st change link for Box number on the Underpayment box summary page
-    Then the user should be on the 'What was the reason for the underpayment?' page
+    Then the user should be on the 'Which reason for the underpayment do you want to tell us about first?' page
     And the user selects the Box 22 Invoice currency and total amount invoiced radio button
     When clicks the Continue button
     Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
@@ -76,7 +76,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And I want to complete section 3: Underpayments with Import VAT (B00)
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
-    Then the user should be on the 'What was the reason for the underpayment?' page
+    Then the user should be on the 'Which reason for the underpayment do you want to tell us about first?' page
     And the user selects the Box 22 Invoice currency and total amount invoiced radio button
     When clicks the Continue button
     Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
@@ -119,7 +119,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And I want to complete section 3: Underpayments with Import VAT (B00)
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
-    Then the user should be on the 'What was the reason for the underpayment?' page
+    Then the user should be on the 'Which reason for the underpayment do you want to tell us about first?' page
     And the user selects the Box 33 Commodity code radio button
     When clicks the Continue button
     Then the user should be on the 'What is the item number?' page
@@ -174,7 +174,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And I want to complete section 3: Underpayments with Import VAT (B00)
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
-    Then the user should be on the 'What was the reason for the underpayment?' page
+    Then the user should be on the 'Which reason for the underpayment do you want to tell us about first?' page
     And the user selects the Box 22 Invoice currency and total amount invoiced radio button
     When clicks the Continue button
     Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page
@@ -218,7 +218,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And I want to complete section 3: Underpayments with Import VAT (B00)
     Then the user should be on the 'You must tell us the reason for the underpayment' page
     When clicks the Continue button
-    Then the user should be on the 'What was the reason for the underpayment?' page
+    Then the user should be on the 'Which reason for the underpayment do you want to tell us about first?' page
     And the user selects the Box 22 Invoice currency and total amount invoiced radio button
     When clicks the Continue button
     Then the user should be on the 'Box 22 invoice currency and total amount invoiced amendment' page

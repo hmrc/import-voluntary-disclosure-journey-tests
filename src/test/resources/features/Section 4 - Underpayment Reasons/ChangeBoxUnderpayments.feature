@@ -17,7 +17,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters EUR125.00 into the Original value input field
     And the user enters GBP190.50 into the Amended value input field
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'Confirm the reason for underpayment' page
     And I check that within the Underpayment box summary that the Entry level value of Box number is 22
     And I check that within the Underpayment box summary that the Entry level value of Original value is EUR125.00
     And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP190.50
@@ -32,7 +32,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters 1234567891ABCD into the Original value input field
     And the user enters 1987654321DCBA into the Amended value input field
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'Confirm the reason for underpayment' page
     And I check that within the Underpayment box summary that the Item level value of Box number is 33
     And I check that within the Underpayment box summary that the Item level value of Item number is 1
     And I check that within the Underpayment box summary that the Item level value of Original value is 1234567891ABCD
@@ -40,15 +40,15 @@ Feature: Check the change flow of the Box amendments reasons journey
     When the user clicks the 2nd change link for Item number on the Underpayment box summary page
     Then the user should be on the 'What is the item number?' page
     When the user clicks browser back
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'Confirm the reason for underpayment' page
     When the user clicks the 3rd change link for Original value on the Underpayment box summary page
     Then the user should be on the 'Box 33 commodity code amendment for item 1' page
     When the user clicks browser back
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'Confirm the reason for underpayment' page
     When the user clicks the 3rd change link for Amended value on the Underpayment box summary page
     Then the user should be on the 'Box 33 commodity code amendment for item 1' page
     When the user clicks browser back
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'Confirm the reason for underpayment' page
     When the user clicks the 1st change link for Box number on the Underpayment box summary page
     Then the user should be on the 'Which reason for the underpayment do you want to tell us about first?' page
     And the user selects the Box 22 Invoice currency and total amount invoiced radio button
@@ -57,11 +57,11 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters EUR125.00 into the Original value input field
     And the user enters GBP190.50 into the Amended value input field
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
+    Then the user should be on the 'Confirm the reason for underpayment' page
     And I check that within the Underpayment box summary that the Entry level value of Box number is 22
     And I check that within the Underpayment box summary that the Entry level value of Original value is EUR125.00
     And I check that within the Underpayment box summary that the Entry level value of Amended value is GBP190.50
-    When clicks the Continue button
+    When clicks the Confirm button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
     And the user selects the No radio button
     When clicks the Continue button
@@ -83,8 +83,8 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters EUR125.00 into the Original value input field
     And the user enters GBP190.50 into the Amended value input field
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When clicks the Continue button
+    Then the user should be on the 'Confirm the reason for underpayment' page
+    When clicks the Confirm button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
     When the user clicks the 1st change link for Box 22 on the Underpayment box summary page
     Then the user should be on the 'Change box 22 of the reason for underpayment' page
@@ -129,8 +129,8 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters 1234567891ABCD into the Original value input field
     And the user enters 1987654321DCBA into the Amended value input field
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When clicks the Continue button
+    Then the user should be on the 'Confirm the reason for underpayment' page
+    When clicks the Confirm button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
     When the user clicks the 1st change link for Box 33 on the Underpayment box summary page
     Then the user should be on the 'Change box 33 of the reason for underpayment' page
@@ -181,8 +181,8 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters EUR125.00 into the Original value input field
     And the user enters GBP190.50 into the Amended value input field
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When clicks the Continue button
+    Then the user should be on the 'Confirm the reason for underpayment' page
+    When clicks the Confirm button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
     And the user selects the Yes radio button
     When clicks the Continue button
@@ -196,8 +196,8 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters 1234567891ABCD into the Original value input field
     And the user enters 1987654321DCBA into the Amended value input field
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When clicks the Continue button
+    Then the user should be on the 'Confirm the reason for underpayment' page
+    When clicks the Confirm button
     Then the user should be on the 'You have added 2 reasons for the underpayment' page
     When the user clicks the 1st change link for Box 22 on the Underpayment box summary page
     Then the user should be on the 'Change box 22 of the reason for underpayment' page
@@ -225,8 +225,8 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user enters EUR125.00 into the Original value input field
     And the user enters GBP190.50 into the Amended value input field
     When clicks the Continue button
-    Then the user should be on the 'Confirm the details of the reason for underpayment' page
-    When clicks the Continue button
+    Then the user should be on the 'Confirm the reason for underpayment' page
+    When clicks the Confirm button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
     When the user clicks the 1st change link for Box 22 on the Underpayment box summary page
     Then the user should be on the 'Change box 22 of the reason for underpayment' page

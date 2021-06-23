@@ -17,14 +17,30 @@
 package uk.gov.hmrc.test.ui.cucumber.stepdefs
 
 import java.nio.file.Paths
-
 import org.openqa.selenium.By
-import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage}
+import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLandingPage, ImportVoluntaryDisclosureStartPage}
 
 class IVDStepDef extends ShutdownStepDef {
 
   Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
     driver.navigate().to(AuthLoginStubPage.url)
+    driver.findElement(By.name("redirectionUrl")).clear()
+    driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclosureLandingPage.url)
+    driver.findElement(By.name("enrolment[0].name")).clear()
+    driver.findElement(By.cssSelector(s"#affinityGroupSelect > option:nth-child(2)")).click()
+    driver.findElement(By.name("enrolment[0].name")).sendKeys("HMRC-CTS-ORG")
+    driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).clear()
+    driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).sendKeys("EORINumber")
+    driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).clear()
+    driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys("GB991200122000")
+    driver.findElement(By.cssSelector("Input[value='Submit']")).click()
+  }
+
+  Given("""^a user goes through the start page to access the Import Voluntary Disclosure Service""") { () =>
+    driver.navigate().to(ImportVoluntaryDisclosureStartPage.url)
+  }
+
+  Given("""^a user logs in to access the Import Voluntary Disclosure Service from the start page""") { () =>
     driver.findElement(By.name("redirectionUrl")).clear()
     driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclosureLandingPage.url)
     driver.findElement(By.name("enrolment[0].name")).clear()
@@ -151,7 +167,7 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^clicks the (.*) button$""") { button: String =>
     button match {
-      case "Continue" | "Refresh" | "Accept and send" | "Confirm address" | "Confirm and continue" | "Confirm" => findBy(By.className("govuk-button")).click()
+      case "Continue" | "Refresh" | "Accept and send" | "Confirm address" | "Confirm and continue" | "Confirm" | "Start Now" => findBy(By.className("govuk-button")).click()
       case _ => fail(s"$button is not a valid button")
     }
   }

@@ -151,7 +151,7 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^clicks the (.*) button$""") { button: String =>
     button match {
-      case "Continue" | "Refresh" | "Accept and send" | "Confirm address" | "Confirm and continue" => findBy(By.className("govuk-button")).click()
+      case "Continue" | "Refresh" | "Accept and send" | "Confirm address" | "Confirm and continue" | "Confirm" => findBy(By.className("govuk-button")).click()
       case _ => fail(s"$button is not a valid button")
     }
   }

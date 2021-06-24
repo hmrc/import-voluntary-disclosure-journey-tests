@@ -10,10 +10,10 @@
       And I want to complete section 4: Underpayment Reasons
       Then the user should be on the 'Documents you must upload' page
       And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
-      Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+      Then the user should be on the 'What are your contact details?' page
       And the user enters First last into the Name input field
       And the user enters email@email.com into the Email address input field
-      And the user enters 0123456789 into the UK telephone number input field
+      And the user enters 0123456789 into the Telephone number input field
       When clicks the Continue button
       Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
       And the user selects the No radio button
@@ -64,10 +64,10 @@
       And I want to complete section 4: Underpayment Reasons
       Then the user should be on the 'Documents you must upload' page
       And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
-      Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+      Then the user should be on the 'What are your contact details?' page
       And the user enters First last into the Name input field
       And the user enters email@email.com into the Email address input field
-      And the user enters 0123456789 into the UK telephone number input field
+      And the user enters 0123456789 into the Telephone number input field
       When clicks the Continue button
       Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
       And the user selects the No radio button

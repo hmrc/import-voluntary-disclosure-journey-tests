@@ -128,7 +128,7 @@ class IVDStepDef extends ShutdownStepDef {
       case "Email address" =>
         findById("email").clear()
         findById("email").sendKeys(value)
-      case "UK telephone number" =>
+      case "Telephone number" =>
         findById("phoneNumber").clear()
         findById("phoneNumber").sendKeys(value)
       case "Box Number" =>

@@ -11,7 +11,7 @@ Feature: Check doing everything in one go for Import Voluntary Disclosure Journe
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Documents you must upload' page
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+    Then the user should be on the 'What are your contact details?' page
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And I want to complete section 7: Deferment Details as Importer with no split
@@ -26,7 +26,7 @@ Feature: Check doing everything in one go for Import Voluntary Disclosure Journe
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Documents you must upload' page
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+    Then the user should be on the 'What are your contact details?' page
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And I want to complete section 7: Deferment Details as Representative with split

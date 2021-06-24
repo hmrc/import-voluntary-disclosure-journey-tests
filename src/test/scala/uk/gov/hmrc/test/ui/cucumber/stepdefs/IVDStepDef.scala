@@ -40,7 +40,7 @@ class IVDStepDef extends ShutdownStepDef {
     driver.navigate().to(ImportVoluntaryDisclosureStartPage.url)
   }
 
-  Given("""^a user logs in to access the Import Voluntary Disclosure Service from the start page""") { () =>
+  When("""^a user logs in to access the Import Voluntary Disclosure Service from the start page""") { () =>
     driver.findElement(By.name("redirectionUrl")).clear()
     driver.findElement(By.name("redirectionUrl")).sendKeys(ImportVoluntaryDisclosureLandingPage.url)
     driver.findElement(By.name("enrolment[0].name")).clear()

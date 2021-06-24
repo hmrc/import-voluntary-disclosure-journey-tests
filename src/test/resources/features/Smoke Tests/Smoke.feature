@@ -85,10 +85,10 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'You have uploaded 1 file' page
     And the user selects the No radio button
     And clicks the Continue button
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+    Then the user should be on the 'What are your contact details?' page
     And the user enters First last into the Name input field
     And the user enters email@email.com into the Email address input field
-    And the user enters 0123456789 into the UK telephone number input field
+    And the user enters 0123456789 into the Telephone number input field
     When clicks the Continue button
     Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
     And the user selects the No radio button
@@ -228,10 +228,10 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And there should be '1' files on the page
     And the user selects the No radio button
     And clicks the Continue button
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+    Then the user should be on the 'What are your contact details?' page
     And the user enters First last into the Name input field
     And the user enters email@email.com into the Email address input field
-    And the user enters 0123456789 into the UK telephone number input field
+    And the user enters 0123456789 into the Telephone number input field
     When clicks the Continue button
     Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
     And the user selects the No radio button
@@ -290,10 +290,10 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'What were the reasons for the underpayment of tax or duty?' page
     And the user enters Bulk More Information into the More Information input field
     When clicks the Continue button
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+    Then the user should be on the 'What are your contact details?' page
     And the user enters First last into the Name input field
     And the user enters email@email.com into the Email address input field
-    And the user enters 0123456789 into the UK telephone number input field
+    And the user enters 0123456789 into the Telephone number input field
     When clicks the Continue button
     Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
     And the user selects the Yes radio button

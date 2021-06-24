@@ -87,10 +87,10 @@ Feature: Testing check your answers
     And there should be '1' files on the page
     And the user selects the No radio button
     And clicks the Continue button
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+    Then the user should be on the 'What are your contact details?' page
     And the user enters First last into the Name input field
     And the user enters email@email.com into the Email address input field
-    And the user enters 0123456789 into the UK telephone number input field
+    And the user enters 0123456789 into the Telephone number input field
     When clicks the Continue button
     Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
     And the user selects the Yes radio button
@@ -212,10 +212,10 @@ Feature: Testing check your answers
     And I check that within the Your details summary that the value of Address is 99 Avenue Road Anyold Town 99JZ 1AA GB
       # Change your details name, email and phone
     And I click the change link on row 2 in the Your details section on the Check Your Answers page
-    Then the user should be on the 'Who should we contact if we have questions about this disclosure?' page
+    Then the user should be on the 'What are your contact details?' page
     And the user enters New name into the Name input field
     And the user enters alternative@email.com into the Email address input field
-    And the user enters 0987654321 into the UK telephone number input field
+    And the user enters 0987654321 into the Telephone number input field
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the Your details summary that the value of Contact details is New name alternative@email.com 0987654321

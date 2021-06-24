@@ -7,7 +7,7 @@ Feature: Single flow for Importer and Representative
     And I want to complete section 2: Entry Details as Importer
     Then the user should be on the 'Tell us what was underpaid' page
     And I want to complete section 3: Underpayments with Customs Duty (A00)~Import VAT (B00)
-    Then the user should be on the 'You must tell us the reason for the underpayment' page
+    Then the user should be on the 'Next, tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Documents you must upload' page
     And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf

@@ -147,4 +147,4 @@ Feature: Check the flow of the Underpayments journey
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
     When clicks the Continue button
-    Then the user should be on the 'You must tell us the reason for the underpayment' page
+    Then the user should be on the 'Next, tell us the reason for the underpayment' page

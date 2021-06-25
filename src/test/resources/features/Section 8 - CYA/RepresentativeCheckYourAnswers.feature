@@ -72,7 +72,7 @@ Feature: Testing check your answers
     And the user selects the No radio button
     When clicks the Continue button
 
-    Then the user should be on the 'You must tell us the reason for the underpayment' page
+    Then the user should be on the 'Next, tell us the reason for the underpayment' page
     When clicks the Continue button
     Then the user should be on the 'Which reason for the underpayment do you want to tell us about first?' page
     And the user selects the Box 22 Invoice currency and total amount invoiced radio button

@@ -114,6 +114,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Check your answers before sending your disclosure' page
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure sent' page
+    And I clear down the cookies
 
   Scenario: A user successfully submits their voluntary disclosure as a representative
     Given a user logs in to access the Import Voluntary Disclosure Service
@@ -254,6 +255,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Check your answers before sending your disclosure' page
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure sent' page
+    And I clear down the cookies
 
   Scenario: An Importer is able to walk through the bulk entry flow of IVD
     Given I want to complete section 1: Service Entry for Organisation
@@ -303,3 +305,4 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Check your answers before sending your disclosure' page
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure sent' page
+    And I clear down the cookies

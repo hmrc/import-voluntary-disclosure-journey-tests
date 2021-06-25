@@ -32,7 +32,7 @@ class IVDStepDef extends ShutdownStepDef {
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).clear()
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].name")).sendKeys("EORINumber")
     driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).clear()
-    driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys("GB991200122000")
+    driver.findElement(By.name("enrolment[0].taxIdentifier[0].value")).sendKeys("GB250520214000")
     driver.findElement(By.cssSelector("Input[value='Submit']")).click()
   }
 
@@ -257,6 +257,10 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^the user clicks browser back""") {
     driver.navigate().back()
+  }
+
+  And("""^I clear down the cookies$""") {
+    driver.manage().deleteAllCookies()
   }
 
 }

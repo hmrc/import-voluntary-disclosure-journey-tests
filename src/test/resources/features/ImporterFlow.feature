@@ -18,3 +18,4 @@ Feature: Single flow for Importer and Representative
     Then the user should be on the 'Check your answers before sending your disclosure' page
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure sent' page
+    And I clear down the cookies

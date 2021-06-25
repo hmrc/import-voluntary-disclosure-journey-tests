@@ -16,6 +16,7 @@ Feature: Check doing everything in one go for Import Voluntary Disclosure Journe
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And I want to complete section 7: Deferment Details as Importer with no split
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: A logged in user is able to walk through the entire flow of IVD as Representative
     Given I want to complete section 1: Service Entry for Organisation
@@ -31,3 +32,4 @@ Feature: Check doing everything in one go for Import Voluntary Disclosure Journe
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
     And I want to complete section 7: Deferment Details as Representative with split
     Then the user should be on the 'Do you want to split payment between two deferment accounts?' page
+    And I clear down the cookies

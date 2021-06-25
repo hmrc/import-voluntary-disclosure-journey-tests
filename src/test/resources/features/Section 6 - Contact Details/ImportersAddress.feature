@@ -54,6 +54,7 @@
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
       Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
+      And I clear down the cookies
 
     Scenario: A Representative navigates through the flow and enters the importers address
       Given I want to complete section 1: Service Entry for Organisation
@@ -108,3 +109,4 @@
       Then the user should be on the 'Confirm the address' page
       When clicks the Confirm address button
       Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
+      And I clear down the cookies

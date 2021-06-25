@@ -18,6 +18,7 @@
       And the user selects the No radio button
       When clicks the Continue button
       Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
+      And I clear down the cookies
 
     Scenario: A Representative user logs in and declares that they do have an EORI
       Given I want to complete section 1: Service Entry for Organisation
@@ -42,3 +43,4 @@
       And the user selects the Yes radio button
       When clicks the Continue button
       Then the user should be on the 'How many entries are you disclosing an underpayment for?' page
+      And I clear down the cookies

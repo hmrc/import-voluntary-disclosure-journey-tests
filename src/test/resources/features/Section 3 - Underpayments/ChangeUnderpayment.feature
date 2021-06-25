@@ -54,6 +54,7 @@ Feature: Check the change flow of the Underpayments journey
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £320.00
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
+    And I clear down the cookies
 
   Scenario: A logged in importer is able to complete the underpayment flow for Import VAT and Customs Duty and remove both Underpayment entries
     Given I want to complete section 1: Service Entry for Organisation
@@ -112,6 +113,7 @@ Feature: Check the change flow of the Underpayments journey
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
+    And I clear down the cookies
 
   Scenario: A logged in importer is able to change the value of an underpayment from the confirm underpayment screen
     Given I want to complete section 1: Service Entry for Organisation
@@ -138,3 +140,4 @@ Feature: Check the change flow of the Underpayments journey
     And I check that within the Confirm underpayment details page the total Amount that should have been paid is a value of £500.00
     When clicks the Continue button
     Then the user should be on the 'Underpayment summary' page
+    And I clear down the cookies

@@ -380,3 +380,4 @@ Feature: Check the flow of the Box amendments reasons journey
     And I check that within the Underpayment box summary that entry 16 has a value of Box 66 and level of Entry level
     And I check that within the Underpayment box summary that entry 17 has a value of Box 67 and level of Entry level
     And I check that within the Underpayment box summary that entry 18 has a value of Box 68 and level of Entry level
+    And I clear down the cookies

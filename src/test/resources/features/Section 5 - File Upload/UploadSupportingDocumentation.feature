@@ -50,3 +50,4 @@
       And the user selects the Yes radio button
       And clicks the Continue button
       Then the user should be on the 'Upload supporting documentation' page
+      And I clear down the cookies

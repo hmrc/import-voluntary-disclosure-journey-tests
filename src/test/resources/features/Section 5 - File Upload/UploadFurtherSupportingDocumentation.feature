@@ -43,3 +43,4 @@
       And clicks the Refresh button
       Then the user should be on the 'You have uploaded 1 file' page
       And there should be '1' files on the page
+      And I clear down the cookies

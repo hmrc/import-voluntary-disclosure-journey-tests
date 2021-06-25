@@ -314,3 +314,4 @@ Feature: Testing check your answers
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     And I check that within the Payment information summary that the value of Payment method is By BACS, CHAPS, Faster Payments, cheque or banker’s draft.
+    And I clear down the cookies

@@ -45,3 +45,4 @@ Feature: Testing the handoff to address lookup for capturing Representatives Add
     Then the user should be on the 'Confirm the importer’s address' page
     When clicks the Confirm address button
     Then the user should be on the 'Does the importer have an EORI number?' page
+    And I clear down the cookies

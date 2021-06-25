@@ -13,6 +13,7 @@ Feature: Testing Deferments for importers
     And the user selects the Another payment method radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: Importer declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the enter DAN flow
@@ -29,6 +30,7 @@ Feature: Testing Deferments for importers
     And the user enters 0123456 into the Deferment account number input field
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: Importer declares that they only have other duties, selects to pay by duty deferment account,
   and is redirected to the enter DAN flow
@@ -45,3 +47,4 @@ Feature: Testing Deferments for importers
     And the user enters 0123456 into the Deferment account number input field
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies

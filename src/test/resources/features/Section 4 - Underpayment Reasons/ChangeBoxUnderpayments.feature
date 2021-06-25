@@ -69,6 +69,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user selects the No radio button
     When clicks the Continue button
     Then the user should be on the 'Documents you must upload' page
+    And I clear down the cookies
 
   Scenario: A logged in user is able to Change an entry level reason from Underpayment Reason Summary page
     Given I want to complete section 1: Service Entry for Organisation
@@ -112,6 +113,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     Then the user should be on the 'Change box 22 of the reason for underpayment' page
     And I check that within the Underpayment Reason Change that the Entry level value of Original value is EUR325.00
     And I check that within the Underpayment Reason Change that the Entry level value of Amended value is GBP390.50
+    And I clear down the cookies
 
   Scenario: A logged in user is able to Change an item level reason from Underpayment Reason Summary page
     Given I want to complete section 1: Service Entry for Organisation
@@ -167,6 +169,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And I check that within the Underpayment Reason Change that the Item level value of Item number is 3
     And I check that within the Underpayment Reason Change that the Item level value of Original value is 1234567891CCCC
     And I check that within the Underpayment Reason Change that the Item level value of Amended value is 1234567891DDDD
+    And I clear down the cookies
 
   Scenario: A logged in user is able to Remove an unwanted reason from the Underpayment Reason Summary page
     Given I want to complete section 1: Service Entry for Organisation
@@ -211,6 +214,7 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'You have added 1 reason for the underpayment' page
+    And I clear down the cookies
 
   Scenario: A logged in user is able to Remove all reasons from the Underpayment Reason Summary page
     Given I want to complete section 1: Service Entry for Organisation
@@ -235,3 +239,4 @@ Feature: Check the change flow of the Box amendments reasons journey
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Next, tell us the reason for the underpayment' page
+    And I clear down the cookies

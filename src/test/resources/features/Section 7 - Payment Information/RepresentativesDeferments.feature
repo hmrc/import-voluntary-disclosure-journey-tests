@@ -13,6 +13,7 @@ Feature: Testing Deferments for representatives
     And the user selects the Another payment method radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: Representative declares that they have import VAT and other duties, selects to split by two deferment accounts,
   selects My deferment account for duty
@@ -46,6 +47,7 @@ Feature: Testing Deferments for representatives
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by two deferment accounts
@@ -70,6 +72,7 @@ Feature: Testing Deferments for representatives
     And the user selects the The importer’s account and I have standing authority to use it radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by two deferment accounts
@@ -112,6 +115,7 @@ Feature: Testing Deferments for representatives
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by one deferment account - enters DAN and clicks 'My deferment account'
@@ -132,6 +136,7 @@ Feature: Testing Deferments for representatives
     And the user selects the My deferment account radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: Representative declares that they have import VAT and other duties, selects to pay by duty deferment account,
   and is redirected to the split payments flow - chooses to pay by one deferment account - enters DAN and
@@ -162,6 +167,7 @@ Feature: Testing Deferments for representatives
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: Representative declares that they only have import VAT, selects to pay by duty deferment account,
   and is redirected to the enter DAN flow - enters DAN and clicks 'The importer’s account and I have authority to use it'
@@ -188,6 +194,7 @@ Feature: Testing Deferments for representatives
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies
 
   Scenario: Representative declares that they only have other duties, selects to pay by duty deferment account,
   and is redirected to the enter DAN flow - enters DAN and clicks 'The importer’s account and I have standing authority to use it'
@@ -205,3 +212,4 @@ Feature: Testing Deferments for representatives
     And the user selects the The importer’s account and I have standing authority to use it radio button
     When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
+    And I clear down the cookies

@@ -148,3 +148,4 @@ Feature: Check the flow of the Underpayments journey
     Then the user should be on the 'Underpayment summary' page
     When clicks the Continue button
     Then the user should be on the 'Next, tell us the reason for the underpayment' page
+    And I clear down the cookies

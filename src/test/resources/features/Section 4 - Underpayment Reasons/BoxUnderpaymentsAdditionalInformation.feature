@@ -28,3 +28,4 @@
       And the user enters More Information into the More Information input field
       When clicks the Continue button
       Then the user should be on the 'Documents you must upload' page
+      And I clear down the cookies

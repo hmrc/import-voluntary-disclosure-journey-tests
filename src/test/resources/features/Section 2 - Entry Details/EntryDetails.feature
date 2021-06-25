@@ -28,6 +28,7 @@ Feature: Checking the acceptance date flow through the service
     And the user enters 1234A67 into the Customs procedure code input field
     When clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
+    And I clear down the cookies
 
   Scenario: A Representative is able to walk through the flow of IVD
     Given I want to complete section 1: Service Entry for Organisation
@@ -68,3 +69,4 @@ Feature: Checking the acceptance date flow through the service
     And the user selects the No radio button
     And clicks the Continue button
     Then the user should be on the 'Tell us what was underpaid' page
+    And I clear down the cookies

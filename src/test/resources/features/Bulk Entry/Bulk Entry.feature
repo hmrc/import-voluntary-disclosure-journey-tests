@@ -57,3 +57,4 @@ Feature: Checking the bulk entry flow through the service
     And I check that within the Underpayment details summary in the bulk journey that the value of Multiple entries file is TestDocument.pdf
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure sent' page
+    And I clear down the cookies

@@ -67,7 +67,7 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
   }
 
   And("""^I check that within the About the Importer details summary that the value of (.*) is (.*)$""") { (field: String, value: String) =>
-    val expectedHeading = "About the Importer"
+    val expectedHeading = "About the importer"
     val headingId = expectedHeading.replaceAll("\\s","")
     val actualHeading = findBy(By.cssSelector(s"""h2[id="${headingId}"]""")).getText
     assertResult(expectedHeading)(actualHeading)
@@ -418,12 +418,12 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
-      case "Reason for underpayment" =>
+      case "Multiple entries file" =>
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(4) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(4) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)
         assertResult(value)(actualFieldValue)
-      case "Multiple entries file" =>
+      case "Reason for underpayment" =>
         val actualField = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(5) > dt""")).getText
         val actualFieldValue = findBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div:nth-child(5) > dd.govuk-summary-list__value""")).getText
         assertResult(field)(actualField)

@@ -53,8 +53,8 @@ Feature: Checking the bulk entry flow through the service
     And I check that within the Underpayment details summary in the bulk journey that the value of Number of entries is More than one entry
     And I check that within the Underpayment details summary in the bulk journey that the value of Acceptance dates is On or before 31 December 2020
     And I check that within the Underpayment details summary in the bulk journey that the value of Total owed to HMRC is £100.00
-    And I check that within the Underpayment details summary in the bulk journey that the value of Reason for underpayment is Bulk More Information
     And I check that within the Underpayment details summary in the bulk journey that the value of Multiple entries file is TestDocument.pdf
+    And I check that within the Underpayment details summary in the bulk journey that the value of Reason for underpayment is Bulk More Information
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure sent' page
     And I clear down the cookies

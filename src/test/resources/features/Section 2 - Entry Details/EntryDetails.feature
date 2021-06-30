@@ -5,6 +5,9 @@ Feature: Checking the acceptance date flow through the service
   @ZAP
   Scenario: An Importer is able to walk through the flow of IVD
     Given I want to complete section 1: Service Entry for Organisation
+    Then the user should be on the 'What do you want to do?' page
+    And the user selects the Start a new underpayment disclosure radio button
+    When clicks the Continue button
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the I am the importer radio button
     When clicks the Continue button
@@ -32,6 +35,9 @@ Feature: Checking the acceptance date flow through the service
 
   Scenario: A Representative is able to walk through the flow of IVD
     Given I want to complete section 1: Service Entry for Organisation
+    Then the user should be on the 'What do you want to do?' page
+    And the user selects the Start a new underpayment disclosure radio button
+    When clicks the Continue button
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the I am a representative of the importer radio button
     When clicks the Continue button

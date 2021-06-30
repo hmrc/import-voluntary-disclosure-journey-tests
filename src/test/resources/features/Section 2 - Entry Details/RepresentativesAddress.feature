@@ -5,6 +5,9 @@ Feature: Testing the handoff to address lookup for capturing Representatives Add
 
   Scenario: A Representative supplies their address details and completes the flow
     Given I want to complete section 1: Service Entry for Organisation
+    Then the user should be on the 'What do you want to do?' page
+    And the user selects the Start a new underpayment disclosure radio button
+    When clicks the Continue button
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the I am a representative of the importer radio button
     When clicks the Continue button

@@ -5,6 +5,9 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Given a user logs in to access the Import Voluntary Disclosure Service
     Then the user should be on the 'Confirm you want to disclose an underpayment using this EORI number' page
     When clicks the Confirm and continue button
+    Then the user should be on the 'What do you want to do?' page
+    And the user selects the Start a new underpayment disclosure radio button
+    When clicks the Continue button
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the I am the importer radio button
     When clicks the Continue button
@@ -120,6 +123,9 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Given a user logs in to access the Import Voluntary Disclosure Service
     Then the user should be on the 'Confirm you want to disclose an underpayment using this EORI number' page
     When clicks the Confirm and continue button
+    Then the user should be on the 'What do you want to do?' page
+    And the user selects the Start a new underpayment disclosure radio button
+    When clicks the Continue button
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the I am a representative of the importer radio button
     When clicks the Continue button
@@ -259,6 +265,9 @@ Feature: Smoke tests for Import Voluntary Disclosure
 
   Scenario: An Importer is able to walk through the bulk entry flow of IVD
     Given I want to complete section 1: Service Entry for Organisation
+    Then the user should be on the 'What do you want to do?' page
+    And the user selects the Start a new underpayment disclosure radio button
+    When clicks the Continue button
     Then the user should be on the 'Are you the importer or their representative?' page
     And the user selects the I am the importer radio button
     When clicks the Continue button
@@ -306,3 +315,31 @@ Feature: Smoke tests for Import Voluntary Disclosure
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure sent' page
     And I clear down the cookies
+
+  Scenario: An user is able to update their case
+    #Submit initial disclosure
+    Given I want to complete section 1: Service Entry for Organisation
+    And I want to complete section 2: Entry Details as Importer
+    Then the user should be on the 'Tell us what was underpaid' page
+    And I want to complete section 3: Underpayments with Customs Duty (A00)~Import VAT (B00)
+    Then the user should be on the 'Next, tell us the reason for the underpayment' page
+    And I want to complete section 4: Underpayment Reasons
+    Then the user should be on the 'Documents you must upload' page
+    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
+    Then the user should be on the 'What are your contact details?' page
+    And I want to complete section 6: Contact Details
+    Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
+    And I want to complete section 7: Deferment Details as Importer with no split
+    Then the user should be on the 'Check your answers before sending your disclosure' page
+    When clicks the Accept and send button
+    Then the user should be on the 'Disclosure sent' page
+    And I store the caseId reference
+
+    #Update previously sent disclosure
+    Given I want to complete section 1: Service Entry for Organisation
+    Then the user should be on the 'What do you want to do?' page
+    And the user selects the Add more information to an existing underpayment disclosure radio button
+    When clicks the Continue button
+#    Then the user should be on the 'What is the disclosure reference number?' page
+#    And the user enters caseIdRef into the disclosure reference number input field
+#    When clicks the Continue button

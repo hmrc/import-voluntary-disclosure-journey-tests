@@ -22,6 +22,8 @@ import uk.gov.hmrc.test.ui.pages.{AuthLoginStubPage, ImportVoluntaryDisclosureLa
 
 class IVDStepDef extends ShutdownStepDef {
 
+  var caseIdRef: String = ""
+
   Given("""^a user logs in to access the Import Voluntary Disclosure Service""") { () =>
     driver.navigate().to(AuthLoginStubPage.url)
     driver.findElement(By.name("redirectionUrl")).clear()
@@ -160,6 +162,7 @@ class IVDStepDef extends ShutdownStepDef {
       case "More Information" => findById("value").sendKeys(value)
       case "Deferment account number" => findById("value").sendKeys(value)
       case "Deferment account number (representative)" => findById("accountNumber").sendKeys(value)
+      case "disclosure reference number" => findById("TBC").sendKeys(caseIdRef)
       case _ => fail(s"$field is not a valid input field")
     }
 
@@ -261,6 +264,10 @@ class IVDStepDef extends ShutdownStepDef {
 
   And("""^I clear down the cookies$""") {
     driver.manage().deleteAllCookies()
+  }
+
+  And("""^I store the caseId reference$""") {
+    caseIdRef = findBy(By.cssSelector("#main-content > div > div > div.govuk-panel.govuk-panel--confirmation > div > strong")).getText
   }
 
 }

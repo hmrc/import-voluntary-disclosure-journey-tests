@@ -52,6 +52,9 @@ class SectionsStepDef extends ShutdownStepDef {
   }
 
   And("""^I want to complete section 2: Entry Details as (.*)""") { (userType: String) =>
+    // Select Start a new disclosure
+    findRadioButtonByText("Start a new underpayment disclosure").click()
+    findBy(By.className("govuk-button")).click()
     // Select user type and click through to Num Entries
     if (userType == "Importer") {
       findRadioButtonByText("I am the importer").click()

@@ -348,11 +348,9 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And the user selects the Yes radio button
     When clicks the Continue button
     Then the user should be on the 'Upload documentation' page
-    And I get the data from the page
+   And I get the data from the page
     And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
-    And I call the success redirect
-    Then the user should be on the 'Upload progress' page
-    And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
-    And clicks the Refresh button
+    When clicks the Continue button
+    And the user should be either waiting for file upload or The file has been uploaded successfully
     Then the user should be on the 'The file has been uploaded successfully' page
     When clicks the Continue button

@@ -341,6 +341,7 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And the user selects the Add more information to an existing underpayment disclosure radio button
     When clicks the Continue button
     Then the user should be on the 'What is the disclosure reference number?' page
+    #To run line 345 locally, replace 'caseIdRef' with 'C181234567890123456789', please revert back once tested.
     And the user enters caseIdRef into the disclosure reference number input field
     When clicks the Continue button
     Then the user should be on the 'Do you need to send us more documentation?' page

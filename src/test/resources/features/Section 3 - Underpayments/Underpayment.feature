@@ -39,7 +39,7 @@ Feature: Check the flow of the Underpayments journey
 
     #Excise Duty
     Then the user should be on the 'Which type of tax or duty was underpaid?' page
-    And the user selects the Excise Duty radio button
+    And the user selects the Excise duty radio button
     When clicks the Continue button
     Then the user should be on the 'Excise duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field

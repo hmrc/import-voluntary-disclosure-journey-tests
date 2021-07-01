@@ -19,7 +19,7 @@ Feature: Checking the bulk entry flow through the service
     Then the user should be on the 'Tell us what was underpaid' page
     And clicks the Continue button
     Then the user should be on the 'Which type of tax or duty do you want to tell us about first?' page
-    And the user selects the Excise Duty radio button
+    And the user selects the Excise duty radio button
     When clicks the Continue button
     Then the user should be on the 'Excise duty underpayment details, in pounds' page
     And the user enters 100 into the Original value input field

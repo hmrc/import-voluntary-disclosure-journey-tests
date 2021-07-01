@@ -8,7 +8,7 @@ Feature: Checking the update case flow through the service
     And the user selects the Add more information to an existing underpayment disclosure radio button
     When clicks the Continue button
     Then the user should be on the 'What is the disclosure reference number?' page
-    And the user enters caseIdRef into the disclosure reference number input field
+    And the user enters C181234567890123456789 into the disclosure reference number input field
     When clicks the Continue button
     Then the user should be on the 'Do you need to send us more documentation?' page
     And the user selects the Yes radio button
@@ -20,7 +20,7 @@ Feature: Checking the update case flow through the service
     And the user selects the Add more information to an existing underpayment disclosure radio button
     When clicks the Continue button
     Then the user should be on the 'What is the disclosure reference number?' page
-    And the user enters caseIdRef into the disclosure reference number input field
+    And the user enters C181234567890123456789 into the disclosure reference number input field
     When clicks the Continue button
     Then the user should be on the 'Do you need to send us more documentation?' page
     And the user selects the No radio button

@@ -20,8 +20,9 @@ Feature: Checking the update case flow through the service
     Then the user should be on the 'Upload progress' page
     And I call the upscan callback handler with Document: TestDocument.pdf and get response 204
     And clicks the Refresh button
-    Then the user should be on the 'The file has been uploaded successfully' page
-    When clicks the Continue button
+    Then the user should be on the 'You have uploaded 1 file' page
+    And the user selects the No radio button
+    And clicks the Continue button
 
   Scenario: An user is able to update their case - no additional documentation added
     Given I want to complete section 1: Service Entry for Organisation

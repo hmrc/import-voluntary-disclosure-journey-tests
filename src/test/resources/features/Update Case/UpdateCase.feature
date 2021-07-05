@@ -23,6 +23,9 @@ Feature: Checking the update case flow through the service
     Then the user should be on the 'You have uploaded 1 file' page
     And the user selects the No radio button
     And clicks the Continue button
+    Then the user should be on the 'Tell us any additional information' page
+    And the user enters Update case additional information into the Additional Information input field
+    When clicks the Continue button
 
   Scenario: An user is able to update their case - no additional documentation added
     Given I want to complete section 1: Service Entry for Organisation
@@ -35,3 +38,8 @@ Feature: Checking the update case flow through the service
     Then the user should be on the 'Do you need to send us more documentation?' page
     And the user selects the No radio button
     When clicks the Continue button
+    Then the user should be on the 'Tell us any additional information' page
+    And the user enters Update case additional information into the Additional Information input field
+    When clicks the Continue button
+
+

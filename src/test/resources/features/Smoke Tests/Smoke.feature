@@ -355,3 +355,6 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'You have uploaded 1 file' page
     And the user selects the No radio button
     And clicks the Continue button
+    Then the user should be on the 'Tell us any additional information' page
+    And the user enters Update case additional information into the Additional Information input field
+    When clicks the Continue button

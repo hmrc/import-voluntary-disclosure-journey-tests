@@ -325,7 +325,17 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Next, tell us the reason for the underpayment' page
     And I want to complete section 4: Underpayment Reasons
     Then the user should be on the 'Documents you must upload' page
-    And I want to complete section 5: Documents you must upload - Document: TestDocument.pdf
+    When clicks the Continue button
+    Then the user should be on the 'Do you have any of these documents?' page
+    And the user selects the No radio button
+    And clicks the Continue button
+    Then the user should be on the 'Upload supporting documentation' page
+    And the user selects file /src/test/resources/data/TestDocument.pdf in the file input field
+    And clicks the Continue button
+    And the user should be either waiting for file upload or You have uploaded 1 file
+    Then the user should be on the 'You have uploaded 1 file' page
+    And the user selects the No radio button
+    And clicks the Continue button
     Then the user should be on the 'What are your contact details?' page
     And I want to complete section 6: Contact Details
     Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
@@ -358,3 +368,4 @@ Feature: Smoke tests for Import Voluntary Disclosure
     Then the user should be on the 'Tell us any additional information' page
     And the user enters Update case additional information into the Additional Information input field
     When clicks the Continue button
+    Then the user should be on the 'Check your information before adding it to the disclosure' page

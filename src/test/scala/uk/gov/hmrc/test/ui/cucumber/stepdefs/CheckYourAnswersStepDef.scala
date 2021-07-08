@@ -431,4 +431,30 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }
+
+  And("""^I check that within the Update case details summary that the value of (.*) is (.*)""") { (field: String, value: String) =>
+    field match {
+      case "Reference number" =>
+        val actualField = findBy(By.cssSelector(s"""dl > div:nth-child(1) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""dl > div:nth-child(1) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Add more documentation?" =>
+        val actualField = findBy(By.cssSelector(s"""dl > div:nth-child(2) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""dl > div:nth-child(2) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "1 file uploaded" =>
+        val actualField = findBy(By.cssSelector(s"""dl > div:nth-child(3) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""dl > div:nth-child(3) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case "Additional information" =>
+        val actualField = findBy(By.cssSelector(s"""dl > div:nth-child(4) > dt""")).getText
+        val actualFieldValue = findBy(By.cssSelector(s"""dl > div:nth-child(4) > dd.govuk-summary-list__value""")).getText
+        assertResult(field)(actualField)
+        assertResult(value)(actualFieldValue)
+      case _ => fail(s"Field: $field is not valid, please investigate")
+    }
+  }
 }

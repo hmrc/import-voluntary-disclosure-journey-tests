@@ -26,6 +26,12 @@ Feature: Checking the update case flow through the service
     Then the user should be on the 'Tell us any additional information' page
     And the user enters Update case additional information into the Additional Information input field
     When clicks the Continue button
+    Then the user should be on the 'Check your information before adding it to the disclosure' page
+    And I check that within the Update case details summary that the value of Reference number is C181234567890123456789
+    And I check that within the Update case details summary that the value of Add more documentation? is Yes
+    And I check that within the Update case details summary that the value of 1 file uploaded is TestDocument.pdf
+    And I check that within the Update case details summary that the value of Additional information is Update case additional information
+
 
   Scenario: An user is able to update their case - no additional documentation added
     Given I want to complete section 1: Service Entry for Organisation
@@ -41,5 +47,6 @@ Feature: Checking the update case flow through the service
     Then the user should be on the 'Tell us any additional information' page
     And the user enters Update case additional information into the Additional Information input field
     When clicks the Continue button
+    Then the user should be on the 'Check your information before adding it to the disclosure' page
 
 

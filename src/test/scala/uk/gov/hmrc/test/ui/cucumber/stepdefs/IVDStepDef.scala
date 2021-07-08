@@ -164,7 +164,13 @@ class IVDStepDef extends ShutdownStepDef {
       case "Deferment account number" => findById("value").sendKeys(value)
       case "Deferment account number (representative)" => findById("accountNumber").sendKeys(value)
       case "disclosure reference number" =>
-        if(value == "caseIdRef") findById("value").sendKeys(caseIdRef) else findById("value").sendKeys(value)
+        if(value == "caseIdRef") {
+          findById("value").clear()
+          findById("value").sendKeys(caseIdRef)
+        } else {
+          findById("value").clear()
+          findById("value").sendKeys(value)
+        }
       case _ => fail(s"$field is not a valid input field")
     }
 

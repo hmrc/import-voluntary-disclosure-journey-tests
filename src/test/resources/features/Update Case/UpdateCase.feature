@@ -38,6 +38,14 @@ Feature: Checking the update case flow through the service
     When clicks the Continue button
     Then the user should be on the 'Check your information before adding it to the disclosure' page
     And I check that within the Update case details summary that the value of Reference number is C180987654321987654321
+    #Remove uploaded file
+    And I click the change link on row 2 on the Update Case Check Your Answers page
+    Then the user should be on the 'Do you need to send us more documentation?' page
+    And the user selects the No radio button
+    When clicks the Continue button
+    Then the user should be on the 'Check your information before adding it to the disclosure' page
+    And I check that within the Update case details summary that the value of Add more documentation? is No
+    And I check that within the Update case details summary that the third row is Additional information
 
   Scenario: An user is able to update their case - no additional documentation added
     Given I want to complete section 1: Service Entry for Organisation

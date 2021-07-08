@@ -337,9 +337,15 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And the user selects the No radio button
     And clicks the Continue button
     Then the user should be on the 'What are your contact details?' page
-    And I want to complete section 6: Contact Details
-    Then the user should be on the 'How will you pay for the import VAT and duty owed?' page
-    And I want to complete section 7: Deferment Details as Importer with no split
+    And the user enters First last into the Name input field
+    And the user enters email@email.com into the Email address input field
+    And the user enters 0123456789 into the Telephone number input field
+    When clicks the Continue button
+    Then the user should be on the 'Is this the correct address to send the demand for payment to?' page
+    And the user selects the Yes radio button
+    When clicks the Continue button
+    And the user selects the Another payment method radio button
+    When clicks the Continue button
     Then the user should be on the 'Check your answers before sending your disclosure' page
     When clicks the Accept and send button
     Then the user should be on the 'Disclosure sent' page

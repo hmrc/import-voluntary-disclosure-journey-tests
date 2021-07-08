@@ -397,6 +397,10 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
     findElementsBy(By.cssSelector(s"""h2[id="${headingId}"] ~ dl > div > dd.govuk-summary-list__actions > a""")).get(pos-1).click()
   }
 
+  And("""^I click the change link on row (.*) on the Update Case Check Your Answers page$""") { (pos: Int) =>
+    findElementsBy(By.cssSelector(s"""dl > div > dd.govuk-summary-list__actions > a""")).get(pos-1).click()
+  }
+
   And("""^I check that within the Underpayment details summary in the bulk journey that the value of (.*) is (.*)$""") { (field: String, value: String) =>
     val expectedHeading = "Underpayment details"
     val headingId = expectedHeading.replaceAll("\\s","")

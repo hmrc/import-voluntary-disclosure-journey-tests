@@ -461,4 +461,15 @@ class CheckYourAnswersStepDef extends ShutdownStepDef {
       case _ => fail(s"Field: $field is not valid, please investigate")
     }
   }
+
+  And("""^I check that within the Update case details summary that the (.*) row is (.*)""") { (number: String, field: String) =>
+    val row = number match {
+      case "first" => 1
+      case "second" => 2
+      case "third" => 3
+      case "fourth" => 4
+    }
+    val actualField = findBy(By.cssSelector(s"""dl > div:nth-child($row) > dt""")).getText
+    assertResult(field)(actualField)
+  }
 }

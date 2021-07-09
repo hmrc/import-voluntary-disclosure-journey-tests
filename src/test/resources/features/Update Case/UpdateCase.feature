@@ -52,7 +52,7 @@ Feature: Checking the update case flow through the service
     Then the user should be on the 'Are you sure you want to remove this file?' page
     And the user selects the Yes radio button
     And clicks the Continue button
-    Then the user should be on the 'Upload supporting documentation' page
+    Then the user should be on the 'Upload documentation' page
     And I get the data from the page
     And the user selects file /src/test/resources/data/SampleDocument.pdf in the file input field
     And I call the success redirect
@@ -64,7 +64,7 @@ Feature: Checking the update case flow through the service
     And the user selects the No radio button
     And clicks the Continue button
     Then the user should be on the 'Check your information before adding it to the disclosure' page
-    And I check that within the Underpayment details summary that the value of 1 file uploaded is SampleDocument.pdf
+    And I check that within the Update case details summary that the value of 1 file uploaded is SampleDocument.pdf
     #Change link for more documentation
     And I click the change link on row 2 on the Update Case Check Your Answers page
     Then the user should be on the 'Do you need to send us more documentation?' page

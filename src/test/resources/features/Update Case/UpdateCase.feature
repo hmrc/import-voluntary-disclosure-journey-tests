@@ -38,7 +38,14 @@ Feature: Checking the update case flow through the service
     When clicks the Continue button
     Then the user should be on the 'Check your information before adding it to the disclosure' page
     And I check that within the Update case details summary that the value of Reference number is C180987654321987654321
-    #Remove uploaded file
+    #Change link for Additional information
+    And I click the change link on row 4 on the Update Case Check Your Answers page
+    Then the user should be on the 'Tell us any additional information' page
+    And the user enters Additional information for update case into the Additional Information input field
+    When clicks the Continue button
+    Then the user should be on the 'Check your information before adding it to the disclosure' page
+    And I check that within the Update case details summary that the value of Additional information is Additional information for update case
+    #Change link for more documentation
     And I click the change link on row 2 on the Update Case Check Your Answers page
     Then the user should be on the 'Do you need to send us more documentation?' page
     And the user selects the No radio button

@@ -160,7 +160,9 @@ class IVDStepDef extends ShutdownStepDef {
       case "Town" => findById("town").sendKeys(value)
       case "EORI" => findById("importerEORI").sendKeys(value)
       case "More Information" => findById("value").sendKeys(value)
-      case "Additional Information" => findById("value").sendKeys(value)
+      case "Additional Information" =>
+        findById("value").clear()
+        findById("value").sendKeys(value)
       case "Deferment account number" => findById("value").sendKeys(value)
       case "Deferment account number (representative)" => findById("accountNumber").sendKeys(value)
       case "disclosure reference number" =>

@@ -53,6 +53,9 @@ Feature: Checking the update case flow through the service
     Then the user should be on the 'Check your information before adding it to the disclosure' page
     And I check that within the Update case details summary that the value of Add more documentation? is No
     And I check that within the Update case details summary that the third row is Additional information
+    #Completing CYA
+    When clicks the Accept and send button
+    Then the user should be on the 'Information added' page
 
   Scenario: An user is able to update their case - no additional documentation added
     Given I want to complete section 1: Service Entry for Organisation
@@ -69,5 +72,6 @@ Feature: Checking the update case flow through the service
     And the user enters Update case additional information into the Additional Information input field
     When clicks the Continue button
     Then the user should be on the 'Check your information before adding it to the disclosure' page
-
+    When clicks the Accept and send button
+    Then the user should be on the 'Information added' page
 

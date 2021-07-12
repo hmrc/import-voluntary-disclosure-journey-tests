@@ -45,6 +45,26 @@ Feature: Checking the update case flow through the service
     When clicks the Continue button
     Then the user should be on the 'Check your information before adding it to the disclosure' page
     And I check that within the Update case details summary that the value of Additional information is Additional information for update case
+    #Change link for file upload
+    And I click the change link on row 3 on the Update Case Check Your Answers page
+    Then the user should be on the 'You have uploaded 1 file' page
+    And the user clicks the 1st remove link for TestDocument on the Upload Another page
+    Then the user should be on the 'Are you sure you want to remove this file?' page
+    And the user selects the Yes radio button
+    And clicks the Continue button
+    Then the user should be on the 'Upload documentation' page
+    And I get the data from the page
+    And the user selects file /src/test/resources/data/SampleDocument.pdf in the file input field
+    And I call the success redirect
+    Then the user should be on the 'Upload progress' page
+    And I call the upscan callback handler with Document: SampleDocument.pdf and get response 204
+    And clicks the Refresh button
+    Then the user should be on the 'You have uploaded 1 file' page
+    And there should be '1' files on the page
+    And the user selects the No radio button
+    And clicks the Continue button
+    Then the user should be on the 'Check your information before adding it to the disclosure' page
+    And I check that within the Update case details summary that the value of 1 file uploaded is SampleDocument.pdf
     #Change link for more documentation
     And I click the change link on row 2 on the Update Case Check Your Answers page
     Then the user should be on the 'Do you need to send us more documentation?' page

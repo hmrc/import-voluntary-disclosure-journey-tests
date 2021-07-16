@@ -375,3 +375,5 @@ Feature: Smoke tests for Import Voluntary Disclosure
     And the user enters Update case additional information into the Additional Information input field
     When clicks the Continue button
     Then the user should be on the 'Check your information before adding it to the disclosure' page
+    When clicks the Accept and send button
+    Then the user should be on the 'Information added' page
